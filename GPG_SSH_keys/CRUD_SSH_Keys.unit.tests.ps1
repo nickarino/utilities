@@ -15,7 +15,10 @@ BeforeAll {
 Describe "Given you need to create a new SSH key" {
     Context "When you have no SSH key" {
         It "should create a new SSH key" {
-            # PowerShell command for checking for a directory
+            $homeDir = $home #https://devblogs.microsoft.com/scripting/powertip-find-users-home-directory-in-powershell/
+            $folderName = '/.ssh'
+            Test-Path  ($homeDir + $folderName) | Should -Be $true -Because "/.ssh directory exists" #https://shellgeek.com/powershell-delete-folder-if-exists/
+
 
         }
     }
