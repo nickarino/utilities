@@ -19,6 +19,7 @@ Describe "Given you need to create a new SSH key" {
             $folderName = '/.ssh'
             Test-Path  ($homeDir + $folderName) | Should -Be $true -Because "/.ssh directory exists" #https://shellgeek.com/powershell-delete-folder-if-exists/
 
+            #Todo find github code that does this. 
 
         }
     }
