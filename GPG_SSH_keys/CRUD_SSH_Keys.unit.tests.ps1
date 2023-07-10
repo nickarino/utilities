@@ -4,7 +4,7 @@ BeforeAll {
     . $PSCommandPath.Replace('.Tests.ps1', '.ps1')
 }
 
-# BDD Example (Given (Describe), When (Context), Then (Should)):
+# BDD Example (Given (Describe), When (Context), Then ( It) Should)):
 # Given a code block
 # When compared with the same reference
 # Then will equal itself
@@ -12,8 +12,8 @@ BeforeAll {
 # Arrange, Act, Assert
 # Skeleton the tests before you actually start writing them
 
-Describe "Given you need to create a new SSH key" {
-    Context "When you have no SSH key" {
+Describe "Given ssh-keygen provides keys" {
+    Context "When there is no SSH key" {
         It "should create a new SSH key" {
             $homeDir = $home #https://devblogs.microsoft.com/scripting/powertip-find-users-home-directory-in-powershell/
             $folderName = '/.ssh'
@@ -21,6 +21,14 @@ Describe "Given you need to create a new SSH key" {
 
             #Todo find github code that does this. 
 
+            # PowerShell command for checking for a directory
+            Test-Path $home/.ssh | Should -Be $true -Because ".ssh directory is there in $home "
+            $pubKeys =  (dir $home/.ssh/*.pub)
+            $pubKeys.length | Should -BeGreaterThan 1 -Because ".ssh directory should have more than one public key. "
+            #show you can get some output from ssh-keygen. 
+            Start-Process -FilePath "ssh-keygen"  -ArgumentList "-lf $home/.ssh/id_rsa.pub"
+            # get the hashes
+            Write-Host (ssh-keygen -lf $pubKeys.Name[0])
         }
     }
 }
