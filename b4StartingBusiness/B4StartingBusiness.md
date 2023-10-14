@@ -1,0 +1,1 @@
+* Your successful business needs to have alignment on many parts.  Economic engine, USPs, Your abilities, skills, personality, exit strategy, the phases of the business, 
