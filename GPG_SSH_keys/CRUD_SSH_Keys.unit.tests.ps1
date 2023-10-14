@@ -12,6 +12,40 @@ BeforeAll {
 # Arrange, Act, Assert
 # Skeleton the tests before you actually start writing them
 
+Describe "Given OpenSSH exists and can be installed" {
+    Context "When you check if it is installed"{
+        It "Should use the correct package manager: winget on windows or brew on mac"{
+            # To decide on a string contains you could use either
+            # 1. https://learn.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Select-String?view=powershell-7.3&viewFallbackFrom=powershell-7
+            # 2. https://lazyadmin.nl/powershell/string-contains/ 
+            if ($PSVersionTable.OS.Contains("Windows")) {
+                # https://www.codetwo.com/admins-blog/how-to-check-installed-software-version/
+                Get-WmiObject -Class Win32_Product | where vendor -eq CodeTwo | select Name, Version
+
+
+            } else {
+                # we are in linux or mac
+                # Explanation of processes and their output. 
+                # See difference between Start-Process and Invoke-Process: https://adamtheautomator.com/start-process/
+                # Operators
+                # https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2
+                # I needed the "&" so the process is called
+                & Start-Process -FilePath "which"  -ArgumentList "brew"
+                # https://www.powershellgallery.com/packages/Invoke-Process/1.4
+                # start https://www.comparitech.com/net-admin/install-powershell-modules/
+                # TODO start here
+                # ls /usr/local/Cellar/powershell/7.3.1/libexec/Modules/
+                # grep -irl Invoke-Process .
+
+            }
+        }
+
+        It "should install it or show it is already installed"{
+
+        }
+    }
+}
+
 Describe "Given ssh-keygen provides keys" {
     Context "When there is no SSH key" {
         It "should create a new SSH key" {
@@ -26,6 +60,7 @@ Describe "Given ssh-keygen provides keys" {
         }
     }
 }
+
 
 # References
 # * Install  https://github.com/jimbrig/Scripts/tree/b23e87b72f56597b465399d92f928fe7e9e96094/PowerShell/Installations
