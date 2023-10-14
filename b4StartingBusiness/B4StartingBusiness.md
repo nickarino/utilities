@@ -1,1 +1,2 @@
 * Your successful business needs to have alignment on many parts.  Economic engine, USPs, Your abilities, skills, personality, exit strategy, the phases of the business, 
+* I want to make up a .json file that has all the attributes and questions I want to show it has alignment.  Then a test should run over it. 
