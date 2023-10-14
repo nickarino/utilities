@@ -49,6 +49,12 @@ Describe "Given OpenSSH exists and can be installed" {
 Describe "Given ssh-keygen provides keys" {
     Context "When there is no SSH key" {
         It "should create a new SSH key" {
+            $homeDir = $home #https://devblogs.microsoft.com/scripting/powertip-find-users-home-directory-in-powershell/
+            $folderName = '/.ssh'
+            Test-Path  ($homeDir + $folderName) | Should -Be $true -Because "/.ssh directory exists" #https://shellgeek.com/powershell-delete-folder-if-exists/
+
+            #Todo find github code that does this. 
+
             # PowerShell command for checking for a directory
             Test-Path $home/.ssh | Should -Be $true -Because ".ssh directory is there in $home "
             $pubKeys =  (dir $home/.ssh/*.pub)
