@@ -18,6 +18,7 @@ Donald Miller, the CEO of StoryBrand, best-selling author and public speaker, le
 1. Negotiation
 1. Management
 1. Execution
+1. Unique Selling Proposition
 
 ## #1 Leadership Made Simple
 
@@ -279,3 +280,8 @@ Celebrating wins, no matter big or small, is how you let your team know they’r
 1. Acknowledge those responsible.
 
 If you celebrate wins and learn from disappointing performances, your team will definitely evolve and get better. We all love playing games and who wouldn’t love to win at the game they play? Keeping a scoreboard and celebrating victories makes work more fun and productive.
+
+## 11 Unique Selling Proposition
+
+It would be nice to sell things that are high value that are rare that only you can produce.
+
