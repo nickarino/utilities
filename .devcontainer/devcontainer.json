@@ -1,0 +1,4 @@
+"runArgs": [
+    "-v", "/var/run/docker.sock:/var/run/docker.sock",
+    "mcr.microsoft.com/vscode/devcontainers/powershell:0-7-lts"
+]
