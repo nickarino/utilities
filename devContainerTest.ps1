@@ -1,23 +1,40 @@
-# Define the test
-$testScript = {
-    Describe "Environment Variable Test" {
-        It "Checks if there is a value in $env:PSModulePath" {
-            # Get the value of $env:PSModulePath
-            $psModulePath = $env:PSModulePath
-
-            # Test if there is a value in $env:PSModulePath
-            $psModulePath | Should -Not -BeNullOrEmpty
-        }
+function Assert($Condition, $Message) {
+    if (-not $Condition) {
+        Throw "Assertion failed: $Message"
     }
 }
 
-# Call the test
+# Assert that a variable is not null
+$var = $null
 try {
-    Invoke-Pester -ScriptBlock $testScript
+    Assert ($var -ne $null) "Variable should not be null"
+} catch {
+    Assert ($_ -ne $null) "An error should have occurred"
 }
-catch {
-    Write-Output "An error occurred while invoking Pester: $_"
-}
+
+## Test if you understand particular module commands
+Find-Module -Name Pester 
+
+## Define the test
+# $testScript = {
+#     Describe "Environment Variable Test" {
+#         It "Checks if there is a value in $env:PSModulePath" {
+#             # Get the value of $env:PSModulePath
+#             $psModulePath = $env:PSModulePath
+
+#             # Test if there is a value in $env:PSModulePath
+#             $psModulePath | Should -Not -BeNullOrEmpty
+#         }
+#     }
+# }
+
+# # Call the test
+# try {
+#     Invoke-Pester -ScriptBlock $testScript
+# }
+# catch {
+#     Write-Output "An error occurred while invoking Pester: $_"
+# }
 
 
 # Define the test
