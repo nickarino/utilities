@@ -14,6 +14,9 @@ try {
 
 ## Test if you understand particular module commands
 Find-Module -Name Pester 
+Get-Module -Name Pester
+Install-Module -Name Pester -Force -SkipPublisherCheck
+
 
 ## Define the test
 # $testScript = {
