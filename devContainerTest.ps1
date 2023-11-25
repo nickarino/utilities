@@ -7,16 +7,44 @@ function Assert($Condition, $Message) {
 # Assert that a variable is not null
 $var = $null
 try {
-    Assert ($var -ne $null) "Variable should not be null"
+    Assert ($null -ne $var) "Variable should not be null"
 } catch {
     Assert ($_ -ne $null) "An error should have occurred"
 }
 
+
+
 ## Test if you understand particular module commands
 Find-Module -Name Pester 
+$pesterModule = Find-Module -Name Pester
+Write-Output $pesterModule.Name
+
 Get-Module -Name Pester
 Install-Module -Name Pester -Force -SkipPublisherCheck
+Get-InstalledModule -Name Pester
+Invoke-Pester -ScriptBlock { 1 + 1 | Should -Be 2 }
+Invoke-Pester 
 
+# Define the test
+$testScript = {
+    Describe "PSGallery Test" {
+        It "Checks if PSGallery is the repository in use" {
+            # Get the current repository
+            $repository = (Get-PSRepository).Name
+
+            # Test if PSGallery is the repository in use
+            $repository | Should -Be 'PSGallery'
+        }
+    }
+}
+
+# Call the test
+try {
+    Invoke-Pester -ScriptBlock $testScript
+}
+catch {
+    Write-Output "An error occurred while invoking Pester: $_"
+}
 
 ## Define the test
 # $testScript = {
