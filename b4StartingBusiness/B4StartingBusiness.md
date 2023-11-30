@@ -2,6 +2,10 @@
 
  I want to make up a .json file that has all the attributes and questions I want to show the busineess has alignment.  Then a test should run over it.
 
+* [Ted Talk on why startups succeed](https://www.ted.com/talks/bill_gross_the_single_biggest_reason_why_start_ups_succeed)
+![Alt text](image.png)
+
+
 # [Summary of Business Made Simple](https://waiyancan.com/business-made-simple-summary-donald-miller/)
 
 Most people enter their professions without properly understanding how to grow a business. At times, this makes them feel lost, or worse, like a fraud pretending to know what they’re doing. It’s hard to be successful without a clear understanding of how business works.
