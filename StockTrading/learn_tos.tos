@@ -1,0 +1,14 @@
+#According to @Gary, thinkScript does not come with a debugger tool. Gary recommends using chart bubbles and chart labels as alternatives. When a condition is met, bubbles will appear on a designated bar within the chart, while labels will appear on the upper left corner of the same chart.
+
+# https://copyprogramming.com/howto/how-do-you-step-through-thinkscript-in-thinkorswim-platform
+
+AddChartBubble("time condition", # condition defining bar where bubble should appear
+               "price location", # which price should bubble point at (eg, high, low)
+               text,             # text to display in bubble
+               color,            # bubble color
+               up                # display bubble above price (yes) or below it (no)
+);
+AddLabel(visible,  # condition defining whether the label should appear; yes means always
+         text,     # text to display in label
+         color     # label color
+);
