@@ -12,3 +12,11 @@ AddLabel(visible,  # condition defining whether the label should appear; yes mea
          text,     # text to display in label
          color     # label color
 );
+
+declare lower;
+#def a = close + open;
+#def b = high + low;
+#plot c = a/b;
+
+plot DataLine = close;  # Example of plotting the closing price
+DataLine.SetDefaultColor(Color.CYAN);
