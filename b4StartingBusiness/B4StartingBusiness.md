@@ -5,7 +5,7 @@
 * [Ted Talk on why startups succeed](https://www.ted.com/talks/bill_gross_the_single_biggest_reason_why_start_ups_succeed)
 ![Alt text](image.png)
 
-
+<!-- markdownlint-disable-next-line MD025 -->
 # [Summary of Business Made Simple](https://waiyancan.com/business-made-simple-summary-donald-miller/)
 
 Most people enter their professions without properly understanding how to grow a business. At times, this makes them feel lost, or worse, like a fraud pretending to know what they’re doing. It’s hard to be successful without a clear understanding of how business works.
@@ -99,7 +99,7 @@ They’re resistant to adding costs (especially recurring costs) to overhead. Th
 
 ## 4 Messaging Made Simple
 
-TODo: https://waiyancan.com/summary-building-a-storybrand-by-donald-miller/
+TODo: <https://waiyancan.com/summary-building-a-storybrand-by-donald-miller/>
 
 A clear and compelling message has a potential to sell millions. Yet the hardest thing to do as a professional is to get people’s attention. Here’s a proven formula you can use to create great marketing messages, give terrific presentations and grab the attention.
 
@@ -125,11 +125,11 @@ Now that’s a sales (and marketing) pitch. It can be used almost everywhere, in
 
 ## 5 Marketing Made Simple
 
-Todo: https://waiyancan.com/marketing-made-simple-summary/
+Todo: <https://waiyancan.com/marketing-made-simple-summary/>
 
 Not every professional works in marketing but every professional needs to know enough about marketing so they can get their messages out to the world. Of course, marketing isn’t just about delivering messages to customers. It’s also about delivering messages to coworkers, investors and even the press and media.
 
-### Great marketers know how to craft a one-liner.
+### Great marketers know how to craft a one-liner
 
 The idea of a one-liner originated from the movie industry. Whenever a screenwriter writes a screenplay, they have to summarize the story so producers want to invest in and potentially thousands will go to theatres to see it. Your one-liner has three components:
 
@@ -185,7 +185,8 @@ Finally, __remember that the biggest problems salespeople have are mostly psycho
 
 A good negotiator can save a company a fortune. Any team member who can negotiate well dramatically increases their value inside an organization.
 
-### Great negotiators understand the two modes of negotiation.
+### Great negotiators understand the two modes of negotiation
+
 A general rule about negotiation is that if one party is ‘competitive’ and the other is ‘collaborative’, the competitive side will almost always win.
 
 __If you’re in a collaborative negotiation mode and you sense the other party in competitive mode, you should switch to competitive mode immediately. Why? Because the competitive negotiators are not looking for win/win. In order to create a win/win scenario, you need both parties to be collaborative.__ So how does this play out in the real world? Here’s what Donald has to share with us:
@@ -196,7 +197,7 @@ Why was it important for me not to let them know we’d arrived at the price I w
 
 The point is this. Always know the negotiation mode the other person is in and adjust yours accordingly.
 
-### Great negotiators anchor the negotiation with initial offers.
+### Great negotiators anchor the negotiation with initial offers
 
 Anchoring means placing a number on the table you want the rest of the negotiation to gravitate around. Say you’re buying a new car. A car dealership anchors the price with a high gravitational pull. If they want $35,000 for the car and you negotiate it down to $34,000, you feel like you got yourself a good deal. But what if the opening price was set at $5,000 over what the dealership is willing to accept? That means they just got $4,000 over the price they’d have sold it for.
 
@@ -288,4 +289,3 @@ If you celebrate wins and learn from disappointing performances, your team will 
 ## 11 Unique Selling Proposition
 
 It would be nice to sell things that are high value that are rare that only you can produce.
-
