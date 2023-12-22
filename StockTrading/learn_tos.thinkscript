@@ -20,3 +20,5 @@ declare lower;
 
 plot DataLine = close;  # Example of plotting the closing price
 DataLine.SetDefaultColor(Color.CYAN);
+
+
