@@ -1,5 +1,17 @@
 # Labels show up a the top left of the graph and bubble show up on the individual bars. 
 
+# AddChartBubble("time condition", # condition defining bar where bubble should appear
+#                "price location", # which price should bubble point at (eg, high, low)
+#                text,             # text to display in bubble
+#                color,            # bubble color
+#                up                # display bubble above price (yes) or below it (no)
+# );
+# AddLabel(visible,  # condition defining whether the label should appear; yes means always
+#          text,     # text to display in label
+#          color     # label color
+# );
+
+
 # https://tlc.thinkorswim.com/center/reference/thinkScript/Functions/Look---Feel/AddLabel
 AddLabel(1, "This is a label that shows up at the top left of a chart. There are no multi-line labels", color.white);
 
@@ -10,3 +22,6 @@ AddChartBubble(BarNumber() % 10 == 0, high, "bubble at " + high, Color.WHITE);
 
 # uncomment to see a multi-line bubble
 #AddChartBubble(GetYYYYMMDD() != GetYYYYMMDD()[1], high, "O: " + open(period = "DAY") + "\nChg: " + ( open(period = "DAY") - open(period = "DAY")[1] ), Color.PLUM, yes);
+
+
+

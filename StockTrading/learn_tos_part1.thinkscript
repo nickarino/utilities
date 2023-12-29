@@ -1,40 +1,4 @@
-
-AddChartBubble("time condition", # condition defining bar where bubble should appear
-               "price location", # which price should bubble point at (eg, high, low)
-               text,             # text to display in bubble
-               color,            # bubble color
-               up                # display bubble above price (yes) or below it (no)
-);
-AddLabel(visible,  # condition defining whether the label should appear; yes means always
-         text,     # text to display in label
-         color     # label color
-);
-
-declare lower;
-#def a = close + open;
-#def b = high + low;
-#plot c = a/b;
-
-plot DataLine = close;  # Example of plotting the closing price
-DataLine.SetDefaultColor(Color.CYAN);
-
-
-#declare lower;
-#def a = close + open;
-#def b = high + low;
-#plot c = a/b;
-
-#plot DataLine = close;  # Example of plotting the closing price
-#DataLine.SetDefaultColor(Color.DARK_ORANGE);
-#AddLabel(yes, "Current Close: " + close, Color.WHITE);
-#
 #Alert(close > 100, "Close is above 100: " + close, Alert.BAR, Sound.Bell);
-#
-#AddLabel(yes, if close > Average(close, 20) then "Uptrend" else "Downtrend");
-#AddLabel(yes, "Average: " + Average(close, 20));
-#
-#AddChartBubble(close crosses above Average(close, 20), close, "Close price " + close + " is #greater");
-#
 
 
 #input timeFrame = {default DAY, "2 DAYS", "3 DAYS", "4 DAYS", WEEK, MONTH, "OPT EXP"};
