@@ -1,0 +1,6 @@
+# Assert -  Assert false stops the script : https://tlc.thinkorswim.com/center/reference/thinkScript/Functions/Others/Assert  Throws a runtime error message in case the specified condition is false. 
+# The error message can be viewed by clicking Exclamation indicator in the top left corner of the chart.
+# If uncommented, this would stop this script
+# Comment out to show the Label
+Assert(no,"stop the script here and the below Label will not come up  but this error will come up in the exclamation mark in the top left of the graph. ");
+AddLabel(yes, "This is a label", Color.CYAN);

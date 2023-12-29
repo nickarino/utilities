@@ -1,0 +1,12 @@
+# Labels show up a the top left of the graph and bubble show up on the individual bars. 
+
+# https://tlc.thinkorswim.com/center/reference/thinkScript/Functions/Look---Feel/AddLabel
+AddLabel(1, "This is a label that shows up at the top left of a chart. There are no multi-line labels", color.white);
+
+# https://tlc.thinkorswim.com/center/reference/thinkScript/Functions/Look---Feel/AddChartBubble
+# uncomment to see a bubble on every bar
+#AddChartBubble(yes, high, "bubble at " + high, Color.WHITE);
+AddChartBubble(BarNumber() % 10 == 0, high, "bubble at " + high, Color.WHITE);
+
+# uncomment to see a multi-line bubble
+#AddChartBubble(GetYYYYMMDD() != GetYYYYMMDD()[1], high, "O: " + open(period = "DAY") + "\nChg: " + ( open(period = "DAY") - open(period = "DAY")[1] ), Color.PLUM, yes);

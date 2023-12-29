@@ -1,4 +1,53 @@
-# In In ThinkScript, each script or study is self-contained. If you have a custom function, it must be defined within the same script or study where it is used. This limitation requires that any functions you wish to use across multiple scripts must be copied and pasted into each script separately.  So, I will keep a master copy in the git repo Utilities/StockTrading.  
+# This is a testdriven view of the thinkscript tutorial from TD Ameritrade.  
+# We will try to use assert and Labels to do test driven  thinking as we learn thinkscript. 
+# https://tlc.thinkorswim.com/center/reference/thinkScript/tutorials 
+
+## Introduction and Important parts. 
+
+# ThinkScript is a proprietary language that is used to write code for the ThinkorSwim platform.  It is designed for analysis and is not a full bodied coding language like Python. It is a single threaded language. 
+
+# Self-contained Scripts without references --In ThinkScript, each script or study is self-contained. If you have a custom function, it must be defined within the same script or study where it is used. This limitation requires that any functions you wish to use across multiple scripts must be copied and pasted into each script separately.  So, I will keep a master copy in the git repo Utilities/StockTrading.  
+
+# Plot object -- The very first thing they show is the 'plot' object.  This is the primary way to display data on a chart.  It is a reserved word and cannot be used as a variable name.    
+
+# Assert -  Assert false stops the script : https://tlc.thinkorswim.com/center/reference/thinkScript/Functions/Others/Assert  Throws a runtime error message in case the specified condition is false. 
+## The error message can be viewed by clicking Exclamation indicator in the top left corner of the chart.
+# If uncommented, this would stop this script
+# Assert(no,"stop the script here. ");
+
+#### Double.NaN is like null in Java
+
+#In ThinkScript, `Double.NaN` stands for "Not a Number." It is a special floating-point value used to represent an undefined or unrepresentable value. When you assign `Double.NaN` to a variable or use it in a calculation, it essentially means that the variable does not hold a valid number.
+
+#Here's what `Double.NaN` does in different contexts within a ThinkScript:
+#Assert(Double.NaN, "This is a NaN value"); # This will throw an error and stop the script
+Assert(IsNaN(Double.NaN), "This is a NaN value"); # This will not throw an error
+
+# 1. **Plotting**: If you assign `Double.NaN` to a plot, that particular data point will not be displayed on the chart. This is often used to selectively hide elements of a plotted series without affecting the rest of the series.
+# Plot the SMA, but only if the close is above the threshold, otherwise hide the plot. 
+
+# Find the total number of bars displayed on the chart
+def totalBars = HighestAll(BarNumber());
+# Summing up all the close values
+def sumCloseVals= fold j = 0 to totalBars with t=0 do t + GetValue(close, j);
+# Calculate the average
+def averageClose = sumCloseVals / totalBars;
+
+plot SMAPlot = if close > averageClose then Average(close,14) else Double.NaN;
+def adjustedValue = 5 + SMAPlot;
+SMAPlot.SetDefaultColor(Color.GREEN);
+
+
+
+
+# 2. **Calculations**: If `Double.NaN` participates in a calculation, the result will also be `Double.NaN`. This can be used as a way to propagate an error state through a series of calculations.
+
+# 3. **Conditional Checks**: When you use `Double.NaN` in a condition, the condition will be evaluated as `false`. This can be used to prevent certain parts of the script from executing when the data is not valid.
+
+# 4. **Script Execution**: Assigning `Double.NaN` to a variable or returning it from a script does not halt the execution of the script. The script will continue to run, and `Double.NaN` will propagate through subsequent calculations unless handled by conditional logic.
+
+
+
 
 ##### CHAPTER 1 DEFININING VARIABLES. 
 

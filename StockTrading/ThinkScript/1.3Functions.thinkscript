@@ -1,0 +1,75 @@
+# TODO - go over the entire tutorial and then back over it. 
+
+script MyFunction {
+    input data = close;
+    input length = 12;
+    def returnVal = GetValue(data, length);  
+    # The name of the plot inside the script block does not have to match the name of the script. It can be named anything, but it must be a plot for the value to be accessible outside of the script block. 
+    plot Result = returnVal;
+}
+
+# If you were to uncomment this, then you would see that there is a White Exclamation mark that has these errors
+#Assert(1==2,"here is the first problem");
+#Assert(1==2,"here is the second problem");
+
+#TODO make this have a input value that stops if there is a problem by an assert. 
+# TODO: show when you can reference def or plot variables. 
+script MyAssert {
+    input condition = yes;  # Default condition is a placeholder, should be replaced when calling the function
+    input valueIfTrue = 0;  # Replace with the default value if necessary
+    input valueIfFalse = Double.NaN;  # Typically, we use NaN to indicate a condition not met
+
+    plot Result = if condition then valueIfTrue else valueIfFalse;
+    
+}
+
+# Example usage
+def closeGreaterThanOpen = close > open;
+def assertClose = MyAssert(condition = closeGreaterThanOpen, valueIfTrue = close).Result;
+AddLabel(!closeGreaterThanOpen, "Assertion failed: Close is not greater than Open", Color.RED);
+
+# Reuse the script for another condition
+def volumeAboveAverage = volume > Average(volume, 50);
+def assertVolume = MyAssert(condition = volumeAboveAverage, valueIfTrue = volume).Result;
+AddLabel(!volumeAboveAverage, "Assertion failed: Volume is not above average", Color.RED);
+
+
+
+
+# Usage
+def myCustomValue = MyFunction(data = close, length = 10);
+#Assert(myCustomValue == GetValue(close,10),"");
+
+
+#Assert(LowestAll(BarNumber()) ==1,"The lowest should be 1");
+
+# Assert(HighestAll(BarNumber())>0,"The highest bar number should be greater than 0");
+
+def sumClose = fold i = 0 to 5 with s = 0 do s + getValue(close, i);
+
+# Display the result
+AddLabel(yes, "Sum of last 5 closes: " + sumClose, Color.WHITE);
+
+
+
+#def allThere = fold i = 1 to HighestAll(BarNumber()) with salesPerShare do Assert(getValue(open,i)>0)
+#def myAssert = if (open>close) then 1 else 0;
+#Assert(myAssert==1, "We have access to the open and it is greater than zero");
+#def myAssert = if (open) then 1 else 0;
+#assert(myAssert == 1, "Assertion passed");
+#Assert( high > 0, "We have access to the open and it is greater than zero");
+#Assert( low > 0, "We have access to the open and it is greater than zero");
+#Assert( close > 0, "We have access to the open and it is greater than zero");
+#Assert( volume > 0, "We have access to the volume and it is greater than zero");
+#Assert( BarNumber() > 0, "For every bar that moves across the chart, it starts at 1");
+
+AddChartBubble(
+    BarNumber() % 10 == 0,        # "condition" parameter determines when the bubble is displayed.
+    if (250 - BarNumber() * 10 > 0) then (250 - BarNumber() * 10) else 0 ,# "y" parameter for the vertical position of the bubble, set at the 'high' price for visibility.
+    "Bar: " + BarNumber(),# "text" parameter to display the bar number.
+    Color.WHITE,          # "color" parameter for the color of the bubble's text.
+    if BarNumber() % 10 == 0 then yes else no);  # "up" parameter set to yes for the 10th bars, so the bubble appears above the price bar.
+
+
+
+
