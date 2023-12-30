@@ -71,5 +71,30 @@ AddChartBubble(
     if BarNumber() % 10 == 0 then yes else no);  # "up" parameter set to yes for the 10th bars, so the bubble appears above the price bar.
 
 
+# Example of how you can use input of 
+script LinearLine {
+    input x1 = 10;
+    input y1 = 250;
+    input x2 = 250;
+    input y2 = 0;
+    def x = BarNumber();
+    def m = (y2 - y1) / (x2 - x1);
+    def b = y1 - m * x1;
+    plot LineValue = m * x + b;
+}
+
+plot MyLine = LinearLine();
+MyLine.SetDefaultColor(Color.BLUE);
+
+# Adding points at regular intervals
+input interval = 20; # Interval for points
+def barNumber = BarNumber();
+def isPoint = barNumber >= 10 && barNumber <= 250 && (barNumber - 10) % interval == 0;
+
+# Calculate Y-value for the bubble directly
+def bubbleYValue = LinearLine().m * barNumber + LinearLine().b;
+AddChartBubble(isPoint, bubbleYValue, AsText(barNumber) + ", " + AsText(bubbleYValue), Color.YELLOW, yes);
 
 
+#TODO: go over this again.
+# 4. **Script Execution**: Assigning `Double.NaN` to a variable or returning it from a script does not halt the execution of the script. The script will continue to run, and `Double.NaN` will propagate through subsequent calculations unless handled by conditional logic.

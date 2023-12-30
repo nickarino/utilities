@@ -28,9 +28,13 @@ plot pltSMA = if close > AverageCloseOfShownBars() then Average(close, 14) else 
 pltSMA.SetDefaultColor(Color.GREEN);
 AddLabel(yes," pltSMA plots only the Color.GREEN line that is above the AverageCloseOfShownBars showing that Double.NaN is not plotted ",Color.GREEN);
 
+# This will continue the NaN  if it is there and thus not plot the value. 
 plot pltSMAAdjustedUpFive = 5 + pltSMA;
 pltSMAAdjustedUpFive.SetDefaultColor(Color.RED);
 AddLabel(yes," pltSMAAdjustedUpFive plots only the Color.RED line that shows NaN was propogated from pltSMA",Color.RED);
+
+#NaN evaluates to false in an if statement. 
+AddLabel(Double.Nan, "This will not render the label because it is NaN", Color.RED);
 
 # What would happen if you changed "if close > AverageCloseOfShownBars" to a "<" ?
 
