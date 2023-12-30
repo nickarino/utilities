@@ -8,34 +8,6 @@ script MyFunction {
     plot Result = returnVal;
 }
 
-# If you were to uncomment this, then you would see that there is a White Exclamation mark that has these errors
-#Assert(1==2,"here is the first problem");
-#Assert(1==2,"here is the second problem");
-
-#TODO make this have a input value that stops if there is a problem by an assert. 
-# TODO: show when you can reference def or plot variables. 
-script MyAssert {
-    input condition = yes;  # Default condition is a placeholder, should be replaced when calling the function
-    input valueIfTrue = 0;  # Replace with the default value if necessary
-    input valueIfFalse = Double.NaN;  # Typically, we use NaN to indicate a condition not met
-
-    plot Result = if condition then valueIfTrue else valueIfFalse;
-    
-}
-
-# Example usage
-def closeGreaterThanOpen = close > open;
-def assertClose = MyAssert(condition = closeGreaterThanOpen, valueIfTrue = close).Result;
-AddLabel(!closeGreaterThanOpen, "Assertion failed: Close is not greater than Open", Color.RED);
-
-# Reuse the script for another condition
-def volumeAboveAverage = volume > Average(volume, 50);
-def assertVolume = MyAssert(condition = volumeAboveAverage, valueIfTrue = volume).Result;
-AddLabel(!volumeAboveAverage, "Assertion failed: Volume is not above average", Color.RED);
-
-
-
-
 # Usage
 def myCustomValue = MyFunction(data = close, length = 10);
 #Assert(myCustomValue == GetValue(close,10),"");
