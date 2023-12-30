@@ -1,2 +1,3 @@
 declare lower;
-# You want clean charts.  Follow the humbled trader recommendations for chart settings.
+# TODO: You want clean charts.  Follow the humbled trader recommendations for chart settings.
+# where it is plotted is based on then Declaration used (lower, upper, on_volume) see them. 
