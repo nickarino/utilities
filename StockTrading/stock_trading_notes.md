@@ -1,3 +1,8 @@
+# Why?
+
+- Have more than one stream of income.  Get ready for retirement in 2027.  Not about the pursuit of money but about having options.
+- [Started with this article on Scalping](https://medium.com/@nicknikravesh/a-foolproof-strategy-to-make-money-day-trading-no-really-7896e365fd40)
+
 # Github repos
 
 - [largest number of stars](https://github.com/hwrdprkns/ThinkOrSwim)

@@ -33,3 +33,4 @@ pltSMAAdjustedUpFive.SetDefaultColor(Color.RED);
 AddLabel(yes," pltSMAAdjustedUpFive plots only the Color.RED line that shows NaN was propogated from pltSMA",Color.RED);
 
 # What would happen if you changed "if close > AverageCloseOfShownBars" to a "<" ?
+
