@@ -14,6 +14,7 @@
 - <https://developer.tdameritrade.com/>
 - [Charles Schwab bought TDAmeritrade and has this dev center](https://beta-developer.schwab.com/)
 - [Guy who writes complex scripts](https://funwiththinkscript.com/adding-space-between-candles/)
+- [Carl not Karl](https://usethinkscript.com/members/carl-not-karl.23790/#recent-content)
 
 # Trading communities
 

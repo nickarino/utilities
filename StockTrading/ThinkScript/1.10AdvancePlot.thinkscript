@@ -1,0 +1,18 @@
+
+plot isAbove = Average(close, 5) crosses above Average (close, 20);
+plot isBelow = Average(close, 5) crosses below Average (close, 20);
+#Set painting strategy
+isAbove.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_UP);
+isBelow.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_DOWN);
+
+#Add vertical line
+AddVerticalLine(close crosses above Average(close, 20),  "Close price " + close + " is greater");
+
+plot weeklyClose = close("IBM", period = AggregationPeriod.WEEK);
+
+plot ask = close(priceType = "ASK");
+plot bid = close(priceType = "BID");
+
+# reference a standard study
+plot MyMACD = reference MACDHistogram;
+plot diff = Average(close, 5) – Average(close, 20);

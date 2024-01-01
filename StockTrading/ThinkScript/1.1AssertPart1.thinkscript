@@ -1,4 +1,3 @@
-#TODO write a function tha is an assert for a dynamic variable like Asssert(close, "close is false"); ? 
 # Assert -  Assert false stops the script : https://tlc.thinkorswim.com/center/reference/thinkScript/Functions/Others/Assert  Throws a runtime error message in case the specified condition is false. 
 # The error message can be viewed by clicking Exclamation indicator in the top left corner of the chart.
 # If uncommented, this would stop this script

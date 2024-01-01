@@ -25,4 +25,5 @@ AddChartBubble(BarNumber() % 10 == 0, high, "bubble at " + high, Color.WHITE);
 #AddChartBubble(GetYYYYMMDD() != GetYYYYMMDD()[1], high, "O: " + open(period = "DAY") + "\nChg: " + ( open(period = "DAY") - open(period = "DAY")[1] ), Color.PLUM, yes);
 
 
-
+#Hint
+#adding #Hint to the script will allow the text of the hint to show up in the study area. 
