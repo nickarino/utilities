@@ -1,4 +1,6 @@
 
+
+
 # Define the Simple Moving Averages (SMAs)
 def SMA5 = Average(close, 5);
 def SMA8 = Average(close, 8);
