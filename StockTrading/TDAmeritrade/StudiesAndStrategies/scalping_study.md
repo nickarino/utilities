@@ -1,3 +1,5 @@
+#TODO pick up on understanding the trade tab so you can get back to doing the scalping strategy. 
+
 # BLUF
 * Delta a delta of 50% means ( that the option will move 50% of whatever the underlying stock moved). 
 * As a general rule of thumb, I would go with an option that is at-the-money or one in-the-money.
@@ -38,3 +40,7 @@ To replicate this strategy in ThinkOrSwim, you would need to:
 * Apply the 5-8-13 SMAs and MACD indicators to the charts.
 * Practice identifying the patterns and signals described using the PaperMoney feature.
 Follow the guidelines for selecting options and managing trades.
+
+# Strategies for Scalping
+
+* [watch the RSI and Vix](https://www.youtube.com/watch?v=AVIGYXcbeas) getting in and out quickly.  See her log links in.  She uses a 30 second chart. 
