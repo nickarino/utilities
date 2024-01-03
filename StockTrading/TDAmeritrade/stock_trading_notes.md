@@ -55,3 +55,6 @@
 
 5. **Pairs Trader**: This subtab facilitates pairs trading, a strategy that involves taking simultaneous long and short positions in two highly correlated securities with the aim of profiting from the relative price movements.
 
+![How To Set red/green volume](./md_file_assets/SetVolume.png)
+
+![How To Set RSI](./md_file_assets/SetRSI.png)
