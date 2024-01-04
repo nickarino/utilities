@@ -2,11 +2,14 @@
 
 - Have more than one stream of income.  Get ready for retirement in 2027.  Not about the pursuit of money but about having options.
 - [Started with this article on Scalping](https://medium.com/@nicknikravesh/a-foolproof-strategy-to-make-money-day-trading-no-really-7896e365fd40)
-    - [He does have a repo on technical analysis](https://github.com/nikolas-nikravesh/technical-analysis-tool)
+  - [He does have a repo on technical analysis](https://github.com/nikolas-nikravesh/technical-analysis-tool)
 
 # Github repos
-
-- [largest number of stars](https://github.com/hwrdprkns/ThinkOrSwim)
+-
+- [Td-Ameritrade](https://github.com/orgs/td-ameritrade/repositories)
+- [lots of stars and many forks](https://github.com/jshingler/TOS-and-Thinkscript-Snippet-Collection)
+- [4 years old](https://github.com/bingit2/TradingView-to-ThinkorSwim)
+- [Old but thorough](https://github.com/hwrdprkns/ThinkOrSwim)
 - [newer](https://github.com/2187Nick/thinkscript)
 - [useThinkScript.com](https://usethinkscript.com/resources/categories/code-reference.2/)
 

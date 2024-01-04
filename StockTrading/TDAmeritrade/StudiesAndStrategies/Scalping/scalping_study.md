@@ -1,11 +1,13 @@
 #TODO pick up on understanding the trade tab so you can get back to doing the scalping strategy. 
 
 # BLUF
+
 * Delta a delta of 50% means ( that the option will move 50% of whatever the underlying stock moved). 
 * As a general rule of thumb, I would go with an option that is at-the-money or one in-the-money.
 * Volume and open interest. The volume (number of options traded) and open interest (the number of held contracts) should be very high, in at least the thousands. This means that there are a lot of people who are participating in the trading of these options, meaning we increase our likelihood of our order being filled quickly.
-	
+
 # Summary
+
 * [Article in Medium](https://medium.com/@nicknikravesh/a-foolproof-strategy-to-make-money-day-trading-no-really-7896e365fd40)
 * Trading is like any other skill that takes time. The people who are looking to get rich quick and don’t want to put the work in to learn the market and the skills are the ones who lose money. 
 * On 12/16/23 I signed up for https://trade.thinkorswim.com via Ameritrade and used PaperMoney.  This involves real-time data.  This is better than back-testing because back-testing can be subject to hindsight bias, where you only test your theory on situations that you believe will prove the strategy.

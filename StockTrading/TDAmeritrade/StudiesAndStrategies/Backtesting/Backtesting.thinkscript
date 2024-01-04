@@ -1,0 +1,8 @@
+# I am following https://www.youtube.com/watch?v=6sF39ekh16U&list=PLezJ3flwsE4dWV4ykg16z6TSvuIhbv2kz&index=1
+
+def buy = RSI() < 30;
+def sell = RSI() > 70;
+
+#TODO pick up here
+# Now if you run this you will get an order added but not sold.  https://youtu.be/6sF39ekh16U?list=PLezJ3flwsE4dWV4ykg16z6TSvuIhbv2kz&t=311
+AddOrder(OrderType.BUY_TO_OPEN, buy);
