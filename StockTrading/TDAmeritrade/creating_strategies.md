@@ -26,3 +26,23 @@ In ThinkScript, which is used within the ThinkorSwim platform, there are several
 6. **BUY_TO_CLOSE**: This order type is used to close out or cover a short position. If you have previously sold a security short (meaning you borrowed and sold it with the intention of buying it back at a lower price), you use a BUY_TO_CLOSE order to buy back the security and close the short position.
 
 It's important to note that while these order types can be specified in ThinkScript for strategy testing and development, actual order execution and management are handled through the ThinkorSwim trading platform interface, not directly within ThinkScript.
+
+# Settings
+
+* **Global Settings** This is where you set the number of trades that can happen while your buy condition is true and the number of contracts for that order, unless you override it in the ```AddOrder``` function.
+
+![Global Settings](./md_file_assets/GlobalSettings.png)
+
+# When does ```AddOrder``` get triggered?
+
+* It gets triggered when the candle is done for that increment--the smallest being 1 min: the close of the candle. 
+
+* By default, it buys at open[-1] but instead we are going to buy at the close of the candle instead of at the open of the next candle.  It may or may not be a big deal depending on the increment.
+
+# Export your strategy as a CSV
+
+![Export as CSV](./md_file_assets/exportAsCSV.png)
+
+# Add FloatingPL shows if strategy is up or down
+
+* You can add the FloatingPL to your lower list of strategies OR you can make a [setup script](./StudiesAndStrategies/Setup/FloatingPL_setup.thinkscript)
