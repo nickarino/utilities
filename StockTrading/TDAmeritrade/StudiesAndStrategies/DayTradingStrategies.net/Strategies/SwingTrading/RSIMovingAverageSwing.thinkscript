@@ -1,0 +1,29 @@
+# Synopsis
+
+# Buy when close is above a set moving average and RSI amount. Sell when the bar closes below the set RSI amount.
+
+# MA and RSI values can be easily changed from the settings cog of the strategy. 
+
+# Time Frame
+
+# Daily
+
+# Share Link
+
+# http://tos.mx/LlX5lJT
+
+input buyingpower = 5000;
+input MAType = averagetype.simple;
+input MALength = 500;
+input buyRSI = 50;
+input sellRSI = 30;
+
+def compounding = buyingpower + floatingpl();
+
+plot movingavg = movingaverage(MAType, close, MALength);
+
+def buy = close > movingavg and rsi() > buyRSI and (highest(rsi(), 10) - rsi()) < 5;
+def sell = rsi() < sellRSI;
+
+addOrder(OrderType.BUY_TO_OPEN, buy, tradesize = compounding /close, tickcolor = color.green, arrowcolor = color.green, name = "BUY");
+addOrder(OrderType.SELL_TO_CLOSE, sell, tradesize = buyingpower/close, tickcolor = color.red, arrowcolor = color.red, name = "SELL");

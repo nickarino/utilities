@@ -1,0 +1,29 @@
+
+# Synopsis
+# Scan for stocks that have been over 15 on the ‘PercentChg()’ indicator or over 80 on the intraday RSI() and Buy when the RSI(length 14, wilders) is above 60 and sell when that same RSI() closes below 30. Also only buy if the rsi() trigger candle also closes above the daily open value. 
+# TimeFrame
+# 5 Minute
+# Share Link
+# http://tos.mx/zbjHLRW
+
+Plot D = Open(period = aggregationperiod.day);
+
+Input PositionSize = 25000;
+Input UpperRSI = 60;
+Input LowerRSI = 30;
+
+Def MarketOpen = SecondsFromTime(925) > 0 and SecondsTillTime(1550) > 0;
+
+Def hotstocks = PercentChg(price = (open(period = aggregationperiod.day)))[0] > 15 or rsi() > 80;
+
+
+### LONG ORDERS ###
+
+Def Buy = RSI() > UpperRSI and MarketOpen and hotstocks and close > D;
+Def Sell = RSI() < LowerRSI or SecondsTillTime(1555) == 0;
+
+addOrder(OrderType.BUY_TO_OPEN, Buy, close, PositionSize/close, Color.Green, Color.Green, "BUY");
+addOrder(OrderType.SELL_TO_CLOSE, Sell, close, PositionSize/close, Color.RED, Color.RED, "SELL");
+
+addlabel(buy, "BUY " + round(Positionsize/close, 0), color.green);
+addlabel(sell, "SELL", color.red);

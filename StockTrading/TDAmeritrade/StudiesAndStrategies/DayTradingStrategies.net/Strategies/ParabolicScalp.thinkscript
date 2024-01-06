@@ -1,0 +1,29 @@
+Parabolic Scalp Day Trading Strategy
+Synopsis
+When there is a stock making a large upside, preferably news driven, move, buy when a one minute candle pulls back to the halfway point of the previous candle. Take profit at previous candle high, or stop out at previous candle low. Trigger candle conditions are met on candles that break the previous 20 candle price high as well as the previous 20 candle volume high. Once this large bullish price action and volume move occurs the strategy looks to enter a pullback on the next candle.
+TimeFrame
+1 Minute
+Share Link
+http://tos.mx/BiUoxUK
+
+input BuyingPower = 5000;
+
+plot LocalHigh = highest(close,100)[2];
+plot Midline = (close[1] + low[1]) / 2;
+
+def setup = volume[1] > highest(volume,20)[2] and close[1] > localhigh;
+def liquitidy = volume[1] > (buyingpower/close) * 5;
+
+def buy = low <= midline and setup and liquitidy;
+
+def sell = high > high[1];
+def stop = close < entryprice();
+def stop2 = low < low[1];
+
+addOrder(OrderType.BUY_TO_OPEN, buy, midline, buyingpower/close);
+
+addOrder(OrderType.SELL_TO_CLOSE, sell, high[1]);
+addOrder(OrderType.SELL_TO_CLOSE, stop2, low[1]);
+
+addlabel(setup and liquitidy, "TRIGGER!" + round(BuyingPower/close, 0) + " SHARES", color.green);
+

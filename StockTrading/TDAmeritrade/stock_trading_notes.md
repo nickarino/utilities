@@ -3,9 +3,10 @@
 - Have more than one stream of income.  Get ready for retirement in 2027.  Not about the pursuit of money but about having options.
 - [Started with this article on Scalping](https://medium.com/@nicknikravesh/a-foolproof-strategy-to-make-money-day-trading-no-really-7896e365fd40)
   - [He does have a repo on technical analysis](https://github.com/nikolas-nikravesh/technical-analysis-tool)
+  - I want to optimize my time through quant trading and also make money. 
 
 # Github repos
--
+
 - [Td-Ameritrade](https://github.com/orgs/td-ameritrade/repositories)
 - [lots of stars and many forks](https://github.com/jshingler/TOS-and-Thinkscript-Snippet-Collection)
 - [4 years old](https://github.com/bingit2/TradingView-to-ThinkorSwim)

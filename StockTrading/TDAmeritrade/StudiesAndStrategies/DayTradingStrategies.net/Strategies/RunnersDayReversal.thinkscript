@@ -1,0 +1,40 @@
+
+# Synopsis
+# Use the ‘runners’ scanner to find multi-day strong stocks, find stocks that are currently trading over their three-day high mark. When these parameters are true, buy when the RSI crosses above 40. Profit take is RSI close over 60 and stop loss is entry price – ATR * 2.
+
+# TimeFrame
+# 5 Minute
+# Share Link
+# http://tos.mx/DDMybb7
+
+input PositionSize = 10000;
+
+
+def sellrsi = 60;
+def buyrsi = 40;
+def buyrsi2 = rsi() < sellrsi and rsi() > lowest(rsi(),10) + 10;
+
+plot d1 = highest(high(period = aggregationperiod.day),3)[1];
+plot t = entryprice() - atr()[1] * 2;
+
+Def MarketOpen = SecondsFromTime(925) > 0 and SecondsTillTime(1550) > 0;
+
+
+def hotstocks = PercentChg(price = (open(period = aggregationperiod.day)))[0] > 30 and (volume(period = aggregationperiod.day)[1] > 5000000 or average(volume(period = aggregationperiod.day), 14)[1] > 5000000);
+
+
+### Entrance Conditions ### 
+
+def long = rsi() crosses above buyrsi and rsi() < sellrsi and close > d1 and marketopen and hotstocks;
+
+
+AddOrder(OrderType.BUY_TO_OPEN, long, close, tradeSize = PositionSize / close, name = "BUY", arrowcolor = Color.GREEN, tickcolor = Color.GREEN);
+
+
+### Exit Conditions ### 
+
+AddOrder(OrderType.SELL_TO_CLOSE, rsi() > sellrsi, close, PositionSize / close, name = "SELL", arrowcolor = Color.YELLOW, tickcolor = Color.YELLOW);
+
+AddOrder(OrderType.SELL_TO_CLOSE, close < t, close, PositionSize / close, name = "STOP", arrowcolor = Color.RED, tickcolor = Color.RED);
+
+AddOrder(OrderType.SELL_TO_CLOSE, SecondsTillTime(1555) == 0, close, PositionSize / close, name = "EoD", arrowcolor = Color.VIOLET, tickcolor = Color.VIOLET);

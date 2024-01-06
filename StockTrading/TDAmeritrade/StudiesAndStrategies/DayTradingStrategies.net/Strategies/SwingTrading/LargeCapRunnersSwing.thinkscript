@@ -1,0 +1,39 @@
+# Synopsis
+
+# This strategy scans for the current strongest large cap stocks in the market and looks to capitalize on that momentum over multiple days. The strategy buys when the percent change over the last 14 days is over 15 for three consecutive days. It then sells either when the price touches the ATR * 2.5 from previous bar close, or if a bar closes below your entry price minus ATR * 2.5
+
+# TimeFrame
+
+# Daily
+
+# Share Link
+
+# http://tos.mx/FmsyocA
+
+# ThinkScript Code
+
+input PositionSize = 10000;
+input PercentChange = 5;
+
+plot s = close[1] - atr()[1] * 2.5;
+plot t = entryprice() - atr()[1] * 2.5;
+
+
+def hotstocksswing = PercentChg(price = (close(period = aggregationperiod.day)))[1] > 15 and PercentChg(price = (close(period = aggregationperiod.day)))[2] > 15 and PercentChg(price = (close(period = aggregationperiod.day))) > 15;
+
+def recentspike = highest(percentchg(), 5) > 100;
+
+
+### Entrance Conditions ### 
+
+def long = hotstocksswing and volume(period = aggregationperiod.day)[1] > 1000000 and low > s;
+
+
+AddOrder(OrderType.BUY_TO_OPEN, long, close, tradeSize = (PositionSize + floatingpl()) / close, name = "BUY", arrowcolor = color.GREEN, tickcolor = Color.GREEN);
+
+
+### Exit Conditions ### 
+
+AddOrder(OrderType.SELL_TO_CLOSE, low < s, if open > s then s else open, name = "SELL", arrowcolor = Color.RED, tickcolor = Color.RED);
+
+AddOrder(OrderType.SELL_TO_CLOSE, close < t, close, name = "STOP", arrowcolor = Color.RED, tickcolor = Color.RED);

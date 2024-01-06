@@ -1,0 +1,26 @@
+# Synopsis
+# Buy or short the close of candle after earnings are announced. Buy if that first candle is green, short if that first candle is red. If the trade is red then exit on the first candle that closes below the low, if long, or above the high, if short. If the trade is green then exit on the first candle that closes below the lowest bar in the last 5, if long, or above the highest bar in the last 5, if short. 
+# TimeFrame
+# 1 Minute
+# Share Link
+# http://tos.mx/IQeTnLQ
+
+Input PositionSize = 10000;
+
+### LONG STRATEGY ###
+
+def buy = GetEventOffset(Events.EARNINGS) == 0 and close > open;
+
+addOrder(OrderType.BUY_TO_OPEN, buy, tradeSize = PositionSize/close);
+
+addOrder(OrderType.SELL_TO_CLOSE, if close > entryprice() then close() < lowest(low()[1],5) or secondstilltime(1950) == 0 else close < low[1] or secondstilltime(1950) == 0);
+
+
+
+### SHORT STRATEGY ###
+
+def short = GetEventOffset(Events.EARNINGS) == 0 and close < open;
+
+addOrder(OrderType.SELL_TO_OPEN, short, tradeSize = PositionSize/close);
+
+addOrder(OrderType.BUY_TO_CLOSE, if close < entryprice() then close() > highest(high()[1],5) or secondstilltime(1950) == 0 else close > high[1] or secondstilltime(1950) == 0);
