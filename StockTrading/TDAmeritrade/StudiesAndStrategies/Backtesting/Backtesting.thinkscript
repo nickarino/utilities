@@ -1,0 +1,70 @@
+# I am following https://www.youtube.com/watch?v=6sF39ekh16U&list=PLezJ3flwsE4dWV4ykg16z6TSvuIhbv2kz&index=1
+
+# version 1: Version 1.  Must comment out the rest to run this. 
+def buy = RSI() < 30;
+# Now if you run this you will get an order added but not sold.  https://youtu.be/6sF39ekh16U?list=PLezJ3flwsE4dWV4ykg16z6TSvuIhbv2kz&t=311
+AddOrder(OrderType.BUY_TO_OPEN, buy);
+# I am following https://www.youtube.com/watch?v=6sF39ekh16U&list=PLezJ3flwsE4dWV4ykg16z6TSvuIhbv2kz&index=1
+
+# Version 2.  Must comment out the rest to run this. 
+def buy = RSI() < 25;
+def sell = RSI() > 70;
+
+##Now if you run this you will get an order added but not sold.  https://youtu.be/6sF39ekh16U?list=PLezJ3flwsE4dWV4ykg16z6TSvuIhbv2kz&t=311
+AddOrder(OrderType.BUY_TO_OPEN, buy);
+
+##Now if you run this you will get an order to sell and close the position
+AddOrder(OrderType.Sell_to_close, sell);
+
+# version 3:  Must comment out the rest to run this. 
+# I am following https://www.youtube.com/watch?v=6sF39ekh16U&list=PLezJ3flwsE4dWV4ykg16z6TSvuIhbv2kz&index=1
+
+def buy = RSI() < 25;
+def sell = RSI() > 70;
+def accountTotal = 10000;
+# you usually want a dollar smount instead of a contract amount
+def tradeSize = accountTotal/close;
+
+# Now if you run this you will get an order added but not sold.  https://youtu.be/6sF39ekh16U?list=PLezJ3flwsE4dWV4ykg16z6TSvuIhbv2kz&t=311
+# By default, it buys at open[-1] but instead we are going to buy at the close of the candle instead of at the open of the next candle.  It may or may not be a big deal. 
+AddOrder(OrderType.BUY_TO_OPEN, buy, close, tradeSize, tickColor = Color.green, arrowcolor = Color.green, name="This is the buy order" );
+
+# Now if you run this you will get an order to sell and close the position
+# This is defaulted to sell all. 
+AddOrder(OrderType.Sell_to_close, sell, close, double.POSITIVE_INFINITY , tickColor = Color.green, arrowcolor = color.magenta, name="This is the sell order order");
+
+
+# TODO Pick up here https://www.youtube.com/watch?v=TGy43qk04fo&list=PLezJ3flwsE4dWV4ykg16z6TSvuIhbv2kz&index=2
+
+
+
+
+
+# From asking ChatGPT https://chat.openai.com/c/5182078d-b37d-44f1-9956-f7a42025cfc9
+# # Define the RSI period and levels for oversold and overbought conditions
+# def rsiPeriod = 14;
+# def overSold = 30;
+# def overBought = 70;
+
+# # Calculate the RSI
+# def rsi = reference RSI(rsiPeriod);
+
+# # Define entry signal (RSI crosses above oversold level)
+# def buySignal = Crosses(rsi, overSold, CrossingDirection.ABOVE);
+
+# # Define exit signal (RSI crosses below overbought level)
+# def sellSignal = Crosses(rsi, overBought, CrossingDirection.BELOW);
+
+# # Plot the buy and sell signals
+# plot Buy = buySignal;
+# plot Sell = sellSignal;
+
+# Buy.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_UP);
+# Sell.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_DOWN);
+
+# Buy.SetDefaultColor(Color.GREEN);
+# Sell.SetDefaultColor(Color.RED);
+
+# # Alerts
+# Alert(buySignal, "RSI crossed above oversold level", Alert.Bar, Sound.Chimes);
+# Alert(sellSignal, "RSI crossed below overbought level", Alert.Bar, Sound.Bell);

@@ -1,0 +1,32 @@
+
+# Synopsis
+# Scan for stocks that have been over 30 on the ‘PercentChg()’ indicator and also either have a volumeaverage(length 14) over 5 million or yesterdays volume over 5 million on the daily time frame and sort the five that have been above that PercentChg() indication for the longest. Buy when the RSI(length 14, wilders) is above 50 and sell when that same RSI() closes below 40. Also only buy if the rsi() trigger candle also closes above the daily open value. 
+# TimeFrame
+# 5 Minute
+# Share Link
+# http://tos.mx/eOhPqBG
+
+Plot D = Open(period = aggregationperiod.day);
+Def H = highest(high(period = aggregationperiod.day),10)[2];
+
+Input PositionSize = 5000;
+Input UpperRSI = 50;
+Input LowerRSI = 40;
+
+Def MarketOpen = SecondsFromTime(925) > 0 and SecondsTillTime(1550) > 0;
+
+def hotstocks = PercentChg(price = (open(period = aggregationperiod.day)))[0] > 30 and (volume(period = aggregationperiod.day)[1] > 5000000 or average(volume(period = aggregationperiod.day), 14)[1] > 5000000) and high(period = aggregationperiod.day)[1] > H;
+
+### LONG ORDERS ###
+
+Def Buy = RSI() > UpperRSI and MarketOpen and hotstocks and close > D;
+Def Sell = RSI() < LowerRSI or SecondsTillTime(1555) == 0 or RSI() > 80;
+
+
+def armed = if secondsTillTime(0930) == 0 then 1 else if buy[1] == 1 then 0 else armed[1];
+
+addOrder(OrderType.BUY_TO_OPEN, Buy == 1 and armed == 1, close, PositionSize/close, Color.Green, Color.Green, "BUY");
+addOrder(OrderType.SELL_TO_CLOSE, Sell, close, PositionSize/close, Color.RED, Color.RED, "SELL");
+
+addlabel(buy, "BUY " + round(Positionsize/close, 0), color.green);
+addlabel(sell, "SELL", color.red);

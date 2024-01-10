@@ -1,0 +1,3 @@
+def allchart = 0;
+profile tpo = timeProfile("startnewprofile" = allchart);
+tpo.show("color" = Color.BLUE);

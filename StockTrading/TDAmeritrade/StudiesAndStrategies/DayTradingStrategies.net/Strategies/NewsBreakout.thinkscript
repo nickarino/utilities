@@ -1,0 +1,34 @@
+# Synopsis
+
+# Buy when close is above local highs and volume is above local highs. Take profit on a candle that breaks the high of previous candle and closes with a decreasing volume, if high breaks and volume is still ascending then hold onto the trade. Stop loss is any close under entry price.
+
+# Only applicable if a ticker has recently announced news.
+
+# TimeFrame
+
+# 1 Minute
+
+# Share Link
+
+# http://tos.mx/aE3ZTNU
+
+
+input BuyingPower = 5000;
+
+plot LocalHigh = highest(high,100)[2];
+
+def timing = secondsfromtime(0700) > 0 and secondstilltime(925) > 0 or secondsfromtime(1600) > 0 and secondstilltime(1955) > 0;
+def setup = volume > highest(volume,20)[1] and close > localhigh;
+def liquitidy = volume > (buyingpower/close) * 5;
+
+def buy = setup and liquitidy and timing and close > open;
+
+def sell = high > high[1] and !buy;
+def stop = close < entryprice() or (close < open and close > entryprice());
+
+addOrder(OrderType.BUY_TO_OPEN, buy, close, buyingpower/close);
+
+addOrder(OrderType.SELL_TO_CLOSE, sell, close);
+addOrder(OrderType.SELL_TO_CLOSE, stop, close);
+
+addlabel(buy, "BUY " + round(BuyingPower/close, 0) + " SHARES", color.green);

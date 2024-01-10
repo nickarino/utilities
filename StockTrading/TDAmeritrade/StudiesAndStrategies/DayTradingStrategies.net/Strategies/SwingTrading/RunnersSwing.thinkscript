@@ -1,0 +1,39 @@
+# Synopsis
+
+# This strategy scans for the current strongest stocks in the market and looks to capitalize on that momentum over multiple days. The strategy buys into strength with the goal to sell higher. The exit plan is either a sign of weakness.
+
+# Time Frame
+
+# Daily
+
+# Share Link
+
+# http://tos.mx/5CFsg5Q
+
+# ThinkScript Code
+
+input PositionSize = 10000;
+input PercentChange = 5;
+
+plot s = close[1] - atr()[1] * 1.5;
+plot t = entryprice() - atr()[1] * 1.5;
+
+
+def hotstocksswing = PercentChg(price = (close(period = aggregationperiod.day)))[1] > 30 and PercentChg(price = (close(period = aggregationperiod.day)))[2] > 30 and PercentChg(price = (close(period = aggregationperiod.day))) > 30;
+
+def recentspike = highest(percentchg(), 5) > 100;
+
+
+### Entrance Conditions ### 
+
+def long = hotstocksswing and volume(period = aggregationperiod.day)[1] > 1000000 and low > s;
+
+
+AddOrder(OrderType.BUY_TO_OPEN, long, close, tradeSize = (PositionSize) / close, name = "BUY", tickcolor = Color.GREEN);
+
+
+### Exit Conditions ### 
+
+AddOrder(OrderType.SELL_TO_CLOSE, low < s, if open > s then s else open, name = "SELL", arrowcolor = Color.RED, tickcolor = Color.RED);
+
+AddOrder(OrderType.SELL_TO_CLOSE, close < t, close, name = "STOP", arrowcolor = Color.RED, tickcolor = Color.RED);

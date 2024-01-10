@@ -1,0 +1,40 @@
+# Ignore this Function as we will discuss functions later
+
+script AverageCloseOfShownBars {
+    ## Calculate average close price for plot shown. 
+    # Find the total number of bars displayed on the chart
+    def totalBars = HighestAll(BarNumber());
+    # Summing up all the close values
+    def sumCloseVals = fold j = 0 to totalBars with t=0 do t + GetValue(close, j);
+    # Calculate the average
+    plot averageClose = sumCloseVals / totalBars;
+}
+
+#### Double.NaN is like null in Java
+
+#In ThinkScript, `Double.NaN` stands for "Not a Number." It is a special floating-point value used to represent an undefined or unrepresentable value. When you assign `Double.NaN` to a variable or use it in a calculation, it essentially means that the variable does not hold a valid number.
+
+#Here's what `Double.NaN` does in different contexts within a ThinkScript:
+#Assert(Double.NaN, "This is a NaN value"); # This will throw an error and stop the script
+Assert(IsNaN(Double.NaN), "This is a NaN value"); # This will not throw an error
+
+# **Plotting**: If you assign `Double.NaN` to a plot, that particular data point will not be displayed on the chart. This is often used to selectively hide elements of a plotted series without affecting the rest of the series.
+# Plot the SMA, but only if the close is above the AverageOfShownBars, otherwise hide the plot. 
+
+plot pltSMAnoNaN = Average(close,14)+1; # Add one to move it slightly above
+pltSMAnoNaN.SetDefaultColor(Color.BLUE);
+
+plot pltSMA = if close > AverageCloseOfShownBars() then Average(close, 14) else Double.NaN;
+pltSMA.SetDefaultColor(Color.GREEN);
+AddLabel(yes," pltSMA plots only the Color.GREEN line that is above the AverageCloseOfShownBars showing that Double.NaN is not plotted ",Color.GREEN);
+
+# This will continue the NaN  if it is there and thus not plot the value. 
+plot pltSMAAdjustedUpFive = 5 + pltSMA;
+pltSMAAdjustedUpFive.SetDefaultColor(Color.RED);
+AddLabel(yes," pltSMAAdjustedUpFive plots only the Color.RED line that shows NaN was propogated from pltSMA",Color.RED);
+
+#NaN evaluates to false in an if statement. 
+AddLabel(Double.Nan, "This will not render the label because it is NaN", Color.RED);
+
+# What would happen if you changed "if close > AverageCloseOfShownBars" to a "<" ?
+

@@ -1,0 +1,26 @@
+#Uncomment this, save, and see the error, "Cannot access dynamic value for initialization of 'assert'"
+#Assert(close > 0, "This does not work because you get error, 'Cannot access dynamic value for initialization of 'assert'");
+
+# Why is this the case?  The script does not know if you mean that you want to assert that every close is greater than 0 OR if you just mean a particular one
+
+# Even if you try to help it by choosing a particular close, you get the same issue
+#Assert( if BarNumber() == 1 then close > 0 else no, "This does not work because you get error, 'Cannot access dynamic value for initialization of 'assert'");
+
+# So, what is someone to do?  Make a custom function!
+
+#possible enhacement,  make this have a input value that stops execution if there is a problem by an assert. 
+script MyAssert {
+    input condition = yes;  # Default condition is a placeholder, should be replaced when calling the function
+    input valueIfTrue = 0;  # Replace with the default value if necessary
+    input valueIfFalse = Double.NaN;  # Typically, we use NaN to indicate a condition not met
+    plot Result = if condition then valueIfTrue else valueIfFalse;
+}
+
+# Example usage
+def closeGreaterThanOpen = close > open;
+# Language is case insensitive
+def assertClose = myAssert(condition = closeGreaterThanOpen, valueIfTrue = close).Result;
+# Notice that only one label is added but multiple chartBubbles are added!  That is the way it works. 
+AddLabel(!closeGreaterThanOpen, "Assertion failed: Close is not greater than Open", Color.GREEN);
+AddChartBubble(closeGreaterThanOpen, high, close, Color.WHITE, yes);
+

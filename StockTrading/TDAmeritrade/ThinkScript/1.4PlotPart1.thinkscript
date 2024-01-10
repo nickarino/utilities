@@ -1,0 +1,17 @@
+
+
+#In this example, the plot `PriceLine` will only display for bars where the closing price is greater than the opening price. For all other bars, `PriceLine` will not appear on the chart because it is set to `Double.NaN`.
+
+
+# Apply this to the top graph
+HidePricePlot(yes);
+Assert( yes, "Initial Price Plot was hidden");
+
+HidePricePlot(no);
+Assert( yes, "Initial Price Plot was shown");
+
+# For each chart you have access to each Bar in a range
+Assert( yes, "you have access to 'open', 'close', 'high', 'low', and 'BarNumber()' for each bar");
+
+# What is available at every Bar. 
+Assert(yes, "ThinkScript executes on every bar of the chart, and values like open, high, low, close, and volume are dynamic – they change with each bar. The Assert function, however, expects a static condition, something that can be evaluated as either true or false once and doesn't change with each bar."); 

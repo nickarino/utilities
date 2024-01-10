@@ -1,0 +1,5 @@
+plot VolumeLine = volume;
+VolumeLine.SetPaintingStrategy(PaintingStrategy.HISTOGRAM);
+VolumeLine.SetLineWeight(3);
+VolumeLine.AssignValueColor(if close > close[1] then Color.GREEN else Color.RED);
+

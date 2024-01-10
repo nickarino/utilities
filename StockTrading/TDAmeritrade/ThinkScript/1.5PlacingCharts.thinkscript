@@ -1,0 +1,17 @@
+# See https://thinkscript101.com/thinkscript-declare-lower/
+# You cannot have two different scales on a chart. So you want to have different scales on different charts. 
+
+#Must be the first statement in the script.
+# You can have a script that has no association to a particular study area
+declare lower; #could use 'upper' or 'on_volume', but thinkscript will put it many times on the place where. 
+# declare lower statement is necessary to specify the plot direction for boolean values in ThinkScript, so that they can be displayed correctly as histograms below/on the price chart.
+plot isAbove = Average(close, 5) > Average (close, 20);
+plot isAbove2 = Average(close, 5) crosses above Average (close, 20);
+# You can have human readable constraints
+# https://toslc.thinkorswim.com/center/reference/thinkScript/tutorials/Basic/Chapter-6---Human-Readable-Syntax
+plot Raise = close is greater than close from 1 bar ago within 3 bars;
+
+
+# TODO: You want clean charts.  Follow the humbled trader recommendations for chart settings. 5 min setup. 
+
+# where it is plotted is based on then Declaration used (lower, upper, on_volume) see them. 

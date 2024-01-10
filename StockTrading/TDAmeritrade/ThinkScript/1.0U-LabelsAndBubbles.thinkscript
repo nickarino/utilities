@@ -1,0 +1,29 @@
+# Labels show up a the top left of the graph and bubble show up on the individual bars. 
+
+# AddChartBubble("time condition", # condition defining bar where bubble should appear
+#                "price location", # which price should bubble point at (eg, high, low)
+#                text,             # text to display in bubble
+#                color,            # bubble color
+#                up                # display bubble above price (yes) or below it (no)
+# );
+# AddLabel(visible,  # condition defining whether the label should appear; yes means always
+#          text,     # text to display in label
+#          color     # label color
+# );
+
+
+# https://tlc.thinkorswim.com/center/reference/thinkScript/Functions/Look---Feel/AddLabel
+AddLabel(1, "This is a label that shows up at the top left of a chart. There are no multi-line labels", color.white);
+
+# https://tlc.thinkorswim.com/center/reference/thinkScript/Functions/Look---Feel/AddChartBubble
+# uncomment to see a bubble on every bar
+#AddChartBubble(yes, high, "bubble at " + high, Color.WHITE);
+# This will use the modulo operator to only show the bubble on every 10th bar
+AddChartBubble(BarNumber() % 10 == 0, high, "bubble at " + high, Color.WHITE);
+
+# uncomment to see a multi-line bubble.  There is no multi-line label. 
+#AddChartBubble(GetYYYYMMDD() != GetYYYYMMDD()[1], high, "O: " + open(period = "DAY") + "\nChg: " + ( open(period = "DAY") - open(period = "DAY")[1] ), Color.PLUM, yes);
+
+
+#Hint
+#adding #Hint to the script will allow the text of the hint to show up in the study area. 

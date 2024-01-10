@@ -1,0 +1,79 @@
+
+# Synopsis
+# Buy when close is above an exponential moving average with a defined length input (default 100) and above yesterday’s close and with an RSI change on current bar greater than 10 times the ATR value from the previous bar. Exit at entryprice – ATR multiplied by the latr input (default 1) or at the last bar of after hours trading.
+# Vice versa the above for the short strategy.
+# Strategy will have a low win rate and a high risk/reward ratio.
+
+# TimeFrame
+# 5 Minute
+# Share Link
+# http://tos.mx/UVh6EBz
+
+def marketopen = 925;
+def marketclose = 1030;
+def ahclose = 1950;
+
+def mo = SecondsFromTime(marketopen);
+def mc = SecondsTillTime(marketclose);
+def ac = SecondsTillTime(ahclose);
+def markethours = mo > 0 and mc > 0;
+def eod = ac < 121;
+
+
+input latr = 1;
+input mal = 100;
+input TradeSize = 33000;
+
+def rsiamount = 10 * ATR()[1];
+
+plot data = close(period = AggregationPeriod.DAY)[1];
+
+plot movingaverage = MovAvgExponential(length = mal);
+
+def HoD = Highest(data, 1);
+
+def buyingpower = TradeSize / close;
+
+
+### LONG STRATEGY ###
+
+def buy = (RSI() - RSI()[1]) > rsiamount and markethours and close > HoD and close > MovAvgExponential(length = mal);
+def stoploss = close < EntryPrice() - ATR()[1] * latr;
+def dayend = eod;
+
+
+
+AddOrder(OrderType.BUY_TO_OPEN, buy, close[-1], tradeSize = buyingpower, name = "Buy", tickcolor = Color.GREEN);
+
+
+AddOrder(OrderType.SELL_TO_CLOSE, stoploss, name = "Stop", tickcolor = Color.RED, arrowcolor = Color.RED);
+AddOrder(OrderType.SELL_TO_CLOSE, dayend, name = "Fin", tickcolor = Color.VIOLET, arrowcolor = Color.VIOLET);
+
+
+
+### SHORT STRATEGY ### 
+
+
+def short = (RSI() - RSI()[1]) < -rsiamount and markethours and close < HoD and close < MovAvgExponential(length = mal);
+def shortloss = close > EntryPrice() + ATR()[1];
+
+
+AddOrder(OrderType.SELL_TO_OPEN, short, close[-1], tradeSize = buyingpower, name = "Short", tickcolor = Color.GREEN);
+
+
+
+AddOrder(OrderType.BUY_TO_CLOSE, shortloss, name = "Stop", tickcolor = Color.RED, arrowcolor = Color.RED);
+AddOrder(OrderType.BUY_TO_CLOSE, dayend, name = "Fin", tickcolor = Color.VIOLET, arrowcolor = Color.VIOLET);
+
+
+### LABELS AND PLOTS ###
+
+AddLabel(buy, "Buy " + Round(buyingpower, 0) + " shares", Color.YELLOW);
+AddLabel(short, "Short " + Round(buyingpower, 0) + " shares", Color.YELLOW);
+AddLabel(yes, "RSI Diff: " + Round((RSI() - RSI()[1]), 1), if (RSI() - RSI()[1]) > rsiamount then Color.GREEN else Color.GRAY);
+AddLabel(stoploss, "STOP", Color.RED);
+AddLabel(shortloss, "STOP", Color.RED);
+
+
+AssignPriceColor(if buy then Color.BLUE else Color.CURRENT);
+AssignPriceColor(if short then Color.YELLOW else Color.CURRENT);

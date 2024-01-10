@@ -1,0 +1,55 @@
+
+
+
+# Define the Simple Moving Averages (SMAs)
+def SMA5 = Average(close, 5);
+def SMA8 = Average(close, 8);
+def SMA13 = Average(close, 13);
+
+# Plot the SMAs
+plot SMA5Plot = SMA5;
+plot SMA8Plot = SMA8;
+plot SMA13Plot = SMA13;
+
+SMA5Plot.SetDefaultColor(Color.CYAN);
+SMA8Plot.SetDefaultColor(Color.MAGENTA);
+SMA13Plot.SetDefaultColor(Color.YELLOW);
+
+# MACD Parameters
+def fastLength = 12;
+def slowLength = 26;
+def MACDLength = 9;
+def AverageType = AverageType.EXPONENTIAL;
+
+# MACD Calculation
+def Value = MovingAverage(AverageType, close, fastLength) - MovingAverage(AverageType, close, slowLength);
+def Avg = MovingAverage(AverageType, Value, MACDLength);
+
+# Plot MACD and Signal Line
+plot MACD = Value;
+plot SignalLine = Avg;
+
+MACD.SetDefaultColor(Color.BLUE);
+SignalLine.SetDefaultColor(Color.RED);
+
+# Time Check: Only allow signals within the first hour after market opens
+def marketOpen = 0930;
+def marketClose = 1600;
+def firstHourEnd = marketOpen + 100; # 100 minutes after market open
+def withinFirstHour = SecondsFromTime(marketOpen) >= 0 and SecondsTillTime(firstHourEnd) > 0;
+
+# Implementing the strategy:
+# Entry signal: All three SMAs are in alignment, MACD crosses above the signal line, and it is within the first hour after market open
+def entrySignal = withinFirstHour and SMA5 > SMA8 and SMA8 > SMA13 and MACD crosses above SignalLine;
+
+# Exit signal: Loss of SMA alignment or MACD crosses below the signal line, and it is within the first hour after market open
+def exitSignal = withinFirstHour and (!(SMA5 > SMA8 and SMA8 > SMA13) or MACD crosses below SignalLine);
+
+# Plot the signals as arrows on the chart
+plot EntryArrows = entrySignal;
+plot ExitArrows = exitSignal;
+
+EntryArrows.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_UP);
+EntryArrows.SetDefaultColor(Color.GREEN);
+ExitArrows.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_DOWN);
+ExitArrows.SetDefaultColor(Color.RED);

@@ -1,0 +1,28 @@
+# Synopsis
+# Buy when FastMALength crosses above SlowMALength and if the Shorting input is flipped to ‘yes’ also enter short when FastMALength crosses below SlowMALength.
+# Strategy can also be used to swing trade if the parameter is set to ‘yes.’
+# Video Description https://www.youtube.com/watch?v=xeaapz3W94M&t=6s
+# Share Link: 
+# http://tos.mx/gSx03Qt
+
+
+Input FastMALength = 50;
+Input SlowMALength = 200;
+Input MAType = AverageType.Simple;
+Input DayTrade = No;
+Input Shorting = Yes;
+
+Plot FastMA = MovingAverage(MAType, close, FastMaLength);
+Plot SlowMA = MovingAverage(MAType, close, SlowMaLength);
+
+Def MarketHours = if DayTrade == Yes then (SecondsFromTime(925) > 0 and SecondsTillTime(1550) > 0) else Yes;
+
+Def Buy = FastMA crosses above SlowMA and MarketHours;
+Def Sell = FastMA crosses below SlowMA and MarketHours;
+Def EoDExit = if DayTrade == Yes then (SecondsTillTime(1555) == 0) else no;
+
+### ORDER EXECUTION ###
+addOrder(OrderType.BUY_AUTO, Buy, name = "BUY", tickcolor = color.green, arrowcolor = color.green);
+addOrder(if shorting == Yes then OrderType.SELL_AUTO else OrderType.SELL_TO_CLOSE, Sell, name = "SELL", tickcolor = color.red, arrowcolor = color.red);
+addOrder(OrderType.SELL_TO_CLOSE, EoDExit, name = "MarketClose", tickcolor = color.violet, arrowcolor = color.violet);
+addOrder(OrderType.BUY_TO_CLOSE, EoDExit, name = "MarketClose", tickcolor = color.violet, arrowcolor = color.violet);

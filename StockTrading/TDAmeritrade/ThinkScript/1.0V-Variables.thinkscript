@@ -1,0 +1,36 @@
+##### CHAPTER 1 DEFININING VARIABLES. 
+
+# plot means put something on the chart--unless it is used in a custom function; then it is a return type. 
+
+# plot can be defined separately or on the same line
+# plot <plot_name>=<expression>;
+# or
+# plot <plot_name>;
+# <plot_name>=<expression>;
+
+#ToS is designed for speed.  You cannot declare traditional arrays and you declare variables with def knowing the interpreter will figure out the type--dynamic typing instead of strict typing. 
+
+# You can declare a variable of the set of values for a stock in Fundamentals: close, high, hl2,...vwap. 
+
+# boolean values are translated into integers 0 or 1 
+
+def condition1 = close > 190;
+def condition2 = close > 220;
+def res = condition1 + condition2; 
+# In this script, variable res will have value of 2 for those bars with Close price in greater 900 and 1 for those closing in between 700 and 900, and 0 for the rest. This script is also a good example of using multiple variables: once you have declared a variable, you are free to use it further on.
+AddChartBubble(res, close, "res is " + res, Color.GREEN); # multiple are added
+AddLabel(res, "res is" + res, Color.BLUE); # only one is added. 
+
+#Variables can be declared recursively, so that they use their own values in further calculation. Let’s start with a basic example:
+
+# vol[1] means the previous bar's volume.
+def vol = vol[1] + volume; 
+# This script calculates cumulative volume starting from the first bar on chart. The logic behind it is quite simple: before the calculation, thinkScript® assigns 0 to the variable (it actually always does so), thus, its value at the first bar will be equal to volume. Then, for the second bar, it takes previous value and adds current volume to it; accumulation of volume proceeds until the last bar on chart. You must have noticed square brackets next to vol in the script. These brackets have thinkScript® take a certain value from the previous bar;var
+
+# You have access to this for each bar
+# BarNumber() - returns the number of the current bar on chart.
+# Open: This is the price at which a security first trades upon the opening of an exchange on a trading day.
+# High: The highest price at which a security trades during the course of the trading day.
+# Low: The lowest price at which a security trades during the trading day.
+# Close: The final price at which a security trades on a given trading day.
+# Volume: This represents the total number of shares or contracts traded for a specific security or market during a given period.

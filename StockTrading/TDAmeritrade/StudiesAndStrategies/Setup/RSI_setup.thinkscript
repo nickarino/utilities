@@ -1,0 +1,22 @@
+input length = 14;
+input overBought = 70;
+input overSold = 30;
+input price = close;
+input averageType = AverageType.WILDERS;
+
+plot plot_RSI = RSI(price = price, length = length, averageType = averageType);
+
+plot OverBoughtLine = overBought;
+plot OverSoldLine = overSold;
+
+plot_RSI.DefineColor("OverBought", GetColor(5));
+plot_RSI.DefineColor("Normal", GetColor(1));
+plot_RSI.DefineColor("OverSold", GetColor(5));
+plot_RSI.AssignValueColor(if plot_RSI > overBought then plot_RSI.Color("OverBought") else if plot_RSI < overSold then plot_RSI.Color("OverSold") else plot_RSI.Color("Normal"));
+
+OverBoughtLine.SetDefaultColor(GetColor(5));
+OverSoldLine.SetDefaultColor(GetColor(5));
+
+AddLabel(yes, "plot_RSI: " + plot_RSI, if plot_RSI > overBought then plot_RSI.Color("OverBought") else if plot_RSI < overSold then plot_RSI.Color("OverSold") else plot_RSI.Color("Normal"));
+
+

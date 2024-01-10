@@ -1,0 +1,18 @@
+# input in a function is a parameter while input outside of a function is something the user can adjust in the interface. 
+# https://toslc.thinkorswim.com/center/reference/thinkScript/tutorials/Basic/Chapter-3---Defining-Inputs
+
+# If you need more than two options to select from or if you prefer more meaningful naming for them, the enum type should be used. This will require just a little bit more scripting, but it’s not too difficult. First of all, list all the options for the input in braces and specify the default one:
+
+input fastLength = 14;
+input slowLength = 28;
+# uses enum type with default value
+input diffType = {default points, percent};
+
+
+plot VolumeOsc;
+#uses switch statement.
+switch (diffType) {
+case points:
+    VolumeOsc = Average(volume, fastLength) - Average(volume, slowLength);
+case percent:
+    VolumeOsc = (Average(volume, fastLength) - Average(volume, slowLength)) / Average(volume, slowLength);

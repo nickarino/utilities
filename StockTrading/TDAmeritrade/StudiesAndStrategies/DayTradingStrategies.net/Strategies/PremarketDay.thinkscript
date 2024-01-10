@@ -1,0 +1,21 @@
+# Synopsis
+# Buy when there is a news event in the premarket at the close of the candle and sell either the first candle that closes under the low of the previous candle if the position is red, or under the lowest of the last 5 candles if the position is green.
+# TimeFrame
+# 5 Minute
+# Share Link
+# http://tos.mx/oiT9SDZ
+
+
+Input buyingpower = 5000;
+
+DeInput buyingpower = 1000;
+
+Def buytime = secondstilltime(700) == 0 or secondstilltime(730) == 0 or secondstilltime(800) == 0 or secondstilltime(830) == 0 or secondstilltime(900) == 0 and secondsfromtime(928) < 0;
+Def afterhours = secondstilltime(1600) == 0 or secondstilltime(1605) == 0 or secondstilltime(1630) == 0 or secondstilltime(1635) == 0;
+Def volumehigh = volume > highest(volume[1],10) or volume > buyingpower/close * 5;
+Def ATRchange = close - open > (atr()[1] * 1);
+Def ydayclose = close > close(period = aggregationperiod.day)[1];
+
+addOrder(OrderType.BUY_TO_OPEN, (buytime or afterhours) and volumehigh and ATRchange and ydayclose, close, buyingpower/close, color.green, color.green, "BUY");
+
+addOrder(OrderType.SELL_TO_CLOSE, if close > entryprice() then close() < lowest(low()[1],5) or secondstilltime(925) == 0 else close < low[1] or secondstilltime(925) == 0, close, buyingpower/close, color.red, color.red, "SELL");

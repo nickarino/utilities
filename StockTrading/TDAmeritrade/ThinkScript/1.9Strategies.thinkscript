@@ -1,0 +1,35 @@
+# https://toslc.thinkorswim.com/center/reference/thinkScript/tutorials/Basic/Chapter-7---Creating-Strategies
+
+# Strategies are a indicators which have trading signals as the main target of analysis. These indicators are displayed on the “Strategies” tab of “Edit Studies and Strategies” window and this is where they should be added.
+
+# When you add a strategy to chart, Buy and Sell triggers appear in response to the specified conditions (and now you know a lot of ways to specify them; refer to chapter 5 and chapter 6 to refresh your knowledge). Strategies also provide you with ability to estimate the Profit/Loss value if you sent orders upon each Buy and Sell signal. This is what we call backtesting of a strategy: TOS Charts interface allows you to view the performance report upon clicking each signal on chart (the full procedure is described [here](https://toslc.thinkorswim.com/center/howToTos/thinkManual/charts/Using-Studies-and-Strategies/strategies-setup/report)).
+
+# As one can expect, strategies are similar to regular studies, but they just have something special to them. This something is AddOrder function which (if properly used) will turn any technical indicator into trading strategy.  Let us take a look at the following script:
+
+input price = close;
+input length = 20;
+def avg = Average(price, length);
+AddOrder(OrderType.BUY_AUTO, price crosses above avg);
+AddOrder(OrderType.SELL_AUTO, price crosses below avg);
+
+#Now it is a strategy which will add a Buy signal every time Close price crosses above its 20 period SMA and a Sell signal when it crosses below. Aside from the AddOrder function which will be discussed a bit later, we could notice a couple other differences peculiar to strategies. First of all, as you can see, this strategy does not have any plots (as most studies do). This is characteristic of strategies: they do not normally show any plots, however, it won’t do any harm if you add a plot or several to this script. Secondly, defining the trading condition is crucial: in our case, it is price crossing above or below its SMA. But the main difference remains the same: the AddOrder function. Let us puzzle out its syntax:
+
+# We called this function twice: first for the Buy signal and second for the Sell. In order to specify which side of trading is considered, AddOrder function requires an OrderType constant as the first argument. BUY_AUTO is a constant which AddOrder function uses to add a buying order for entering a new long position or closing a short one. Vice versa, SELL_AUTO is used to add a selling order for entering a new short position or closing a long position. As you can see, both BUY_AUTO and SELL_AUTO constants open new positions and close previous ones. If you prefer a constant which only opens or closes a position, consider using some of the other four: BUY_TO_CLOSE, BUY_TO_OPEN, SELL_TO_CLOSE, and SELL_TO_OPEN. 
+
+# The second argument of the function was the condition upon which the order of specified side and position effect will be added. This order will be added to the next bar after condition is fulfilled.
+
+
+# AddOrder(type, condition, price, tradeSize, tickColor, arrowColor, name); 
+
+#Aside from previously described “type” and “condition”, arguments also include price, trade size, tick color, arrow color and name. Argument “price” defines price at which the order is added (by default, it is the Open of the following bar), “trade size” stands for the number of contracts traded; you can also specify colors for both tick and arrow. Colors need to be defined as Color constants, e.g., Color.RED, Color.GREEN, Color.ORANGE, etc. The last argument is “name”; it defines the caption to be displayed (by default, it is the same as the name of the strategy itself).
+
+# Now we are ready to make the strategy we created before look outstanding:
+input price = close;
+input length = 20;
+def avg = Average(price, length);
+AddOrder(OrderType.BUY_AUTO, price crosses above avg, open[-1], 100, Color.YELLOW, Color.YELLOW, “Buy”);
+AddOrder(OrderType.SELL_AUTO, price crosses below avg, open[-1], 100, Color.RED, Color.RED, “Sell”);
+
+#Now this strategy opens the long position or closes the short one at the Open price of the next bar upon respective crossovers of Close price above and below its 20 period SMA. The trade size will be equal to 100, Buy signals will be colored yellow, Sell signals will be colored red, and each signal will display the trade side. After you added a strategy to chart, you can view the performance report by right-clicking any of the signals and choosing “Show report” from the menu. More information on the report can be found here.
+
+# Here is an important notice about the strategies: all the signals you get are hypothetical, i.e., you cannot send real orders using strategies.
