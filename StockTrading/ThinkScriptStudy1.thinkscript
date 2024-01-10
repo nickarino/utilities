@@ -1,5 +1,37 @@
 # In In ThinkScript, each script or study is self-contained. If you have a custom function, it must be defined within the same script or study where it is used. This limitation requires that any functions you wish to use across multiple scripts must be copied and pasted into each script separately.  So, I will keep a master copy in the git repo Utilities/StockTrading.  
 
+However, there are a few ways you can display or output values:
+
+1. Plotting on Charts
+The primary method of output in ThinkScript is through plotting values on the chart. You can plot data points, lines, histograms, etc., which can be used to visually represent values or conditions.
+
+thinkscript
+Copy code
+plot DataLine = close;  # Example of plotting the closing price
+DataLine.SetDefaultColor(Color.CYAN);
+2. Adding Labels
+You can add labels to your chart to display values. Labels are useful for showing dynamic values like indicators or conditions.
+
+thinkscript
+Copy code
+AddLabel(yes, "Current Close: " + close, Color.WHITE);
+3. Using Alerts for Notifications
+While not a traditional log, alerts can be used to notify you when certain conditions are met. The alert can include specific values.
+
+thinkscript
+Copy code
+Alert(close > 100, "Close is above 100: " + close, Alert.BAR, Sound.Bell);
+4. Bubbles on Charts
+Bubbles can display information at specific points on a chart. They can be used to show values or messages.
+
+thinkscript
+Copy code
+AddChartBubble(condition, price, "Text: " + value, Color.GREEN, yes);
+5. Custom Quote Columns
+For watchlists or the market watch tab, you can create custom quote columns that display calculated values based on your script.
+
+
+
 ##### CHAPTER 1 DEFININING VARIABLES. 
 
 # plot means put something on the chart--unless it is used in a custom function; then it is a return type. 
@@ -27,3 +59,4 @@
 
 # def vol = vol[1] + volume; 
 # This script calculates cumulative volume starting from the first bar on chart. The logic behind it is quite simple: before the calculation, thinkScript® assigns 0 to the variable (it actually always does so), thus, its value at the first bar will be equal to volume. Then, for the second bar, it takes previous value and adds current volume to it; accumulation of volume proceeds until the last bar on chart. You must have noticed square brackets next to vol in the script. These brackets have thinkScript® take a certain value from the previous bar;
+
