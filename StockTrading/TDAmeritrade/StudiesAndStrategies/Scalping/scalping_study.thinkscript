@@ -1,7 +1,16 @@
+# based on Nick Nikravesh article
+#https://medium.com/@nicknikravesh/a-foolproof-strategy-to-make-money-day-trading-no-really-7896e365fd40
+# Have this analyze the time of day, volatility (higher), and volume.
+# I use options for one reason, leverage. Options allow us to control a much larger amount of stocks without paying for them.
+#The most important principle of the option that we choose is that we can get in and out of a trade quickly, and that it will actually make us money. Here are the following factors that go into a good pick.
+# Volume and open interest. The volume (number of options traded) and open interest (the number of held contracts) should be very high, in at least the thousands.
+# Delta. Delta is a measure of how much an option moves compared to the underlying stock price, usually expressed as a percentage. For example, a delta of 50% means that the option will move 50% of whatever the underlying stock moved. While delta is a somewhat complicated concept, what is important to us is that it’s high, at least 30% but preferably much higher. This is usually found with in-the-money options. As a general rule of thumb, I would go with an option that is at-the-money or one in-the-money.
+# Choose one that is expiring within a week (but not the same day). Since we’re going in and out on the same day, we don’t need to buy longer out options as that will only cost us more.
+# As it turns out, it may be hard to predict where a stock will go in a few hours, days, or years, but it is pretty easy to predict where a stock will go in a few minutes. 
 
-
-
-# Define the Simple Moving Averages (SMAs)
+# Define the Simple Moving Averages (SMAs) based on fibonacci.  
+# Todo try tesla,: 3,6,9
+# Todo start here asking about a simple test. 
 def SMA5 = Average(close, 5);
 def SMA8 = Average(close, 8);
 def SMA13 = Average(close, 13);
@@ -15,41 +24,44 @@ SMA5Plot.SetDefaultColor(Color.CYAN);
 SMA8Plot.SetDefaultColor(Color.MAGENTA);
 SMA13Plot.SetDefaultColor(Color.YELLOW);
 
-# MACD Parameters
-def fastLength = 12;
-def slowLength = 26;
-def MACDLength = 9;
-def AverageType = AverageType.EXPONENTIAL;
+# MACD Parameters (commented out)
+# def fastLength = 12;
+# def slowLength = 26;
+# def MACDLength = 9;
+# def AverageType = AverageType.EXPONENTIAL;
 
-# MACD Calculation
-def Value = MovingAverage(AverageType, close, fastLength) - MovingAverage(AverageType, close, slowLength);
-def Avg = MovingAverage(AverageType, Value, MACDLength);
+# MACD Calculation (commented out)
+# def Value = MovingAverage(AverageType, close, fastLength) - MovingAverage(AverageType, close, slowLength);
+# def Avg = MovingAverage(AverageType, Value, MACDLength);
 
-# Plot MACD and Signal Line
-plot MACD = Value;
-plot SignalLine = Avg;
+# Plot MACD and Signal Line (commented out)
+# declare lower;
+# plot MACD = Value;
+# plot SignalLine = Avg;
 
-MACD.SetDefaultColor(Color.BLUE);
-SignalLine.SetDefaultColor(Color.RED);
+# MACD Set Default Colors (commented out)
+# MACD.SetDefaultColor(Color.BLUE);
+# SignalLine.SetDefaultColor(Color.RED);
 
-# Time Check: Only allow signals within the first hour after market opens
-def marketOpen = 0930;
-def marketClose = 1600;
-def firstHourEnd = marketOpen + 100; # 100 minutes after market open
-def withinFirstHour = SecondsFromTime(marketOpen) >= 0 and SecondsTillTime(firstHourEnd) > 0;
+# Time Check: Only allow signals within the first hour after market opens (commented out)
+# def marketOpen = 0930;
+# def marketClose = 1600;
+# def firstHourEnd = marketOpen + 100; # 100 minutes after market open
+# def withinFirstHour = SecondsFromTime(marketOpen) >= 0 and SecondsTillTime(firstHourEnd) > 0;
 
-# Implementing the strategy:
-# Entry signal: All three SMAs are in alignment, MACD crosses above the signal line, and it is within the first hour after market open
-def entrySignal = withinFirstHour and SMA5 > SMA8 and SMA8 > SMA13 and MACD crosses above SignalLine;
+# Implementing the strategy (commented out)
+# Entry signal: All three SMAs are in alignment, MACD crosses above the signal line, and it is within the first hour after market open (commented out)
+# def entrySignal = withinFirstHour and SMA5 > SMA8 and SMA8 > SMA13 and MACD crosses above SignalLine;
 
-# Exit signal: Loss of SMA alignment or MACD crosses below the signal line, and it is within the first hour after market open
-def exitSignal = withinFirstHour and (!(SMA5 > SMA8 and SMA8 > SMA13) or MACD crosses below SignalLine);
+# Exit signal: Loss of SMA alignment or MACD crosses below the signal line, and it is within the first hour after market open (commented out)
+# def exitSignal = withinFirstHour and (!(SMA5 > SMA8 and SMA8 > SMA13) or MACD crosses below SignalLine);
 
-# Plot the signals as arrows on the chart
-plot EntryArrows = entrySignal;
-plot ExitArrows = exitSignal;
+# Plot the signals as arrows on the chart (commented out)
+# plot EntryArrows = entrySignal;
+# plot ExitArrows = exitSignal;
 
-EntryArrows.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_UP);
-EntryArrows.SetDefaultColor(Color.GREEN);
-ExitArrows.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_DOWN);
-ExitArrows.SetDefaultColor(Color.RED);
+# Set Painting Strategies and Colors (commented out)
+# EntryArrows.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_UP);
+# EntryArrows.SetDefaultColor(Color.GREEN);
+# ExitArrows.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_DOWN);
+# ExitArrows.SetDefaultColor(Color.RED);
