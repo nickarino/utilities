@@ -6,43 +6,43 @@
 
 
 #### FOLD FUNCTION
-fold
-Syntax
-def <result> = fold <index> = <start> to <end> [ with <variable> [ = <init> ] ] [ while <condition> ] do <expression>; 
+# fold
+# Syntax
+# def <result> = fold <index> = <start> to <end> [ with <variable> [ = <init> ] ] [ while <condition> ] do <expression>; 
 
-Description
-The fold operator allows you to perform iterated calculations. The list below explains the operator's logic (variable names are taken from the sample syntax above):
+# Description
+# The fold operator allows you to perform iterated calculations. The list below explains the operator's logic (variable names are taken from the sample syntax above):
 
-1. The purpose of the fold operator is to perform an iterated calculation and assign the final value to the result variable.
+# 1. The purpose of the fold operator is to perform an iterated calculation and assign the final value to the result variable.
 
-2. The index variable serves as a loop counter.
+# 2. The index variable serves as a loop counter.
 
-3. With each iteration, the index value increases by 1; the initial value of index is set by the start parameter.  
+# 3. With each iteration, the index value increases by 1; the initial value of index is set by the start parameter.  
 
-4. Iterated calculations will be performed while the index value is less than the end parameter. Once the index value becomes equal to the end parameter, the loop is terminated without calculation.
+# 4. Iterated calculations will be performed while the index value is less than the end parameter. Once the index value becomes equal to the end parameter, the loop is terminated without calculation.
 
-5. Within each iteration, the operator calculates the expression and assigns the result to the variable. In the expression, you are free to use the value of index and also reference the previous value of the variable. The initial value of the variable can be specified with the init parameter. If none is specified, then the variable is assigned a value of 0 before the first iteration.
+# 5. Within each iteration, the operator calculates the expression and assigns the result to the variable. In the expression, you are free to use the value of index and also reference the previous value of the variable. The initial value of the variable can be specified with the init parameter. If none is specified, then the variable is assigned a value of 0 before the first iteration.
 
-6. The variable value is thus re-written after each iteration; after the last iteration, its final value is assigned to the result variable.
+# 6. The variable value is thus re-written after each iteration; after the last iteration, its final value is assigned to the result variable.
 
-7. You can also add a condition within the while block of the operator. If this condition is violated, the result is assigned the last known value of variable and the loop is terminated.
+# 7. You can also add a condition within the while block of the operator. If this condition is violated, the result is assigned the last known value of variable and the loop is terminated.
 
-Example 1
-input n = 10;
-plot factorial = fold index = 1 to n + 1 with p = 1 do p * index;
-This example script calculates the factorial of a number.
+# Example 1
+# input n = 10;
+# plot factorial = fold index = 1 to n + 1 with p = 1 do p * index;
+# This example script calculates the factorial of a number.
 
-Here, the factorial variable stores the result value of the calculation; index is the counter and its values are increased by 1 from 1 through n+1. The p is the variable whose value is re-written over iterations; its initial value is set to 1. The expression is the product of p and index. After the first iteration, p is 1*1=1. After the second iteration, it is equal to its current value (1) multiplied by current index (2), i.e., 2. After the third iteration, its current value (2) is multiplied by current index (3), yielding 6. Since the input n is set to 10, there will be 10 iterations (the loop is terminated when the index becomes equal to n+1=11), so the last value of p will be equal to 3,628,800 (a product of all numbers from 1 through 10). This is the value that is assigned to the factorial variable after the loop is complete.
+# Here, the factorial variable stores the result value of the calculation; index is the counter and its values are increased by 1 from 1 through n+1. The p is the variable whose value is re-written over iterations; its initial value is set to 1. The expression is the product of p and index. After the first iteration, p is 1*1=1. After the second iteration, it is equal to its current value (1) multiplied by current index (2), i.e., 2. After the third iteration, its current value (2) is multiplied by current index (3), yielding 6. Since the input n is set to 10, there will be 10 iterations (the loop is terminated when the index becomes equal to n+1=11), so the last value of p will be equal to 3,628,800 (a product of all numbers from 1 through 10). This is the value that is assigned to the factorial variable after the loop is complete.
 
-Example 2
-input price = close;
-input length = 9;
-plot SMA = (fold n = 0 to length with s do s + getValue(price, n, length - 1)) / length;
-This example script calculates a simple moving average using fold.
+# Example 2
+# input price = close;
+# input length = 9;
+# plot SMA = (fold n = 0 to length with s do s + getValue(price, n, length - 1)) / length;
+# This example script calculates a simple moving average using fold.
 
-Example 3
-plot NextHigh = fold i = 0 to 100 with price = Double.NaN while IsNaN(price) do if getValue(high, -i, -99) > 40 then getValue(high, -i, -99) else Double.NaN;
-This example script plots the closest high price value greater than 40 out of the next 100 bars.
+# Example 3
+# plot NextHigh = fold i = 0 to 100 with price = Double.NaN while IsNaN(price) do if getValue(high, -i, -99) > 40 then getValue(high, -i, -99) else Double.NaN;
+# This example script plots the closest high price value greater than 40 out of the next 100 bars.
 
 # Define the number of bars to look back
 def lookbackPeriod = 10;
@@ -73,20 +73,20 @@ SumClose.SetDefaultColor(Color.CYAN);
 
 
 
-The `fold` statement in ThinkScript is used for looping over a series of values, typically historical data points on a chart. The syntax of a `fold` statement can be broken down into several key components:
+# The `fold` statement in ThinkScript is used for looping over a series of values, typically historical data points on a chart. The syntax of a `fold` statement can be broken down into several key components:
 
-1. **Initialization of the Loop Variable**: This is where you set the starting value for the loop. The loop will iterate from this starting value up to, but not including, the ending value.
+# 1. **Initialization of the Loop Variable**: This is where you set the starting value for the loop. The loop will iterate from this starting value up to, but not including, the ending value.
 
-2. **Ending Condition**: This defines how many times the loop will iterate. It's the value at which the loop stops.
+# 2. **Ending Condition**: This defines how many times the loop will iterate. It's the value at which the loop stops.
 
-3. **Accumulator Variable**: This is a variable that accumulates or stores the result of each iteration of the loop.
+# 3. **Accumulator Variable**: This is a variable that accumulates or stores the result of each iteration of the loop.
 
-4. **Loop Body**: Inside the loop, you define what happens during each iteration. This is where you manipulate or process your data.
+# 4. **Loop Body**: Inside the loop, you define what happens during each iteration. This is where you manipulate or process your data.
 
-Here's a basic structure of a `fold` loop in ThinkScript:
+# Here's a basic structure of a `fold` loop in ThinkScript:
 
-Syntax
-def <result> = fold <index> = <start> to <end> [ with <variable> [ = <init> ] ] [ while <condition> ] do <expression>; 
+# Syntax
+# def <result> = fold <index> = <start> to <end> [ with <variable> [ = <init> ] ] [ while <condition> ] do <expression>; 
 
 
 ```thinkscript

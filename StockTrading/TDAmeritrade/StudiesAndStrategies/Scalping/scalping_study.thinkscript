@@ -12,17 +12,17 @@
 # Todo try tesla,: 3,6,9
 # Todo start here asking about a simple test. 
 def SMA5 = Average(close, 5);
-def SMA8 = Average(close, 8);
-def SMA13 = Average(close, 13);
+# def SMA8 = Average(close, 8);
+# def SMA13 = Average(close, 13);
 
-# Plot the SMAs
-plot SMA5Plot = SMA5;
-plot SMA8Plot = SMA8;
-plot SMA13Plot = SMA13;
+# # Plot the SMAs
+ plot SMA5Plot = SMA5;
+# plot SMA8Plot = SMA8;
+# plot SMA13Plot = SMA13;
 
 SMA5Plot.SetDefaultColor(Color.CYAN);
-SMA8Plot.SetDefaultColor(Color.MAGENTA);
-SMA13Plot.SetDefaultColor(Color.YELLOW);
+# SMA8Plot.SetDefaultColor(Color.MAGENTA);
+# SMA13Plot.SetDefaultColor(Color.YELLOW);
 
 # MACD Parameters (commented out)
 # def fastLength = 12;
