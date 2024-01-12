@@ -1,10 +1,12 @@
-# PowerShell script to open thinkorswim.exe from one of two possible locations
+# PowerShell script to open thinkorswim.exe from one of two possible locations.  Assumes they are installed in these hardcoded places. 
 
 # First path to the thinkorswim executable
-$firstPath = "C:\Users\skriloffn\AppData\Local\thinkorswim2\thinkorswim\thinkorswim.exe"
+$firstPath = $PSVersionTable.OS.Contains("Windows")? "C:\Users\skriloffn\AppData\Local\thinkorswim2\thinkorswim\thinkorswim.exe":"/Applications/thinkorswim/thinkorswim.app"
+open /Users/skriloffn/thinkorswim/thinkorswim.app  
 
 # Second path to the thinkorswim executable
-$secondPath = "C:\Users\skriloffn\AppData\Local\thinkorswim\thinkorswim.exe"
+
+$secondPath = $PSVersionTable.OS.Contains("Windows")? "C:\Users\skriloffn\AppData\Local\thinkorswim\thinkorswim.exe":"/Users/skriloffn/thinkorswim/thinkorswim.app"
 
 # Function to attempt to start the application from a path
 function Start-Application {
