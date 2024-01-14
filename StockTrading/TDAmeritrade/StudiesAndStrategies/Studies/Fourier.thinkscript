@@ -1,0 +1,101 @@
+####################################################
+#
+#  FOURIER TRANSFORM DECOMPOSITION
+#  RMS ENERGY FOR 1st, 3rd, 5th, and 7th Harmonics
+#
+#  A guage of market instability and flutter
+#
+#  by mashume for the usethinkscript.com community
+#
+#  2022.03.28
+#
+#  Released the MIT License as open source
+#  (c) mashume 2022
+#
+####################################################
+
+declare lower;
+declare once_per_bar;
+
+def pi = Double.Pi;
+input n = 64;
+
+script ReX_k {
+    input k = 0;
+    input n = 64;
+    def return_value = fold i = 0 to n - 1 with value = 0 do value + close[i] * Cos(2 * Double.Pi * k * i / n);
+    plot ReX_k = return_value;
+};
+
+script ImX_k {
+    input k = 0;
+    input n = 64;
+    def return_value = fold j = 0 to n - 1 with value = 0 do value + close[j] * Sin(2 * Double.Pi * k * j / n);
+    plot ImX_k = -return_value;
+};
+
+script ReX {
+    input k = 0;
+    input n = 64;
+    def return_value = 
+        if (k != 0 and k != (n / 2))
+            then 2 * ReX_k(k, n) / n
+        else if k == 0
+            then ReX_k(k, n) / n
+        else if k == n / 2
+            then ReX_k(k, n) / n
+        else 0;
+    plot ReX = return_value;
+};
+
+script ImX {
+    input k = 0;
+    input n = 64;
+    plot ImX_value = -2 * ImX_k(k, n) / n;
+};
+
+script x {
+    input i = 1;
+    input k = 0;
+    input n = 64;
+    def sum1 = fold a = 0 to n / 2 with value = 0.0 do value + ReX(k, n) * Cos(2 * Double.Pi * k * (n - a) / n);
+    def sum2 = fold b = 0 to n / 2 with value2 = 0.0 do value2 + ImX(k, n) * Sin(2 * Double.Pi * k * (n - b)/ n);
+    plot x = sum1;
+};
+
+def curve_1 = x(i = 0, k = 1, n = n);
+def curve_2 = x(i = 0, k = 3, n = n);
+def curve_3 = x(i = 0, k = 5, n = n);
+def curve_4 = x(i = 0, k = 7, n = n);
+
+def d = 2 * n;
+
+def c1_mean = Average(curve_1, d);
+def c1_rms = sqrt(fold i1 = 0 to d with ms1 = 0 do ms1 + sqr(curve_1[i1] - c1_mean));
+
+def c2_mean = Average(curve_2, floor(d / 2));
+def c2_rms = sqrt(fold i2 = 0 to floor(d / 2) with ms2 = 0 do ms2 + sqr(curve_2[i2] - c2_mean));
+
+def c3_mean = Average(curve_3, floor(d / 4));
+def c3_rms = sqrt(fold i3 = 0 to floor(d / 4) with ms3 = 0 do ms3 + sqr(curve_3[i3] - c3_mean));
+
+def c4_mean = Average(curve_4, floor(d / 6));
+def c4_rms = sqrt(fold i4 = 0 to floor(d / 6) with ms4 = 0 do ms4 + sqr(curve_4[i4] - c4_mean));
+
+def bar = barNumber();
+AddVerticalLine(visible = bar == highestAll(bar) - d, "2n", color.red);
+AddVerticalLine(visible = bar == round(highestAll(bar) - (d / 2), 0), "2n / 3", color.orange);
+AddVerticalLine(visible = bar == round(highestAll(bar) - (d / 4), 0), "2n / 4", color.green);
+AddVerticalLine(visible = bar == round(highestAll(bar) - (d / 6), 0), "2n / 6", color.cyan);
+
+def dist_sum = c1_rms + c2_rms * 4 + c3_rms * 8 + c4_rms * 16;
+
+plot FirstHarmonicPercent = c1_rms / dist_sum;
+plot ThirdHarmonicPercent = (c2_rms / dist_sum) * 4;
+plot FifthHarmonicPercent = (c3_rms / dist_sum) * 8;
+plot SeventhHarmonicPercent = (c4_rms / dist_sum) * 16;
+
+FirstHarmonicPercent.setDefaultColor(color.red);
+ThirdHarmonicPercent.setDefaultColor(color.orange);
+FifthHarmonicPercent.setDefaultColor(color.green);
+SeventhHarmonicPercent.setDefaultColor(color.cyan);
