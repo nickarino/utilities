@@ -11,13 +11,13 @@
 
 # [Article in Medium by Nikravesh](https://medium.com/@nicknikravesh/a-foolproof-strategy-to-make-money-day-trading-no-really-7896e365fd40)
 
-* Trading is like any other skill that takes time. The people who are looking to get rich quick and don’t want to put the work in to learn the market and the skills are the ones who lose money. 
+* Trading is like any other skill that takes time. The people who are looking to get rich quick and don’t want to put the work in to learn the market and the skills are the ones who lose money.
 * On 12/16/23 I signed up for https://trade.thinkorswim.com via Ameritrade and used PaperMoney.  This involves real-time data.  This is better than back-testing because back-testing can be subject to hindsight bias, where you only test your theory on situations that you believe will prove the strategy.
-* When day trading, you should only bet what you are willing to lose completely. Don’t bet the farm.
+* <ins>When day trading, you should only bet what you are willing to lose completely. Don’t bet the farm.</ins>
 * If you choose to day trade, you will need at least $25,000 in your brokerage order to avoid any penalties associated with being a [Pattern Day Trader](https://www.investopedia.com/terms/p/patterndaytrader.asp). (6 trades a day)
 * What we will be doing is technically labeled [scalping](https://www.investopedia.com/articles/trading/05/scalping.asp). Scalping is a form of day trading in which you profit off of very small movements of a stock over the course of a couple seconds, minutes, or hours (usually not hours)
 * Volatility. The first hour of the day is the most volatile time of the day in the market.
-* When selecting options, there is no one right choice, but there is a wrong choice.
+* <ins>When selecting options, there is no one right choice, but there is a wrong choice.</ins>
 * For example, a delta of 50% means that the option will move 50% of whatever the underlying stock moved. While delta is a somewhat complicated concept, what is important to us is that it’s high, at least 30% but preferably much higher. This is usually found with in-the-money options. As a general rule of thumb, I would go with an option that is at-the-money or one in-the-money.
 * The overarching theme that we are aiming to uncover by using these indicators is momentum
 * As it turns out, it may be hard to predict where a stock will go in a few hours, days, or years, but it is pretty easy to predict where a stock will go in a few minutes.
