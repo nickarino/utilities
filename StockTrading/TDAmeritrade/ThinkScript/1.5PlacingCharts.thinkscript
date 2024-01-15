@@ -1,4 +1,5 @@
 # See https://thinkscript101.com/thinkscript-declare-lower/
+# https://tlc.thinkorswim.com/center/reference/thinkScript/Declarations/once-per-bar
 # You cannot have two different scales on a chart. So you want to have different scales on different charts. 
 
 #Must be the first statement in the script.
@@ -15,3 +16,5 @@ plot Raise = close is greater than close from 1 bar ago within 3 bars;
 # TODO: You want clean charts.  Follow the humbled trader recommendations for chart settings. 5 min setup. 
 
 # where it is plotted is based on then Declaration used (lower, upper, on_volume) see them. 
+
+# By default, the application automatically defines where to place a study. If the study contains volume values and values not related to the base subgraph, then this study is displayed on the volume subgraph, otherwise it is displayed on the base subgraph.

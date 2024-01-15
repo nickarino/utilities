@@ -1,0 +1,8 @@
+# LinearRegressionSlope Indicator
+# Plotting on a Stock Price Chart
+
+input length = 20;  # Length of the regression line
+
+def slope = reference LinearRegressionSlope(length);
+plot lrSlope = slope;
+lrSlope.SetDefaultColor(Color.CYAN);
