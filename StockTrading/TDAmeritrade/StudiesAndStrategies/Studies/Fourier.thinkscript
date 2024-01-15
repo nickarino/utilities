@@ -3,7 +3,7 @@
 #  FOURIER TRANSFORM DECOMPOSITION
 #  RMS ENERGY FOR 1st, 3rd, 5th, and 7th Harmonics
 #
-#  A guage of market instability and flutter
+#  A gauge of market instability and flutter
 #
 #  by mashume for the usethinkscript.com community
 #
@@ -19,6 +19,8 @@ declare once_per_bar;
 
 def pi = Double.Pi;
 input n = 64;
+
+# https://www.algorithm-archive.org/contents/cooley_tukey/cooley_tukey.html  SEE IT ON DFT. 
 
 script ReX_k {
     input k = 0;
@@ -88,14 +90,14 @@ AddVerticalLine(visible = bar == round(highestAll(bar) - (d / 2), 0), "2n / 3", 
 AddVerticalLine(visible = bar == round(highestAll(bar) - (d / 4), 0), "2n / 4", color.green);
 AddVerticalLine(visible = bar == round(highestAll(bar) - (d / 6), 0), "2n / 6", color.cyan);
 
-def dist_sum = c1_rms + c2_rms * 4 + c3_rms * 8 + c4_rms * 16;
+ def dist_sum = c1_rms + c2_rms * 4 + c3_rms * 8 + c4_rms * 16;
 
 plot FirstHarmonicPercent = c1_rms / dist_sum;
-plot ThirdHarmonicPercent = (c2_rms / dist_sum) * 4;
-plot FifthHarmonicPercent = (c3_rms / dist_sum) * 8;
-plot SeventhHarmonicPercent = (c4_rms / dist_sum) * 16;
+# plot ThirdHarmonicPercent = (c2_rms / dist_sum) * 4;
+# plot FifthHarmonicPercent = (c3_rms / dist_sum) * 8;
+# plot SeventhHarmonicPercent = (c4_rms / dist_sum) * 16;
 
 FirstHarmonicPercent.setDefaultColor(color.red);
-ThirdHarmonicPercent.setDefaultColor(color.orange);
-FifthHarmonicPercent.setDefaultColor(color.green);
-SeventhHarmonicPercent.setDefaultColor(color.cyan);
+# ThirdHarmonicPercent.setDefaultColor(color.orange);
+# FifthHarmonicPercent.setDefaultColor(color.green);
+# SeventhHarmonicPercent.setDefaultColor(color.cyan);
