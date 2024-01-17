@@ -65,3 +65,4 @@ def isPoint = barNumber >= 10 && barNumber <= 250 && (barNumber - 10) % interval
 def bubbleYValue = LinearLine().m * barNumber + LinearLine().b;
 AddChartBubble(isPoint, bubbleYValue, AsText(barNumber) + ", " + AsText(bubbleYValue), Color.YELLOW, yes);
 
+

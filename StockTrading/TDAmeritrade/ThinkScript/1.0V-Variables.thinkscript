@@ -34,3 +34,4 @@ def vol = vol[1] + volume;
 # Low: The lowest price at which a security trades during the trading day.
 # Close: The final price at which a security trades on a given trading day.
 # Volume: This represents the total number of shares or contracts traded for a specific security or market during a given period.
+

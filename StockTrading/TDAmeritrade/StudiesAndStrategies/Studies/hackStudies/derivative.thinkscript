@@ -27,3 +27,25 @@ MomentumLine.SetDefaultColor(GetColor(1)); # Set the plot color (color number 1 
 # You can also add horizontal lines to help interpret the momentum
 plot ZeroLine = 0;
 ZeroLine.SetDefaultColor(GetColor(0)); # Set the color of the zero line to color number 0 (usually cyan)
+
+
+# # declare lower;
+
+input length = 14; # Length for the simple moving average
+input price = close; # Default to using the closing price
+input slopeLength = 1; # Number of bars to calculate the slope over, set to 1 for the immediate slope
+
+# Calculate the simple moving average
+def sma = Average(price, length);
+
+# Calculate the slope as the difference between the current SMA value and the SMA value 'slopeLength' bars ago
+# def smaSlope = (sma - sma[slopeLength]) / slopeLength;
+
+# Plot the SMA slope
+# plot SMA_Slope = smaSlope;
+# SMA_Slope.SetDefaultColor(GetColor(1));
+
+# Plot a magenta horizontal line at 0
+# plot ZeroLine = 0;
+# ZeroLine.SetDefaultColor(Color.MAGENTA);
+# ZeroLine.SetStyle(Curve.SHORT_DASH);

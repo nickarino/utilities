@@ -1,0 +1,46 @@
+# I want a Red label if a particular test does NOT pass
+# I want a Green label if all the tests pass
+
+script getRegularTradingStart {
+
+    plot 0930;
+}
+
+#Assert the regular trading day start RegularTradingStart is 
+
+assert(getRegularTradingStart() == 0930,"the trading time should be 0930");
+
+input OpenTime = 0930;
+input DurationHours = 1;
+
+def durationSec = DurationHours * 60 * 60;
+def secondsPassed = SecondsFromTime(OpenTime);
+
+plot Price = if secondsPassed >= 0 and secondsPassed <= durationSec then close else  double.NaN;
+
+
+AddLabel(yes, (RegularTradingEnd(GetYYYYMMDD()) - RegularTradingStart(GetYYYYMMDD()))/AggregationPeriod.HOUR);
+
+# Define the time period
+def marketStartTime = 0800;
+def marketEndTime = 0900;
+
+# Get the time in HHMM format
+def time = GetTime();
+
+# Create a boolean variable that is true during your desired time window
+def inTimeWindow = time >= marketStartTime and time < marketEndTime;
+
+# Use this variable to add a label or bubble on the chart
+AddLabel(inTimeWindow, "Within 8 AM - 9 AM", Color.YELLOW);
+
+
+input OpenTime = 0930;
+input DurationHours = 1;
+
+def durationSec = DurationHours * 60 * 60;
+def secondsPassed = SecondsFromTime(OpenTime);
+
+plot Price = if secondsPassed >= 0 and secondsPassed <= durationSec then close else  double.NaN;
+
+plot ClosingPriceForHighestHigh = GetValue(close, GetMaxValueOffset(high, 12), 12);

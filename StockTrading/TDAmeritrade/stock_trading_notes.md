@@ -67,3 +67,14 @@
 - Market Capital = # of outstanding shares (includes all shareholders) * current share price. 
 
 - To find the total outstanding shares and valuation, go to the "analyze" tab, click "fundamentals", and then look for "Total Shares Outstanding" and, "Market Cap."
+
+# Units of Measure on a Stock Chart
+Here is a table that compares and contrasts the three aggregation types: Time, Tick, and Range.
+
+| Aggregation Type | Definition | Use Case | Granularity | Time-based | Price-based | Volume-based |
+|------------------|------------|----------|-------------|------------|-------------|--------------|
+| Time | Data is grouped based on a specific time interval, such as 1 minute, 5 minutes, 1 day, etc. | Useful for analyzing patterns over time and identifying trends based on standard time intervals. | Fixed intervals, less granular with longer time frames, more granular with shorter time frames. | Yes | No | No |
+| Tick | Data is grouped based on a certain number of transactions or "ticks". | Helpful for traders interested in the details of market microstructure and price action at a granular level. | Very granular, each tick represents one transaction regardless of time. | No | No | Yes |
+| Range | Data is grouped based on a price range, with each data point representing the time it takes for the instrument to move through a specified price range. | Beneficial for traders focusing on price consolidation and breakout patterns within specific price ranges. | Granularity depends on the specified price range; wider ranges are less granular, and narrower ranges are more granular. | No | Yes | No |
+
+Each aggregation type serves different trading strategies and analysis preferences. Time-based aggregation is the most traditional and is useful for a broad range of analyses. Tick-based aggregation gives a detailed view of market dynamics and is typically used by high-frequency traders or those analyzing the market at a very fine level. Range-based aggregation is particularly used for identifying patterns that occur within certain price levels, such as support and resistance areas.
