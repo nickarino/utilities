@@ -1,0 +1,23 @@
+#Synopsis
+#
+#Scale into stocks when they are both above the 200 simple moving average as well as below the 40 RSI. Sell when a daily candle closes above 45 on the RSI.
+#
+#ALLOW UP TO 10 ENTRY ORDER(S) IN THE SAME DIRECTION INSIDE GLOBAL STRATEGY SETTINGS
+#
+#
+#TimeFrame
+#
+#Daily
+#
+#Share Link
+#
+#http://tos.mx/uFbK18b
+#
+#ThinkScript Code
+
+input PositionSize = 2500;
+
+plot SMA = simplemovingavg(length = 200);
+
+addOrder(OrderType.BUY_TO_OPEN, RSI() < 40 and low > SMA, close, (PositionSize)/close);
+addOrder(OrderType.SELL_TO_CLOSE, RSI() > 45, close);
