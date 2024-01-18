@@ -69,7 +69,12 @@
 - To find the total outstanding shares and valuation, go to the "analyze" tab, click "fundamentals", and then look for "Total Shares Outstanding" and, "Market Cap."
 
 # Units of Measure on a Stock Chart
-Here is a table that compares and contrasts the three aggregation types: Time, Tick, and Range.
+
+- By default a Thinkscript script is calculated after every tick unless you use, `declare once_per_bar`
+
+- Here is a table that compares and contrasts the three aggregation types: Time, Tick, and Range.
+
+- Every time the price moves up or down within that specific timeframe (1 min, 5 min...), it can be considered a tick. So, if the price within a 5-minute candlestick chart moves from $10.00 to $10.05, it has experienced five ticks upward within that 5-minute period.
 
 | Aggregation Type | Definition | Use Case | Granularity | Time-based | Price-based | Volume-based |
 |------------------|------------|----------|-------------|------------|-------------|--------------|
