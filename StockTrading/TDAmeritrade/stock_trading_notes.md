@@ -83,3 +83,19 @@
 | Range | Data is grouped based on a price range, with each data point representing the time it takes for the instrument to move through a specified price range. | Beneficial for traders focusing on price consolidation and breakout patterns within specific price ranges. | Granularity depends on the specified price range; wider ranges are less granular, and narrower ranges are more granular. | No | Yes | No |
 
 Each aggregation type serves different trading strategies and analysis preferences. Time-based aggregation is the most traditional and is useful for a broad range of analyses. Tick-based aggregation gives a detailed view of market dynamics and is typically used by high-frequency traders or those analyzing the market at a very fine level. Range-based aggregation is particularly used for identifying patterns that occur within certain price levels, such as support and resistance areas.
+
+Using ticks as an aggregation period instead of time can provide several advantages for traders:
+
+1. **Market Volatility Insight**: Tick charts reflect market volatility by showing price changes as they happen, offering insights into the intensity of buying or selling.
+
+2. **Non-Time-Based Analysis**: Tick charts focus on price movement, not the passage of time, which can reveal patterns during periods of rapid trading that might not be visible on time-based charts.
+
+3. **Identify Market Momentum**: Large numbers of transactions (ticks) in a short period can indicate strong buying or selling pressure, providing a visual representation of market momentum.
+
+4. **Avoid Irrelevant Information**: During slow trading periods, time-based charts can have little to no movement, while tick charts only create new bars when transactions occur, thus filtering out periods of inactivity.
+
+5. **Customization for Strategy**: Traders can customize the number of ticks to match their trading strategies for more precise entries and exits.
+
+# Common Tick numbers
+
+- Common tick chart settings are 144, 233, and 512 ticks. The number 512 is mentioned as a standard or common setting that many traders use due to its balance of detail and smoothness in representing price action. Traders might choose different settings based on the specific market they are trading, the average volume, and their own trading style. For less active markets, traders might use a smaller tick size, such as 233 ticks, whereas more active markets might warrant a larger tick size like 512​​.
