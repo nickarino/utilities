@@ -1,36 +1,101 @@
+# Why?
+
+- Have more than one stream of income.  Get ready for retirement in 2027.  Not about the pursuit of money but about having options.
+- I want to optimize my time through quant trading and also make money. 
+
 # Github repos
 
-* [largest number of stars](https://github.com/hwrdprkns/ThinkOrSwim)
-* [high stars](https://github.com/bingit2/TradingView-to-ThinkorSwim)
-* [newer](https://github.com/2187Nick/thinkscript)
-* [useThinkScript.com](https://usethinkscript.com/resources/categories/code-reference.2/)
+- [Td-Ameritrade](https://github.com/orgs/td-ameritrade/repositories)
+- [lots of stars and many forks](https://github.com/jshingler/TOS-and-Thinkscript-Snippet-Collection)
+- [4 years old](https://github.com/bingit2/TradingView-to-ThinkorSwim)
+- [Old but thorough](https://github.com/hwrdprkns/ThinkOrSwim)
+- [newer](https://github.com/2187Nick/thinkscript)
+- [useThinkScript.com](https://usethinkscript.com/resources/categories/code-reference.2/)
 
-# Options allow for leverage
+# TOS docs and dev community
 
-* One standard options contract typically controls 100 shares of the underlying asset.
+- <https://developer.tdameritrade.com/>
+- [Charles Schwab bought TDAmeritrade and has this dev center](https://beta-developer.schwab.com/)
+- [Guy who writes complex scripts](https://funwiththinkscript.com/adding-space-between-candles/)
+- [Carl not Karl](https://usethinkscript.com/members/carl-not-karl.23790/#recent-content)
 
-Of course! Options are financial derivatives that give the holder the right, but not the obligation, to buy (call option) or sell (put option) a specific underlying asset (such as a stock) at a predetermined price (strike price) within a specified period (expiration date). Options play a crucial role in financial markets and are widely used for various purposes, including hedging, speculation, and income generation. Here are some key concepts and terms related to options:
+# Trading communities
 
-1. **Call Option:** A call option gives the holder the right to buy the underlying asset at the strike price before or on the expiration date. Call options are often used when investors anticipate that the asset's price will rise.
+- <https://bullishbears.com/> [Their picks read into a dataframe](https://github.com/erickbytes/russell-2000-index?tab=readme-ov-file)
+- [Composer for AI algoritms](https://composer.trade)
 
-2. **Put Option:** A put option gives the holder the right to sell the underlying asset at the strike price before or on the expiration date. Put options are used when investors expect the asset's price to fall.
+# [Debugging and adding labels (link)](https://copyprogramming.com/howto/how-do-you-step-through-thinkscript-in-thinkorswim-platform)
 
-3. **Strike Price:** The strike price is the price at which the option holder can buy (for call options) or sell (for put options) the underlying asset. It's a crucial parameter that affects the option's value.
+- #According to @Gary, thinkScript does not come with a debugger tool. Gary recommends using chart bubbles and chart labels as alternatives. When a condition is met,
+  `bubbles will appear on a designated bar within the chart, while labels will appear on the upper left corner of the same chart.`
+- [You can have two instances of Think Or Swim Running at a time](https://toslc.thinkorswim.com/center/howToTos/thinkManual/Getting-Started/SCHW-How-to-Access-thinkorswim-When-You-Have-Accounts-at-Both-Ameritrade-and-Schwab). I think they have to share the same profile
 
-4. **Expiration Date:** The expiration date is the date when the option contract expires. After this date, the option is no longer valid, and the holder loses the right to exercise it.
+# Stock Exchanges
 
-5. **Premium:** The premium is the price paid by the option buyer to the option seller for the rights granted by the option contract. It represents the cost of holding the option and is determined by factors such as the current market price of the underlying asset, the strike price, and the time to expiration.
+- ![img](https://stockstotrade.com/wp-content/uploads/2016/10/Major-Stock-Exchanges-_2.0-01.png)
+- New York Stock Exchange (NYSE): The NYSE is the largest stock exchange in the world, with a market capitalization of over $25 trillion as of 2021. It is located in New York City and is owned by the Intercontinental Exchange (ICE). The NYSE lists both domestic and international companies, and it is home to many well-known companies such as Apple, Microsoft, and ExxonMobil.
+- NASDAQ: The NASDAQ is the second-largest stock exchange in the world, with a market capitalization of over $18 trillion as of 2021. It is based in New York City and is owned by the NASDAQ, Inc. The NASDAQ is known for its focus on technology companies, and it is home to many well-known tech companies such as Amazon, Facebook, and Google.
+- London Stock Exchange (LSE): The LSE is the largest stock exchange in Europe and the third-largest in the world, with a market capitalization of over $6 trillion as of 2021. It is based in London, England and is owned by the London Stock Exchange Group (LSEG). The LSE lists both domestic and international companies, and it is home to many well-known companies such as HSBC, Unilever, and GlaxoSmithKline.
+- Tokyo Stock Exchange (TSE): The TSE is the largest stock exchange in Asia and the fourth-largest in the world, with a market capitalization of over $5 trillion as of 2021. It is based in Tokyo, Japan and is owned by the Japan Exchange Group (JPX). The TSE lists both domestic and international companies, and it is home to many well-known companies such as Toyota, Sony, and Honda.
 
-6. **Intrinsic Value:** The intrinsic value of an option is the difference between the current market price of the underlying asset and the strike price. For call options, it's the market price minus the strike price; for put options, it's the strike price minus the market price. Intrinsic value represents the "in-the-money" portion of an option's value.
+# Futures exchanges
 
-7. **Time Value:** The time value of an option is the premium minus the intrinsic value. It reflects the additional value attributed to the option due to the time remaining until expiration, as well as factors like volatility and interest rates. Time value represents the speculative or hedging component of an option's value.
+- The Chicago Mercantile Exchange (CME) offers a variety of futures and options contracts that trade on a 24/6 basis, which means that they are available for trading 24 hours a day, six days a week. Some examples of tickers on the CME that trade 24/6 include:
+-E-mini S&P 500 futures (/ES): As I mentioned earlier, the E-mini S&P 500 futures contract is a derivative product that is based on the value of the Standard & Poor's 500 index (S&P 500). The E-mini S&P 500 futures contract is one of the most widely traded futures contracts in the world, and it is available for trading on a 24/6 basis on the CME.
+- E-mini NASDAQ-100 futures (/NQ): The E-mini NASDAQ-100 futures contract is a derivative product that is based on the value of the NASDAQ-100 index, which is a stock market index that measures the value of 100 of the largest and most actively traded non-financial stocks listed on the NASDAQ. The E-mini NASDAQ-100 futures contract is available for trading on a 24/6 basis on the CME.
+- E-mini Dow futures (/YM): The E-mini Dow futures contract is a derivative product that is based on the value of the Dow Jones Industrial Average (DJIA), which is a stock market index that measures the value of 30 large-cap stocks listed on the NYSE and NASDAQ. The E-mini Dow futures contract is available for trading on a 24/6 basis on the CME.
+- E-mini Russell 2000 futures (/TF): The E-mini Russell 2000 futures contract is a derivative product that is based on the value of the Russell 2000 index, which is a stock market index that measures the value of 2,000 small-cap stocks listed on the NYSE and NASDAQ. The E-mini Russell 2000 futures contract is available
 
-8. **American vs. European Options:** American options can be exercised by the holder at any time before or on the expiration date, while European options can only be exercised at expiration.
+# The Trade Tab
 
-9. **Option Strategies:** Traders and investors can use various option strategies, such as covered calls, protective puts, straddles, and strangles, to achieve specific goals, including income generation, risk management, and capital appreciation.
+1. **All Products**: This subtab likely allows traders to access and trade all types of products offered by the platform, including stocks, options, futures, forex, and more.
 
-10. **Implied Volatility:** Implied volatility is a measure of market expectations for future price fluctuations of the underlying asset. It plays a significant role in determining option premiums.
+2. **Forex Trader**: Dedicated to the foreign exchange (forex) market, this subtab would enable traders to engage in trading currency pairs, taking advantage of the fluctuations in currency exchange rates.
 
-11. **Option Chain:** An option chain is a table or list that displays available options for a specific underlying asset, including different strike prices and expiration dates.
+3. **Futures Trader**: This section is intended for trading futures contracts, which are standardized agreements to buy or sell a particular asset at a set price and date in the future.
 
-Options are versatile financial instruments that offer a wide range of possibilities for managing risk and profiting from market movements. However, they can be complex, and understanding their mechanics and strategies is essential before trading or investing in options.
+4. **Active Trader**: Tailored for day traders or individuals who trade frequently, this subtab would provide tools for quick trade execution and real-time market data.
+
+5. **Pairs Trader**: This subtab facilitates pairs trading, a strategy that involves taking simultaneous long and short positions in two highly correlated securities with the aim of profiting from the relative price movements.
+
+![How To Set red/green volume](./md_file_assets/SetVolume.png)
+
+![How To Set RSI](./md_file_assets/SetRSI.png)
+
+# Market Capitalization means
+
+- Market Capital = # of outstanding shares (includes all shareholders) * current share price. 
+
+- To find the total outstanding shares and valuation, go to the "analyze" tab, click "fundamentals", and then look for "Total Shares Outstanding" and, "Market Cap."
+
+# Units of Measure on a Stock Chart
+
+- By default a Thinkscript script is calculated after every tick unless you use, `declare once_per_bar`
+
+- Here is a table that compares and contrasts the three aggregation types: Time, Tick, and Range.
+
+- Every time the price moves up or down within that specific timeframe (1 min, 5 min...), it can be considered a tick. So, if the price within a 5-minute candlestick chart moves from $10.00 to $10.05, it has experienced five ticks upward within that 5-minute period.
+
+| Aggregation Type | Definition | Use Case | Granularity | Time-based | Price-based | Volume-based |
+|------------------|------------|----------|-------------|------------|-------------|--------------|
+| Time | Data is grouped based on a specific time interval, such as 1 minute, 5 minutes, 1 day, etc. | Useful for analyzing patterns over time and identifying trends based on standard time intervals. | Fixed intervals, less granular with longer time frames, more granular with shorter time frames. | Yes | No | No |
+| Tick | Data is grouped based on a certain number of transactions or "ticks". | Helpful for traders interested in the details of market microstructure and price action at a granular level. | Very granular, each tick represents one transaction regardless of time. | No | No | Yes |
+| Range | Data is grouped based on a price range, with each data point representing the time it takes for the instrument to move through a specified price range. | Beneficial for traders focusing on price consolidation and breakout patterns within specific price ranges. | Granularity depends on the specified price range; wider ranges are less granular, and narrower ranges are more granular. | No | Yes | No |
+
+Each aggregation type serves different trading strategies and analysis preferences. Time-based aggregation is the most traditional and is useful for a broad range of analyses. Tick-based aggregation gives a detailed view of market dynamics and is typically used by high-frequency traders or those analyzing the market at a very fine level. Range-based aggregation is particularly used for identifying patterns that occur within certain price levels, such as support and resistance areas.
+
+Using ticks as an aggregation period instead of time can provide several advantages for traders:
+
+1. **Market Volatility Insight**: Tick charts reflect market volatility by showing price changes as they happen, offering insights into the intensity of buying or selling.
+
+2. **Non-Time-Based Analysis**: Tick charts focus on price movement, not the passage of time, which can reveal patterns during periods of rapid trading that might not be visible on time-based charts.
+
+3. **Identify Market Momentum**: Large numbers of transactions (ticks) in a short period can indicate strong buying or selling pressure, providing a visual representation of market momentum.
+
+4. **Avoid Irrelevant Information**: During slow trading periods, time-based charts can have little to no movement, while tick charts only create new bars when transactions occur, thus filtering out periods of inactivity.
+
+5. **Customization for Strategy**: Traders can customize the number of ticks to match their trading strategies for more precise entries and exits.
+
+# Common Tick numbers
+
+- Common tick chart settings are 144, 233, and 512 ticks. The number 512 is mentioned as a standard or common setting that many traders use due to its balance of detail and smoothness in representing price action. Traders might choose different settings based on the specific market they are trading, the average volume, and their own trading style. For less active markets, traders might use a smaller tick size, such as 233 ticks, whereas more active markets might warrant a larger tick size like 512​​.
