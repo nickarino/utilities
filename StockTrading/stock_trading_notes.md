@@ -1,7 +1,100 @@
 # Why?
 
-- Have more than one stream of income.  Get ready for retirement in 2027.  Not about the pursuit of money but about having options.
-- I want to optimize my time through quant trading and also make money. 
+- Have more than one stream of income. Get ready for retirement in 2027. Not about the pursuit of money but about having options.
+- I want to optimize my time through quant trading and also make money. Time, Health, and doing what God wants.  
+
+# Manage Expectations
+
+- It is probably going [to take 3 years](https://youtu.be/cbm-X8RfK5Y?t=303) to make money doing it full time. People who come into trading just to make money fast and impatiently usually don't make it.
+
+- Every trader needs to find their way of trading. Plan your trade and work your plan.  Be wrong fast and on a small bet. 
+
+# Important Definitions
+
+- **Stock Market** The stock market isn't like a store where everyone pays the same set price. It's actually a giant
+  live auction unfolding at warp speed. So the current stock quote a second ago may not be the same as now. The quote isn't the stock's current price it's just the last price at which it was traded. Use the bid and ask prices for a better idea of a stock's going rate. Knowing that you have buyers (non-owners) and sellers (owners) of the stock. Fundamentally, everyone wants to make money when they enter a transaction. So the ask>= market price>=bid. The closer they are together the more efficient the market.
+
+  - **float** - number of shares available for trading on the open market. Low float stocks can be subject to higher volatility due to their limited supply. When there's a high demand for a stock with a low float, the price can move up rapidly because there are not enough shares available to meet the demand. Link to [find low float with finviz](https://thinkscript101.com/low-float-stock-scanner-thinkorswim/)
+
+  - **bid price** (if they could buy it) is the maximum amount that buyers in the market are willing to pay.
+
+    - **Buying the Bid**--placing an order at the bid price--means you are willing to pay up to that price. When you buy at the bid price, you are hoping that a seller will eventually agree to sell you the security at that price or lower. Buying at the bid price can be a good strategy if you are willing to wait for a better price. However, it is important to remember that you may not always get your order filled at the bid price, especially in volatile markets.
+
+  - **ask price** (if they had it and could sell it) is the minimum amount that sellers in the market are willing to accept
+    - **selling the ask**-- If you place a sell order at 15.05 for a stock with a bid price of 15 and an ask price of $15.10, you will be selling at the ask price. Here's why:
+      - Order book mechanics: The order book matches buy and sell orders based on price and time priority. Orders at the best price (highest bids and lowest asks) get filled first.
+      - Your ask price vs. market prices: Your ask price of 15.05 is lower than the current ask price of 15.10, but it's higher than the best bid price of $15.
+      - Filling at the best available price: Since your ask price is better than the available bids but worse than the available asks, you will be matched with the best available ask, which in this case is the current ask price of $15.10. Therefore, even though your intention was to sell slightly below the ask price, the market will always prioritize filling orders at the best available price to ensure efficient execution.
+  - **"market order"** to buy a stock, the order is typically executed at the ask price. A market order is an instruction to buy or sell a security immediately at the best available current price, which for a buy order is the lowest price sellers are currently willing to accept (the ask price).
+
+**Spread** is the difference beteen the above. (**a consistently wide bid-ask spread can be a sign of several factors, including low trading volume, low liquidity, high volatility, or news or events**)
+
+**Buy Market:** This button sends an immediate buy order at the current market price. It's the fastest way to buy a security but doesn't guarantee the exact price you'll get.
+
+**Sell Market:** This button sends an immediate sell order at the current market price, similar to Buy Market but for selling.
+
+**Buy Ask:** This button sends a buy order at the current ask price, which is the lowest price sellers are willing to accept. Unlike market orders, it guarantees the ask price but might take slightly longer to fill if the market price moves quickly.
+
+**Cancel...:** This opens a menu where you can cancel specific pending orders or open positions.
+
+**Buy Bid:** This button sends a buy order at the current bid price, which is the highest price buyers are willing to pay. Similar to Buy Ask, it guarantees the bid price but might take longer to fill.
+
+**Reverse:** This button flips the current order (buy to sell or sell to buy) while keeping the same price. Essentially, it lets you quickly change your mind without having to enter a new order.
+
+**Flatten:** This closes all open positions for the selected security, regardless of whether they are long (buy) or short (sell). Use this to exit all your holdings in a particular security.
+
+**Cancel All:** This cancels all pending orders for the selected security, without affecting any existing open positions.
+
+Remember, using these buttons effectively requires understanding market dynamics and your trading strategy. Don't hesitate to practice on a demo account or consult resources from Thinkorswim before using them with real money.
+
+## protecting your trades
+START at these links
+https://youtu.be/un-K-cUeang?t=1125
+- [Link to limit vs stop](https://tokenist.com/investing/what-is-a-limit-order-in-stocks/)
+- [Link to TD Ameritrade explanation](https://www.youtube.com/watch?v=_EEvTGA-K6Q) 
+- **Key Differences:** [See bard ai link](https://g.co/bard/share/20f394040c5a)
+
+| Feature     | Stop Order (protect) | Limit Order (Take profits)                        |
+| ----------- | ------------------------------------- | ---------------------------------- |
+| Trigger     | Price reaches stop price              | Price reaches limit price          |
+| Execution   | Guarantees execution, not price       | Guarantees price, not execution    |
+| Order type  | Becomes a market order when triggered | Remains a limit order until filled |
+| Primary use | Protection or breakout entry          | Price control                      |
+
+**Choosing the Right Order:**
+
+- **Stop orders** are primarily for risk management and position entry based on price triggers.
+- **Limit orders** are for controlling the price you pay or receive, but they might not guarantee execution if the market doesn't meet your price.
+
+# Contributors to price action
+
+You're right, volume, news, and trend are definitely three important indicators that influence stock price action, but it's worth considering the nuances of each and some additional factors that can contribute:
+
+**Volume:**
+
+- **High volume:** Often reflects increased buying or selling pressure, indicating potential momentum in the price movement.
+- **Low volume:** Can suggest a lack of conviction among investors, leading to potentially choppy or sideways price action.
+- **Spike in volume:** May accompany sudden news or events, signaling a possible trend change.
+
+**News:**
+
+- **Positive news:** Can trigger buying interest, pushing the price up. Examples include strong earnings reports, product launches, or favorable regulatory changes.
+- **Negative news:** Can prompt investors to sell, leading to a price decline. Examples include missed earnings targets, product recalls, or legal troubles.
+- **Market sentiment:** Broader market conditions and investor confidence can also be influenced by news events, impacting individual stock prices.
+
+**Trend:**
+
+- **Upward trend:** Suggests sustained buying pressure, with higher highs and higher lows over time.
+- **Downward trend:** Indicates selling pressure, with lower lows and lower highs over time.
+- **Range-bound trend:** Price fluctuates within a defined range, lacking momentum in either direction.
+
+**Additional factors:**
+
+- **Interest rates:** Changes in interest rates can affect the attractiveness of stocks relative to other investments, impacting demand and price.
+- **Economic data:** Economic indicators like GDP growth, unemployment rate, and inflation can influence investor sentiment and stock prices.
+- **Geopolitical events:** Wars, political instability, and international trade disputes can create uncertainty and lead to market volatility.
+
+Remember, stock price action is complex and rarely driven by a single factor. Analyzing all these indicators together and understanding their interdependencies can help you form a more informed perspective on potential market movements.
 
 # Github repos
 
@@ -41,7 +134,7 @@
 # Futures exchanges
 
 - The Chicago Mercantile Exchange (CME) offers a variety of futures and options contracts that trade on a 24/6 basis, which means that they are available for trading 24 hours a day, six days a week. Some examples of tickers on the CME that trade 24/6 include:
--E-mini S&P 500 futures (/ES): As I mentioned earlier, the E-mini S&P 500 futures contract is a derivative product that is based on the value of the Standard & Poor's 500 index (S&P 500). The E-mini S&P 500 futures contract is one of the most widely traded futures contracts in the world, and it is available for trading on a 24/6 basis on the CME.
+  -E-mini S&P 500 futures (/ES): As I mentioned earlier, the E-mini S&P 500 futures contract is a derivative product that is based on the value of the Standard & Poor's 500 index (S&P 500). The E-mini S&P 500 futures contract is one of the most widely traded futures contracts in the world, and it is available for trading on a 24/6 basis on the CME.
 - E-mini NASDAQ-100 futures (/NQ): The E-mini NASDAQ-100 futures contract is a derivative product that is based on the value of the NASDAQ-100 index, which is a stock market index that measures the value of 100 of the largest and most actively traded non-financial stocks listed on the NASDAQ. The E-mini NASDAQ-100 futures contract is available for trading on a 24/6 basis on the CME.
 - E-mini Dow futures (/YM): The E-mini Dow futures contract is a derivative product that is based on the value of the Dow Jones Industrial Average (DJIA), which is a stock market index that measures the value of 30 large-cap stocks listed on the NYSE and NASDAQ. The E-mini Dow futures contract is available for trading on a 24/6 basis on the CME.
 - E-mini Russell 2000 futures (/TF): The E-mini Russell 2000 futures contract is a derivative product that is based on the value of the Russell 2000 index, which is a stock market index that measures the value of 2,000 small-cap stocks listed on the NYSE and NASDAQ. The E-mini Russell 2000 futures contract is available
@@ -64,7 +157,7 @@
 
 # Market Capitalization means
 
-- Market Capital = # of outstanding shares (includes all shareholders) * current share price. 
+- Market Capital = # of outstanding shares (includes all shareholders) \* current share price.
 
 - To find the total outstanding shares and valuation, go to the "analyze" tab, click "fundamentals", and then look for "Total Shares Outstanding" and, "Market Cap."
 
@@ -76,11 +169,11 @@
 
 - Every time the price moves up or down within that specific timeframe (1 min, 5 min...), it can be considered a tick. So, if the price within a 5-minute candlestick chart moves from $10.00 to $10.05, it has experienced five ticks upward within that 5-minute period.
 
-| Aggregation Type | Definition | Use Case | Granularity | Time-based | Price-based | Volume-based |
-|------------------|------------|----------|-------------|------------|-------------|--------------|
-| Time | Data is grouped based on a specific time interval, such as 1 minute, 5 minutes, 1 day, etc. | Useful for analyzing patterns over time and identifying trends based on standard time intervals. | Fixed intervals, less granular with longer time frames, more granular with shorter time frames. | Yes | No | No |
-| Tick | Data is grouped based on a certain number of transactions or "ticks". | Helpful for traders interested in the details of market microstructure and price action at a granular level. | Very granular, each tick represents one transaction regardless of time. | No | No | Yes |
-| Range | Data is grouped based on a price range, with each data point representing the time it takes for the instrument to move through a specified price range. | Beneficial for traders focusing on price consolidation and breakout patterns within specific price ranges. | Granularity depends on the specified price range; wider ranges are less granular, and narrower ranges are more granular. | No | Yes | No |
+| Aggregation Type | Definition                                                                                                                                              | Use Case                                                                                                     | Granularity                                                                                                              | Time-based | Price-based | Volume-based |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ---------- | ----------- | ------------ |
+| Time             | Data is grouped based on a specific time interval, such as 1 minute, 5 minutes, 1 day, etc.                                                             | Useful for analyzing patterns over time and identifying trends based on standard time intervals.             | Fixed intervals, less granular with longer time frames, more granular with shorter time frames.                          | Yes        | No          | No           |
+| Tick             | Data is grouped based on a certain number of transactions or "ticks".                                                                                   | Helpful for traders interested in the details of market microstructure and price action at a granular level. | Very granular, each tick represents one transaction regardless of time.                                                  | No         | No          | Yes          |
+| Range            | Data is grouped based on a price range, with each data point representing the time it takes for the instrument to move through a specified price range. | Beneficial for traders focusing on price consolidation and breakout patterns within specific price ranges.   | Granularity depends on the specified price range; wider ranges are less granular, and narrower ranges are more granular. | No         | Yes         | No           |
 
 Each aggregation type serves different trading strategies and analysis preferences. Time-based aggregation is the most traditional and is useful for a broad range of analyses. Tick-based aggregation gives a detailed view of market dynamics and is typically used by high-frequency traders or those analyzing the market at a very fine level. Range-based aggregation is particularly used for identifying patterns that occur within certain price levels, such as support and resistance areas.
 
