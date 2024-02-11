@@ -1,10 +1,13 @@
-#TODO pick up on understanding the trade tab so you can get back to doing the scalping strategy. 
 
 # BLUF
 
+* Since options just allow more leverage, then we first trade just the stock. 
 * Delta a delta of 50% means ( that the option will move 50% of whatever the underlying stock moved).
 * As a general rule of thumb, I would go with an option that is at-the-money or one in-the-money.
+* You are looking for more volatility while having plenty of volume.  
 * Volume and open interest. The volume (number of options traded) and open interest (the number of held contracts) should be very high, in at least the thousands. This means that there are a lot of people who are participating in the trading of these options, meaning we increase our likelihood of our order being filled quickly.
+* The first and last hour of the day are usually the most volatile but also it can vary per stock.
+* Time Interval - I have found that a 2-minute chart works best for this strategy as it provides a good balance of high-fidelity, short-term information while smoothing out the variance of micro-fluctuations in the stock that are not indicative of a larger trend.
 
 * [Started with this article on Scalping](https://medium.com/@nicknikravesh/a-foolproof-strategy-to-make-money-day-trading-no-really-7896e365fd40)
   * [He does have a repo on technical analysis but it is 3 years old](https://github.com/nikolas-nikravesh/technical-analysis-tool)
@@ -38,7 +41,7 @@
 * 5-8-13 SMA: These Fibonacci sequence numbers are used for SMAs. When these lines agree in their direction, it indicates strong momentum.
 * Trading Advice: The strategy emphasizes quick entry and exit from trades, suggesting buying at the ask price and selling at the bid price. It also advises on setting stop-loss orders to manage risk.
 * Volume of Trades: To increase profits, it suggests increasing the number of contracts rather than the risk level.
-*. Judgment and Fees: The strategy should support, not replace, your judgment. It also reminds traders to account for trading fees and taxes on capital gains.
+* Judgment and Fees: The strategy should support, not replace, your judgment. It also reminds traders to account for trading fees and taxes on capital gains.
 To replicate this strategy in ThinkOrSwim, you would need to:
 * Set up 2-minute interval candlestick charts.
 * Apply the 5-8-13 SMAs and MACD indicators to the charts.

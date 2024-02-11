@@ -1,20 +1,29 @@
 # Why?
 
 - Have more than one stream of income. Get ready for retirement in 2027. Not about the pursuit of money but about having options.
-- I want to optimize my time through quant trading and also make money. Time, Health, and doing what God wants.  
+- I want to optimize my time through quant trading and also make money. Time, Health, and doing what God wants.
 
 # Manage Expectations
 
 - It is probably going [to take 3 years](https://youtu.be/cbm-X8RfK5Y?t=303) to make money doing it full time. People who come into trading just to make money fast and impatiently usually don't make it.
 
-- Every trader needs to find their way of trading. Plan your trade and work your plan.  Be wrong fast and on a small bet. 
+- Every trader needs to find their way of trading. Plan your trade and work your plan. Be wrong fast and on a small bet.
 
 # Important Definitions
+
+- One way to think about this in the sea of supply and demand is the degrees of freedom one has in each dimension.  You start with multiple stock markets and pick a stock market that sells stocks--which are a portion of the company.  Stock/shares can be preferred (internal with time constraints) or public. Total shares * price per share is tthe Market Cap or value of the business.  If the stock is traded then it has price-movement, the volume that is traded, volatility of the price, and a bid-ask spread.  If those are healthy then you get an efficient market where traders can trade and make strategies about those dimensions using just that stocks, multiple stocks, or stocks across multiple stock markets.  
 
 - **Stock Market** The stock market isn't like a store where everyone pays the same set price. It's actually a giant
   live auction unfolding at warp speed. So the current stock quote a second ago may not be the same as now. The quote isn't the stock's current price it's just the last price at which it was traded. Use the bid and ask prices for a better idea of a stock's going rate. Knowing that you have buyers (non-owners) and sellers (owners) of the stock. Fundamentally, everyone wants to make money when they enter a transaction. So the ask>= market price>=bid. The closer they are together the more efficient the market.
 
   - **float** - number of shares available for trading on the open market. Low float stocks can be subject to higher volatility due to their limited supply. When there's a high demand for a stock with a low float, the price can move up rapidly because there are not enough shares available to meet the demand. Link to [find low float with finviz](https://thinkscript101.com/low-float-stock-scanner-thinkorswim/)
+    - Percentage = Classification  
+    - Below 10%  = Very Low Float
+    - 10% - 20%  = Low Float
+    - 20% - 50%  = Moderate Float
+    - Above 50%  = High Float
+
+
 
   - **bid price** (if they could buy it) is the maximum amount that buyers in the market are willing to pay.
 
@@ -47,14 +56,27 @@
 
 Remember, using these buttons effectively requires understanding market dynamics and your trading strategy. Don't hesitate to practice on a demo account or consult resources from Thinkorswim before using them with real money.
 
+**Volatility** The ["Intraday Volatility Study,"](https://www.sec.gov/divisions/marketreg/mr-rule-tabs/intraday-volatility-study-final-report) from 2015 and examined intraday volatility in the U.S. equity markets from January 2010 to June 2014. The study found that
+
+- the first hour of trading was the most volatile period of the trading day, with an average STDEV of 0.87%, compared to an average STDEV of 0.75% for the entire trading day.
+- volatility was elevated during the last hour of trading, with an average STDEV of 0.82%, and during specific market events, such as earnings announcements or economic data releases.
+- However, this does not predict the future.
+
+- Volatility usually brings more volume because it brings more opportunity, unless the volume is so high traders back off. Increased volume usually reduces the bid-ask spread
+
+**Time Interval** - VERY important!  Which interval (ticks, 2 min, 5 min,..) provides a good balance of high-fidelity, short-term information while smoothing out the variance of micro-fluctuations in the stock that are not indicative of a larger trend.
+
 ## protecting your trades
-START at these links
+
 https://youtu.be/un-K-cUeang?t=1125
+
 - [Link to limit vs stop](https://tokenist.com/investing/what-is-a-limit-order-in-stocks/)
-- [Link to TD Ameritrade explanation](https://www.youtube.com/watch?v=_EEvTGA-K6Q) 
+  - During extended trading hours (outside of 9:30-4:30), you can only use limit orders with with TIF(Time in Force)=EXT
+  - Template types - allow you to add your stop losses and OCO (on cancel order)
+- [Link to TD Ameritrade explanation](https://www.youtube.com/watch?v=_EEvTGA-K6Q)
 - **Key Differences:** [See bard ai link](https://g.co/bard/share/20f394040c5a)
 
-| Feature     | Stop Order (protect) | Limit Order (Take profits)                        |
+| Feature     | Stop Order (protect)                  | Limit Order (Take profits)         |
 | ----------- | ------------------------------------- | ---------------------------------- |
 | Trigger     | Price reaches stop price              | Price reaches limit price          |
 | Execution   | Guarantees execution, not price       | Guarantees price, not execution    |
@@ -75,6 +97,14 @@ You're right, volume, news, and trend are definitely three important indicators 
 - **High volume:** Often reflects increased buying or selling pressure, indicating potential momentum in the price movement.
 - **Low volume:** Can suggest a lack of conviction among investors, leading to potentially choppy or sideways price action.
 - **Spike in volume:** May accompany sudden news or events, signaling a possible trend change.
+
+**Liquidity:** Metrics used to assess stock liquidity on platforms :
+
+- **Volume**: Indicates the average number of shares traded daily. Higher volumes suggest more liquidity. - **> 1 million shares/day**
+- **Float**: The number of shares available for public trading. A larger float typically means more liquidity. **see Above (30-50%)**
+- **Bid-Ask Spread**: The difference between the highest price a buyer is willing to pay (bid) and the lowest price a seller is willing to accept (ask). A narrower spread signifies higher liquidity. **A few cents**
+
+These metrics help investors understand how easily they can buy or sell a stock without causing a significant price change.
 
 **News:**
 
@@ -192,3 +222,9 @@ Using ticks as an aggregation period instead of time can provide several advanta
 # Common Tick numbers
 
 - Common tick chart settings are 144, 233, and 512 ticks. The number 512 is mentioned as a standard or common setting that many traders use due to its balance of detail and smoothness in representing price action. Traders might choose different settings based on the specific market they are trading, the average volume, and their own trading style. For less active markets, traders might use a smaller tick size, such as 233 ticks, whereas more active markets might warrant a larger tick size like 512​​.
+
+# Scanners
+
+- You can create your own scanners. (You can ONLY add a study filter in Actual trading).
+  - Trey sorts by volume.
+- use the link color to link the scanners
