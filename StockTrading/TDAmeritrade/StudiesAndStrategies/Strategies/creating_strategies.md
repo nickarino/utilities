@@ -46,3 +46,4 @@ It's important to note that while these order types can be specified in ThinkScr
 # Add FloatingPL shows if strategy is up or down
 
 * You can add the FloatingPL to your lower list of strategies OR you can make a [setup script](./StudiesAndStrategies/Setup/FloatingPL_setup.thinkscript)
+

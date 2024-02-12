@@ -23,8 +23,6 @@
     - 20% - 50%  = Moderate Float
     - Above 50%  = High Float
 
-
-
   - **bid price** (if they could buy it) is the maximum amount that buyers in the market are willing to pay.
 
     - **Buying the Bid**--placing an order at the bid price--means you are willing to pay up to that price. When you buy at the bid price, you are hoping that a seller will eventually agree to sell you the security at that price or lower. Buying at the bid price can be a good strategy if you are willing to wait for a better price. However, it is important to remember that you may not always get your order filled at the bid price, especially in volatile markets.
@@ -222,6 +220,17 @@ Using ticks as an aggregation period instead of time can provide several advanta
 # Common Tick numbers
 
 - Common tick chart settings are 144, 233, and 512 ticks. The number 512 is mentioned as a standard or common setting that many traders use due to its balance of detail and smoothness in representing price action. Traders might choose different settings based on the specific market they are trading, the average volume, and their own trading style. For less active markets, traders might use a smaller tick size, such as 233 ticks, whereas more active markets might warrant a larger tick size like 512​​.
+
+# Choosing between Tick and Time-based
+![Tick vs time same chart](../StockTrading/TDAmeritrade/md_file_assets/tick_vs_time.png)
+
+- Choosing between a tick chart and a time-based chart like the two-minute chart depends on your trading style and what information you find most valuable for making decisions.
+
+The tick chart, with all volume data consolidated into individual trades, can be especially useful for short-term or day traders who are looking for detailed information on market momentum and liquidity. It allows you to see the exact volume of shares traded with each transaction, which can indicate the strength of a price movement. If a large volume is traded within a few ticks, it might suggest a stronger move than if that same volume were spread out over many ticks.
+
+The two-minute chart, on the other hand, provides a more smoothed out view of the market. It shows you the average activity over a set period, which can be easier to analyze for trends without getting caught up in the noise of every single trade. It's particularly useful if you're less concerned with the micro-movements of the market and are focusing on a slightly longer time frame within the day.
+
+So, if you're looking for granular details and immediate execution, the tick chart might be more appropriate. If you're interested in the pace and sustained trends of trading activity over minutes, the two-minute chart could be more beneficial. It's all about the level of detail you need and the speed at which you're making trading decisions. Does that help clarify why you might choose one chart over the other?
 
 # Scanners
 

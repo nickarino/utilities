@@ -13,3 +13,7 @@ The Simple Moving Average (SMA) is a technical analysis indicator that helps smo
 In the chart you've shared, the SMA line is likely the smooth, continuous line that tracks along with the price data. Depending on the time frame of the chart and the period of the SMA, it gives you a visual representation of the average closing price of the stock over the last 5 periods (since the code snippet you provided earlier was for an SMA with a period of 5).
 
 The actual application and interpretation of the SMA can vary based on the strategy and time frame that a trader is looking at. For short-term traders, a 5-period SMA might be very significant, whereas longer-term investors might look at a 50-period or 200-period SMA for a broader view of the market trend.
+
+## Multiple SMAs together
+
+- 5–8–13 (Fibonacci) or 3–6–9 (Tesla) Simple Moving Average (SMA). The idea is that you superimpose the 5, 8, and 13-bar SMA lines on top of the stock you are trading. When all three of these lines are in agreement, it indicates that the stock has momentum in that direction. Conversely, a disagreement indicates that the momentum is not strong or is shifting.
