@@ -2,7 +2,7 @@ import unittest
 
 def moving_average(data, window_size):
     """
-    Calculate the moving average for a given data set and window size.
+    Calculate the moving average for a given data set and window size.  The sma can be thought of as the center of mass for a line where all the points lie. 
     
     Parameters:
         data (list): List of numerical data points.
@@ -27,3 +27,5 @@ class TestMovingAverage(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+# What does it mean if the averages cross? 

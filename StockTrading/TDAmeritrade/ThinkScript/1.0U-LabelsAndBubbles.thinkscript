@@ -13,7 +13,7 @@
 
 
 # https://tlc.thinkorswim.com/center/reference/thinkScript/Functions/Look---Feel/AddLabel
-AddLabel(1, "This is a label that shows up at the top left of a chart. There are no multi-line labels", color.white);
+AddLabel(1, "This is a label that shows up at the top left of a chart. There are no multi-line labels. But there are multiline bubbles", color.white);
 
 # https://tlc.thinkorswim.com/center/reference/thinkScript/Functions/Look---Feel/AddChartBubble
 # uncomment to see a bubble on every bar
@@ -27,3 +27,17 @@ AddChartBubble(BarNumber() % 10 == 0, high, "bubble at " + high, Color.WHITE);
 
 #Hint
 #adding #Hint to the script will allow the text of the hint to show up in the study area. 
+
+# Adding Labels does not work in functions
+
+script addALabel {
+    AddLabel(1, "my label", Color.GREEN);
+    plot bogusReturn = 1;
+}
+def c = addALabel(); # will NOT make a label because it only existed for the time of the call. 
+
+# AddLabel has a void return type and cannot be used this way
+script addALabel2 {
+    plot bogusReturn = AddLabel(1, "my label", Color.GREEN);
+}
+def c = addALabel2();

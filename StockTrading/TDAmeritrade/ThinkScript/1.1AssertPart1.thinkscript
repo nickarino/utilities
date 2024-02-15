@@ -3,4 +3,4 @@
 # If uncommented, this would stop this script
 # Comment out to show the Label
 Assert(no,"stop the script here and the below Label will not come up  but this error will come up in the exclamation mark in the top left of the graph. ");
-AddLabel(yes, "This is a label", Color.CYAN);
+AddLabel(yes, "This is a label that will not stop the script", Color.CYAN);

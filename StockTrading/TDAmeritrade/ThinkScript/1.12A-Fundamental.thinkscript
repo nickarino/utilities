@@ -1,0 +1,12 @@
+# Allows you to bring in other securities to the current script
+# https://tlc.thinkorswim.com/center/reference/thinkScript/Functions/Others/Fundamental
+declare lower;
+
+input price = FundamentalType.CLOSE;
+input relationWithSecurity = "SPX";
+
+def price1 = Fundamental(price);
+def price2 = Fundamental(price, relationWithSecurity);
+
+plot Relation = if price2 == 0 then Double.NaN else price1 / price2;
+Relation.SetDefaultColor(GetColor(1));

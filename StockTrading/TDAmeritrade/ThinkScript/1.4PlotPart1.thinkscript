@@ -1,7 +1,7 @@
 
 
 #In this example, the plot `PriceLine` will only display for bars where the closing price is greater than the opening price. For all other bars, `PriceLine` will not appear on the chart because it is set to `Double.NaN`.
-
+plot PriceLine = close;
 
 # Apply this to the top graph
 HidePricePlot(yes);
