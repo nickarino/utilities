@@ -9,6 +9,10 @@
 
 - Every trader needs to find their way of trading. Plan your trade and work your plan. Be wrong fast and on a small bet.
 
+# Meta Stock Ideas
+
+- If you have the same conditions for a similar event then can you get 80% chance for the same result? 
+
 # Important Definitions
 
 - One way to think about this in the sea of supply and demand is the degrees of freedom one has in each dimension.  You start with multiple stock markets and pick a stock market that sells stocks--which are a portion of the company.  Stock/shares can be preferred (internal with time constraints) or public. Total shares * price per share is tthe Market Cap or value of the business.  If the stock is traded then it has price-movement, the volume that is traded, volatility of the price, and a bid-ask spread.  If those are healthy then you get an efficient market where traders can trade and make strategies about those dimensions using just that stocks, multiple stocks, or stocks across multiple stock markets.  
@@ -237,3 +241,7 @@ So, if you're looking for granular details and immediate execution, the tick cha
 - You can create your own scanners. (You can ONLY add a study filter in Actual trading).
   - Trey sorts by volume.
 - use the link color to link the scanners
+
+# Stock Apis
+
+- https://medium.com/coinmonks/free-stock-apis-de8f13619911

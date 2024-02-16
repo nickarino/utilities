@@ -28,6 +28,10 @@ AddChartBubble(BarNumber() % 10 == 0, high, "bubble at " + high, Color.WHITE);
 #Hint
 #adding #Hint to the script will allow the text of the hint to show up in the study area. 
 
+#https://thinkscript101.com/thinkscript-add-label/
+	
+AddLabel(yes, if close > open then "Gren Bar" else "Red Bar");
+
 # Adding Labels does not work in functions
 
 script addALabel {
@@ -41,3 +45,4 @@ script addALabel2 {
     plot bogusReturn = AddLabel(1, "my label", Color.GREEN);
 }
 def c = addALabel2();
+
