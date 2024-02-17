@@ -1,0 +1,55 @@
+
+
+# prove the average = MovingAverage when averageType = AverageType.SIMPLE;
+def price = close;
+input length =5; 
+def SMA5a = Average(price, length);
+
+def averageType = AverageType.SIMPLE;
+def SMA5ma = MovingAverage(averageType, price , length);
+
+# Must have all the logic in logic clause and not try to have it in a 
+AddLabel(SMA5ma is not equal to SMA5a, "moving average with AverageType.SIMPLE is NOT equal to simple moving average", color.white);
+AddLabel(SMA5ma is equal to SMA5a, "moving average with AverageType.SIMPLE IS equal to simple moving average", color.white);
+
+# AddLabel(
+#     yes, 
+#     Concat(
+#         " Type of Moving Average:  ", 
+#         Concat(
+#             (
+#                 if AverageType == AverageType.WILDERS then "Wilders" 
+#                 else if AverageType == AverageType.SIMPLE then "Simple"  
+#                 else if AverageType == AverageType.HULL then "Hull"  
+#                 else if AverageType == AverageType.EXPONENTIAL then "Exponential" 
+#                 else "Weighted"
+#             ), 
+#             Concat(
+#                 "    # of Periods: ", 
+#                 Concat(
+#                     length, 
+#                     Concat(
+#                         "    ATR: ", 
+#                         Concat(
+#                             AvgTrueRange, 
+#                             Concat(
+#                                 "    10% ATR: ", 
+#                                 Concat(
+#                                     AvgTrueRange10, 
+#                                     Concat(
+#                                         "    2% ATR: ", 
+#                                         AvgTrueRange2
+#                                     )
+#                                 )
+#                             )
+#                         )
+#                     )
+#                 )
+#             )
+#         )
+#     ), 
+#     Color.WHITE
+# );
+
+
+ 

@@ -1,0 +1,21 @@
+# NOT Allowed to do this
+# Declare variable and set it to different strings based on the condition
+def variable;
+if yes {
+    variable = "Close is greater than Open";
+} else {
+    variable = "Close is less than or equal to Open";
+}
+
+# But this is allowed
+def variable;
+
+if yes {
+    variable = 1;
+} else {
+    variable = 2;
+}
+
+#https://thinkscript101.com/thinkscript-add-label/
+# All logic needs to be inside the label.     
+AddLabel(yes, if SMA5a == SMA5ma then "Gren Bar" else "Red Bar", if SMA5a == SMA5ma then color.green else color.red);

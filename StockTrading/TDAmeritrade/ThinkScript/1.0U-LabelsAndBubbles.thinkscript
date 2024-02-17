@@ -46,3 +46,11 @@ script addALabel2 {
 }
 def c = addALabel2();
 
+# Determine the bar number to show ChartBubble
+#def barNumber = BarNumber();
+#def showBubble = barNumber % 10 == 0 or barNumber % 11 == #0 or barNumber % 12 == 0;
+
+# Plot the ChartBubbles
+#AddChartBubble(showBubble, SMA5, "MA5: " + SMA5, Color.RED, yes);
+#AddChartBubble(showBubble, SMA8, "MA8: " + SMA8, Color.MAGENTA, yes);
+#AddChartBubble(showBubble, SMA13, "MA13: " + SMA13, Color.YELLOW, yes);
