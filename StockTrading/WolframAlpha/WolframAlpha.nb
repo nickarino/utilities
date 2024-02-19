@@ -1,0 +1,28 @@
+(* Simulate Brownian motion *)
+(* Can the tick be time? *)
+brownianMotion = RandomFunction[WienerProcess[], {0, 100, 0.1}];
+ListLinePlot[brownianMotion]
+
+(*This function is close*)
+MovingAverageBrownianMotion[n_Integer, delta_:1] := Module[{brownianMotion, movingAvg},
+  (* Generate Brownian motion *)
+  brownianMotion = Accumulate[Prepend[RandomVariate[NormalDistribution[0, Sqrt[delta]], n - 1], 0]];
+  
+  (* Calculate 5-step moving average *)
+  movingAvg = MovingAverage[brownianMotion, 5];
+  
+  (* Return both Brownian motion and its moving average *)
+  {brownianMotion, movingAvg}
+]
+
+(* Assume data = MovingAverageBrownianMotion[1000]; *)
+
+(* Extract Brownian motion and Moving Average *)
+brownianMotion = data[[1]];
+movingAvg = data[[2]];
+
+(* Plot Brownian Motion *)
+ListLinePlot[brownianMotion, PlotLabel -> "Brownian Motion"]
+
+(* Plot Moving Average *)
+ListLinePlot[movingAvg, PlotLabel -> "Moving Average"]
