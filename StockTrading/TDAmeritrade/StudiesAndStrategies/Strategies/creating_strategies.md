@@ -31,7 +31,7 @@ It's important to note that while these order types can be specified in ThinkScr
 
 * **Global Settings** This is where you set the number of trades that can happen while your buy condition is true and the number of contracts for that order, unless you override it in the ```AddOrder``` function.
 
-![Global Settings](./md_file_assets/GlobalSettings.png)
+![Global Settings](../../md_file_assets/GlobalSettings.png)
 
 # When does ```AddOrder``` get triggered?
 

@@ -12,6 +12,7 @@
 # Meta Stock Ideas
 
 - If you have the same conditions for a similar event then can you get 80% chance for the same result? 
+- What are the three reasons stock prices move 1. Longs are selling, 2. Longs are buying, or 3. Shorts entering or covering
 
 # Important Definitions
 
