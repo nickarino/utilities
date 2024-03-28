@@ -17,3 +17,11 @@ Close() > MovAvgExponential(Length = 200)
 * Heavy Volume
 
 Volume() > (Average(Volume,14)[1] * 2)
+
+ATR Stop
+
+low < (close[1] – ATR()[1])
+
+ATR Profit
+
+high > (close[1] + ATR()[1] * 2)    
