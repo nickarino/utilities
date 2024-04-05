@@ -1,0 +1,15 @@
+#HidePricePlot(yes);
+HidePricePlot(no);
+#Assert( yes, "Initial Price Plot was hidden");
+def price = close;
+input length =5; 
+def SMA5a = Average(price, length);
+
+def averageType = AverageType.SIMPLE;
+def SMA5ma = MovingAverage(averageType, price , length);
+
+# Must have all the logic in logic clause and not try to have it in a if statement because not all ifs get executed if you assign a String inside the conditional. 
+ 
+AddLabel(SMA5ma is not equal to SMA5a, "moving average with AverageType.SIMPLE is NOT equal to simple moving average", color.green);
+AddLabel(SMA5ma is equal to SMA5a, "moving average with AverageType.SIMPLE IS equal to simple moving average", color.white);
+
