@@ -32,4 +32,17 @@ def ma = Average(dailyClose, length);
 plot MA = ma;
 ```
 
+# Research
+* Nested Folds
+  * https://usethinkscript.com/threads/nested-fold-function-debugging.15685/#post-126268
+  * https://usethinkscript.com/threads/largest-gain-range-since-uptrend.2418/#post-135368
+  * https://usethinkscript.com/threads/workaround-for-passing-a-variable-to-fold.15791/#post-126717 
+
+
 # Try RSI, MACD, time of day with and without distribution, news, volume,
+
+
+# Thinkscript Research
+* https://tlc.thinkorswim.com/center/reference/thinkScript/Reserved-Words/switch
+
+* https://chat.openai.com/share/dcc733bb-e17c-498a-b288-fc1e7cacf7d8
