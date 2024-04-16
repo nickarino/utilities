@@ -3,7 +3,7 @@
 * If the slope of the N day SMA is > X per timeframe then buy and if it is less < Y per timeframe then short the stock.
 
 ```
-for timeframe constant in MIN, TWO_MIN, THREE_MIN, FOUR_MIN, FIVE_MIN, TEN_MIN, FIFTEEN_MIN, TWENTY_MIN, THIRTY_MIN, HOUR
+for timeframe constant in MIN, TWO_MIN, THREE_MIN, FOUR_MIN, FIVE_MIN, TEN_MIN, FIFTEEN_MIN, TWENTY_MIN, THIRTY_MIN, HOUR, TWO_HOURS, FOUR_HOURS, DAY
 
 for N between 3 and 20
    calculate sma = SMA(N)

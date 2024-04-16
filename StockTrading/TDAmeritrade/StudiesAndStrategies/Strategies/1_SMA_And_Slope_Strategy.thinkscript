@@ -1,0 +1,19 @@
+
+# The user chooses the dropdown for the timeframe = aggregation period. 
+# The AggregationPeriod defines the period for which the Fundamental value is returned. If the user chooses 1 min from the timeframe dropdown, then that means the aggregation period for each bar has open, high, low, and close for at each MINUTE. 
+
+# Which moving average best allows you to make money on the underlying price movement? 
+# First you have to get the
+
+def aggregationPeriod = GetAggregationPeriod();
+def price = FundamentalType.CLOSE;
+def length = 12;
+def averageType = AverageType.SIMPLE;
+
+plot MovAvg1 = MovingAverage(averageType, Fundamental(price, symbol = GetSymbol(), period = AggregationPeriod.MIN, priceType = PriceType.LAST  ), length = length);
+MovAvg1.SetDefaultColor(GetColor(1));
+
+
+# Pick up here
+plot MovAvg2 = MovingAverage(averageType, Fundamental(price, symbol = GetSymbol(), period = AggregationPeriod.TWO_MIN, priceType = PriceType.LAST  ), length = length);
+MovAvg2.SetDefaultColor(GetColor(2));
