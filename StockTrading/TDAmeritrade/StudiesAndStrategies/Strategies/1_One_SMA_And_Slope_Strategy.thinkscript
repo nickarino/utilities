@@ -6,14 +6,15 @@
 # First you have to get the
 
 def aggregationPeriod = GetAggregationPeriod();
-def price = FundamentalType.CLOSE;
-def length = 12;
-def averageType = AverageType.SIMPLE;
+def price = FundamentalType.CLOSE; # HIGH, LOW, CLOSE, OPEN, HL2, HLC3, OHLC4, VWAP, VOLUME, OPEN_INTEREST, IMP_VOLATILITY, TICK_COUNT
+def length = 12; # could be 2-200 but keep in mind your timeframe chosen as this will be the units used for this length.
+def averageType = AverageType.SIMPLE; # EXPONENTIAL, HULL, SIMPLE, WEIGHTED, WILDERS
+periodOfFundamental = AggregationPeriod.TWO_MIN; # MIN, TWO_MIN, THREE_MIN, FOUR_MIN, FIVE_MIN, TEN_MIN, FIFTEEN_MIN, TWENTY_MIN, THIRTY_MIN, HOUR, TWO_HOURS, FOUR_HOURS, DAY, TWO_DAYS, THREE_DAYS, FOUR_DAYS, WEEK, MONTH, OPT_EXP, QUARTER, YEAR
+priceType = PriceType.LAST; # PriceType.LAST, PriceType.BID, PriceType.ASK, PriceType.MARK
 
 plot MovAvg1 = MovingAverage(averageType, Fundamental(price, symbol = GetSymbol(), period = AggregationPeriod.MIN, priceType = PriceType.LAST  ), length = length);
 MovAvg1.SetDefaultColor(GetColor(1));
 
 
-# Pick up here
 plot MovAvg2 = MovingAverage(averageType, Fundamental(price, symbol = GetSymbol(), period = AggregationPeriod.TWO_MIN, priceType = PriceType.LAST  ), length = length);
 MovAvg2.SetDefaultColor(GetColor(2));
