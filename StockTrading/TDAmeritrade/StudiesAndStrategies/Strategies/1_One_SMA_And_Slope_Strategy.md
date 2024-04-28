@@ -12,6 +12,10 @@
 
 * In Wolfram there are about 10 different moving average functions: MovingAverageConvergenceDivergence,MovingAverageConvergenceDivergenceHistogram,SimpleMovingAverage,HullMovingAverage,DoubleExponentialMovingAverage,ExponentialMovingAverage,WeightedMovingAverage,VariableMovingAverage,TriangularMovingAverage,TripleExponentialMovingAverage,MovingAverageEnvelopes, and WildersMovingAverage.
 
+## Written Process
+
+The user chooses from the timeframe dropdown (MIN...FIVE_MIN...DAY).  That gets you the initial time series data that is price movement every timeframe. 
+
 ## Process
 
 * If the slope of the N day SMA is > X per timeframe then buy and if it is less < Y per timeframe then short the stock.

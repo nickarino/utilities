@@ -13,6 +13,8 @@
 
 - If you have the same conditions for a similar event then can you get 80% chance for the same result? 
 - What are the three reasons stock prices move 1. Longs are selling, 2. Longs are buying, or 3. Shorts entering or covering
+- Stop Losses: Thorp discusses the use of stop-loss orders to limit losses and protect capital in case a trade moves against expectations. He suggests setting predetermined exit points based on predefined criteria to avoid emotional decision-making during market fluctuations.
+
 
 # Important Definitions
 
@@ -68,6 +70,50 @@ Remember, using these buttons effectively requires understanding market dynamics
 - Volatility usually brings more volume because it brings more opportunity, unless the volume is so high traders back off. Increased volume usually reduces the bid-ask spread
 
 **Time Interval** - VERY important!  Which interval (ticks, 2 min, 5 min,..) provides a good balance of high-fidelity, short-term information while smoothing out the variance of micro-fluctuations in the stock that are not indicative of a larger trend.
+
+## Trading Strategies in Order of statistical profitability
+
+Certainly! Here are the statistically probable day trading strategies listed in ranked order based on their historical effectiveness and probability of success:
+
+1. **Breakout Trading**: Breakout trading ranks first due to its high potential for capturing significant price movements when the price breaks out of key support or resistance levels with high volume. Breakouts often lead to sustained trends, providing favorable risk-to-reward opportunities for traders.
+
+2. **Pullback Trading**: Pullback trading ranks second as it allows traders to enter trades in the direction of the prevailing trend at better prices following temporary retracements or pullbacks. Pullbacks within strong trends statistically have a higher probability of leading to trend continuation.
+
+3. **Gap Trading**: Gap trading ranks third as it capitalizes on price gaps that occur when the market opens higher or lower than the previous day's close. Statistically, price gaps tend to get filled, providing trading opportunities for traders to profit from the price returning to pre-gap levels.
+
+4. **Mean Reversion Trading**: Mean reversion trading ranks fourth as it focuses on identifying overbought or oversold conditions in the market and entering trades based on the expectation of price returning to its average or mean levels. While mean reversion trades can be profitable, they may require patience and discipline to wait for price reversals.
+
+5. **Volume Analysis**: Volume analysis ranks fifth as it helps traders gauge the strength of price movements and identify potential reversal or continuation patterns based on trading volume. High-volume price movements statistically have a higher probability of being sustained compared to low-volume movements.
+
+6. **Pattern Recognition**: Pattern recognition techniques rank sixth as they involve identifying chart patterns, candlestick patterns, and harmonic patterns to anticipate potential trend reversals or continuation patterns. While patterns can provide valuable insights, they may require subjective interpretation and confirmation from other indicators.
+
+
+## Tradeable Entities that are created from the underlying stock
+
+- There are OTC (over-the-counter) and ETF (exchange-traded-funds) 
+
+OTCs
+S - Interest Rate Swaps 
+F - Forwards
+
+Exchange-traded funds (ETFs) cover a wide range of asset classes, including:
+
+1. Stock ETFs: These track the performance of a specific stock market index or sector.
+2. Bond ETFs: These invest in fixed-income securities like government, municipal, or corporate bonds.
+3. Commodity ETFs: These track the price movements of physical commodities like gold, silver, oil, or agricultural products.
+4. Currency ETFs: These follow the performance of foreign currencies or currency baskets.
+5. Real Estate ETFs: These invest in real estate investment trusts (REITs) or real estate companies.
+6. Sector ETFs: These focus on specific sectors of the economy, like technology, healthcare, or energy.
+7. International ETFs: These invest in foreign stocks or bonds, providing exposure to global markets.
+8. Leveraged and Inverse ETFs: These use derivatives to amplify returns or provide inverse exposure to an underlying index or asset.
+9. Multi-Asset ETFs: These invest in a combination of different asset classes, providing diversified exposure within a single fund.
+10. Thematic ETFs: These target specific investment themes or trends, such as renewable energy, cybersecurity, or robotics.
+
+
+Over-The-Counter (OTC) funds
+- One example of a swap is an interest rate swap. In this type of swap, two parties agree to exchange interest rate payments, typically where one party pays a fixed interest rate and the other pays a floating (variable) interest rate. This can be used by entities to manage interest rate risk or to take advantage of differences in interest rate expectations.
+-Forwards
+
 
 ## protecting your trades
 

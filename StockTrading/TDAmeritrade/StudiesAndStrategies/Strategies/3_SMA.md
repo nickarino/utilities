@@ -16,3 +16,6 @@ Fibonacci numbers are revered in technical analysis due to their occurrence in n
 
 While not a combination of moving averages in the traditional sense, the Moving Average Convergence Divergence (MACD) indicator is worth mentioning. It is calculated using exponential moving averages (EMAs), specifically the 12-period EMA minus the 26-period EMA, with a 9-period EMA of the MACD itself (known as the "signal line") plotted on top to trigger buy or sell signals. The MACD is a momentum oscillator that traders use to identify the direction, momentum, and duration of a trend.
 
+## Study of SMA with Michael Nauss
+
+- [Nice study of how slope with MACD improves outcomes](https://michaelnausscmt.substack.com/p/slope-matters)
