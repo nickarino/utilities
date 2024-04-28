@@ -13,7 +13,9 @@
 
 - If you have the same conditions for a similar event then can you get 80% chance for the same result? 
 - What are the three reasons stock prices move 1. Longs are selling, 2. Longs are buying, or 3. Shorts entering or covering
+- Predefine your win so you can measure it. 
 - Stop Losses: Thorp discusses the use of stop-loss orders to limit losses and protect capital in case a trade moves against expectations. He suggests setting predetermined exit points based on predefined criteria to avoid emotional decision-making during market fluctuations.
+- 50-90% of Stock options expire worthless.  Being on the side of theta decay can be profitable--like insurance angents. When you sell options, you're essentially taking advantage of time decay (theta decay) because as time passes, the option loses value, particularly if it's out-of-the-money (OTM) or at-the-money (ATM). This time decay accelerates as the option approaches its expiration date.
 
 
 # Important Definitions
@@ -63,7 +65,7 @@ Remember, using these buttons effectively requires understanding market dynamics
 
 **Volatility** The ["Intraday Volatility Study,"](https://www.sec.gov/divisions/marketreg/mr-rule-tabs/intraday-volatility-study-final-report) from 2015 and examined intraday volatility in the U.S. equity markets from January 2010 to June 2014. The study found that
 
-- the first hour of trading was the most volatile period of the trading day, with an average STDEV of 0.87%, compared to an average STDEV of 0.75% for the entire trading day.
+- the first and last hour of trading are the most volatile period of the trading day, with an average STDEV of 0.87%, compared to an average STDEV of 0.75% for the entire trading day.
 - volatility was elevated during the last hour of trading, with an average STDEV of 0.82%, and during specific market events, such as earnings announcements or economic data releases.
 - However, this does not predict the future.
 
