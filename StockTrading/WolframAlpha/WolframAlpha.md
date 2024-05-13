@@ -1,3 +1,10 @@
+# Wolfram Alpha components
+
+- See [your license entitlements](https://account.wolfram.com/products) and [wolfram Engine faq](https://www.wolfram.com/engine/faq/).  For a free basic license you get
+  - Wolfram|Alpha (super search), Wolfram Cloud (web dev), Wolfram Engine (terminal), Service Credits
+- You can only have one terminal instance of wolfram at a time.  You can see it by  `ps aux | grep 'Wolfram' | awk '{print $11}'`
+
+
 # Brownian motion vs Markov Chains
 
 - Markov Chains: A Markov chain is a stochastic process that satisfies the Markov property, meaning the future state depends only on the current state and not on the sequence of events that preceded it. Markov chains can be discrete or continuous in time, but they are characterized by this lack of memory about the past.
