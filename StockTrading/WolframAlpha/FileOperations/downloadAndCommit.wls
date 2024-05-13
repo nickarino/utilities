@@ -3,6 +3,22 @@
 username = "nick_skriloff@yahoo.com"; (* Replace with your actual username *)
 service = "WolframCloud"; (* Service name for identification in Keychain *)
 
+(*
+In[5]:= CloudConnect["nick_skriloff@yahoo.com","password"]                                             
+
+Out[5]= nick_skriloff@yahoo.com
+
+In[6]:= URLDownload["https://www.wolframcloud.com/env/nickskriloff/WolframBasics.nb", "./WolframBasics.nb"]    
+
+Out[6]= File[./WolframBasics.nb]
+
+In[7]:= URLDownload["https://www.wolframcloud.com/env/nickskriloff/BrowninanMotion.nb", "./BrownianMotion.nb"] 
+
+Out[7]= File[./BrownianMotion.nb]
+
+
+*)
+
 (* Command to add credentials to Keychain *)
 command = StringJoin[{
   "security find-generic-password -a \"", username, 
