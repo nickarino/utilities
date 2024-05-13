@@ -23,6 +23,8 @@ If[Not[$CloudConnected],
   Print["Failed to connect to Wolfram Cloud. Please check your credentials."]
 ];
 
+CloudExport["https://www.wolframcloud.com/obj/nickskriloff/WolframBasics.nb", "Desktop/WolframBasics.nb"]
+
 (* Define the URLs of the files to be downloaded *)
 urls = {
   "https://www.wolframcloud.com/env/nickskriloff/WolframBasics.nb",
