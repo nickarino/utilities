@@ -5,6 +5,14 @@
 (* Set the script to be executable and output directly to the terminal *)
 SetOptions[$Output, FormatType -> OutputForm];
 
-CloudConnect["nick_skriloff@yahoo.com","Iy0LO&0bXE3uTavB"];
-Print [CloudConnected[]]
+CloudDisconnect[];
 Print [$CloudConnected]
+(* handwrite the password. *)
+CloudConnect["nick_skriloff@yahoo.com","password"];
+Print [$CloudConnected]
+
+
+If[Not[$CloudConnected],
+  Print["Connect to the Wolfram Cloud"],
+  Print["Already connected to the Wolfram Cloud"]
+]
