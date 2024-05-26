@@ -13,7 +13,7 @@
 
 - If you have the same conditions for a similar event then can you get 80% chance for the same result? 
 - What are the three reasons stock prices move 1. Longs are selling, 2. Longs are buying, or 3. Shorts entering or covering
-- Predefine your win so you can measure it. 
+- Predefine your win so you can measure it.
 - Stop Losses: Thorp discusses the use of stop-loss orders to limit losses and protect capital in case a trade moves against expectations. He suggests setting predetermined exit points based on predefined criteria to avoid emotional decision-making during market fluctuations.
 - 50-90% of Stock options expire worthless.  Being on the side of theta decay can be profitable--like insurance angents. When you sell options, you're essentially taking advantage of time decay (theta decay) because as time passes, the option loses value, particularly if it's out-of-the-money (OTM) or at-the-money (ATM). This time decay accelerates as the option approaches its expiration date.
 - [The volume of traded stocks and options has been doubling every 5 years](https://youtu.be/A5w-dEgIU1M?t=1337)

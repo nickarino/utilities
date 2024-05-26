@@ -1,20 +1,65 @@
 
+
 # The user chooses the dropdown for the timeframe = aggregation period. 
 # The AggregationPeriod defines the period for which the Fundamental value is returned. If the user chooses 1 min from the timeframe dropdown, then that means the aggregation period for each bar has open, high, low, and close for at each MINUTE. 
 
-# Which moving average best allows you to make money on the underlying price movement? 
-# First you have to get the
+## Define your Win within a timeframe (day, week, month)  
+## Which moving average best allows you to make money on the underlying price movement? 
+
+## BEGIN VARIABLE SETUP
 
 def aggregationPeriod = GetAggregationPeriod();
+def milisecondsInMin = 1000 * 60;
+def aggInMin = aggregationPeriod / milisecondsInMin ;
+AddLabel(yes, "Aggregation Period = " + aggInMin + " minutes");
 def price = FundamentalType.CLOSE; # HIGH, LOW, CLOSE, OPEN, HL2, HLC3, OHLC4, VWAP, VOLUME, OPEN_INTEREST, IMP_VOLATILITY, TICK_COUNT
-def length = 12; # could be 2-200 but keep in mind your timeframe chosen as this will be the units used for this length.
-def averageType = AverageType.SIMPLE; # EXPONENTIAL, HULL, SIMPLE, WEIGHTED, WILDERS
-periodOfFundamental = AggregationPeriod.TWO_MIN; # MIN, TWO_MIN, THREE_MIN, FOUR_MIN, FIVE_MIN, TEN_MIN, FIFTEEN_MIN, TWENTY_MIN, THIRTY_MIN, HOUR, TWO_HOURS, FOUR_HOURS, DAY, TWO_DAYS, THREE_DAYS, FOUR_DAYS, WEEK, MONTH, OPT_EXP, QUARTER, YEAR
-priceType = PriceType.LAST; # PriceType.LAST, PriceType.BID, PriceType.ASK, PriceType.MARK
 
-plot MovAvg1 = MovingAverage(averageType, Fundamental(price, symbol = GetSymbol(), period = AggregationPeriod.MIN, priceType = PriceType.LAST  ), length = length);
+# A fifty cent move in 5 min is 10 cents per minute on avg. 
+def averageType = AverageType.SIMPLE; # EXPONENTIAL, HULL, SIMPLE, WEIGHTED, WILDERS
+def periodOfFundamental = AggregationPeriod.FIVE_MIN; # MIN, TWO_MIN, THREE_MIN, FOUR_MIN, FIVE_MIN, TEN_MIN, FIFTEEN_MIN, TWENTY_MIN, THIRTY_MIN, HOUR, TWO_HOURS, FOUR_HOURS, DAY, TWO_DAYS, THREE_DAYS, FOUR_DAYS, WEEK, MONTH, OPT_EXP, QUARTER, YEAR
+
+#Weird that you cannot define this as "def", but must use "input"
+input priceType = PriceType.LAST; # PriceType.LAST, PriceType.BID, PriceType.ASK, PriceType.MARK
+
+# Decide on times of day to trade? 
+
+## END VARIABLE SETUP
+
+def fundamentalData = Fundamental(price, symbol = GetSymbol(), period = periodOfFundamental, priceType = priceType);
+
+# length = aggInMin.  So if you have a 5 min choice you get a moving average of five 5-min periods
+def numOfPeriodsForMovingAverage = 5;
+plot MovAvg1 = MovingAverage(averageType, fundamentalData , length = numOfPeriodsForMovingAverage);
 MovAvg1.SetDefaultColor(GetColor(1));
 
+# Rise is in currency units (dollars) and run is in AggregationPeriod (ie dollars/min)
+def twoRisesAgo = MovAvg1[2] - MovAvg1[3];
+def oneRiseAgo = MovAvg1[1] - MovAvg1[2];
+def currentRise = MovAvg1[0] - MovAvg1[1];
+def run = aggInMin; #  AggregationPeriod."Chosen"
+def twoRisesAgoSlope = twoRisesAgo / run;
+def oneRiseAgoSlope = oneRiseAgo / run;
+def currentRiseSlope = currentRise / run;
+def desiredSlope = 0.05; #dollars
 
-plot MovAvg2 = MovingAverage(averageType, Fundamental(price, symbol = GetSymbol(), period = AggregationPeriod.TWO_MIN, priceType = PriceType.LAST  ), length = length);
-MovAvg2.SetDefaultColor(GetColor(2));
+# What defines a, "Move".  Does it mean it has been sustained? 
+# If the aggregation Period is 5 min and there are three in a row with slope greater than ten-cents, then buy
+
+# If the past three time segments have a slope greater than desired slope then it is, "on the move"
+def hasFastSlope =  twoRisesAgoSlope > desiredSlope and oneRiseAgoSlope > desiredSlope and currentRiseSlope > desiredSlope;
+def marketHours =  SecondsFromTime(925) > 0 and SecondsTillTime(1550) > 0;
+def plotIt = marketHours and hasFastSlope;
+
+plot Signal = plotIt;
+AddChartBubble(plotIt, high, "mkt hrs " + marketHours + ", "+ twoRisesAgoSlope + ", " + oneRiseAgoSlope + ", " + currentRiseSlope , Color.WHITE);
+Signal.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_UP);
+Signal.SetLineWeight(2);
+Signal.SetDefaultColor(Color.GREEN);
+
+# Optional: Plot the SMA and Slope
+#plot SMAPlot = sma;
+#SMAPlot.SetDefaultColor(Color.CYAN);
+
+
+#plot SlopePlot = slope;
+#SlopePlot.SetDefaultColor(Color.YELLOW);
