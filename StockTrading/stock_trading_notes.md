@@ -2,6 +2,7 @@
 
 - Have more than one stream of income. Get ready for retirement in 2027. Not about the pursuit of money but about having options.
 - I want to optimize my time through quant trading and also make money. Time, Health, and doing what God wants.
+- All you need are less than three consistent systems that work.  You do not have to solve all of them. 
 
 # Manage Expectations
 

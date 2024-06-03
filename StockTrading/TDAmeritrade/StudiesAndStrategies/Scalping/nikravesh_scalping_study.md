@@ -1,12 +1,12 @@
 
 # BLUF
 
-* Since options just allow more leverage, then we first trade just the stock. 
-* Delta a delta of 50% means ( that the option will move 50% of whatever the underlying stock moved).
-* As a general rule of thumb, I would go with an option that is at-the-money or one in-the-money.
+* Since options just allow more leverage, then we first trade just the stock and later add options.
+* Delta - a delta of 50% means ( that the option will move 50% of whatever the underlying stock moved).
+* As a general rule of thumb, I would go with an option that is at-the-money or one in-the-money [- 50-90% of Stock options expire worthless](../../../stock_trading_notes.md#meta-stock-ideas)
 * You are looking for more volatility while having plenty of volume.  
 * Volume and open interest. The volume (number of options traded) and open interest (the number of held contracts) should be very high, in at least the thousands. This means that there are a lot of people who are participating in the trading of these options, meaning we increase our likelihood of our order being filled quickly.
-* The first and last hour of the day are usually the most volatile but also it can vary per stock.
+* [The first and last hour of the day are usually the most volatile but also it can vary per stock.  See Volatility Definition](../../../stock_trading_notes.md#important-definitions)
 * Time Interval - I have found that a 2-minute chart works best for this strategy as it provides a good balance of high-fidelity, short-term information while smoothing out the variance of micro-fluctuations in the stock that are not indicative of a larger trend.
 
 * [Started with this article on Scalping](https://medium.com/@nicknikravesh/a-foolproof-strategy-to-make-money-day-trading-no-really-7896e365fd40)
@@ -25,6 +25,7 @@
 * The overarching theme that we are aiming to uncover by using these indicators is momentum
 * As it turns out, it may be hard to predict where a stock will go in a few hours, days, or years, but it is pretty easy to predict where a stock will go in a few minutes.
 * 5–8–13 Simple Moving Average (SMA) OR 3,6,9 for tesla. Do those numbers look familiar? They are fibonacci numbers. The idea is that you superimpose the 5, 8, and 13-bar SMA lines on top of the stock you are trading. When all three of these lines are in agreement, it indicates that the stock has momentum in that direction. Conversely, a disagreement indicates that the momentum is not strong or is shifting.
+* Ideally, choose options that are at-the-money or in-the-money, with high volume and open interest, a narrow bid-ask spread, and expiring within a week.
 * Choosing the right price is important. As a scalper, you want to be able to get in and out of trades as quickly as possible. In order to do that, your best bet is to buy at the ask price and sell at the bid price. The caveat is that you will lose money if you try to buy and sell an option without a positive change in the price of the premium, so keep that in mind.
 * You should always have a STOP loss in place in the case of sudden volatile movements. As the price goes up, adjust your STOP loss up so that you may retain profits by selling if the price starts to drop.
 * Use your judgement. The strategy is designed to help inform your judgement, not to be applied blindly. Watch the stock, watch how it moves. Use your judgement if there is a disagreement between the technicals and the movement of the stock.
@@ -33,10 +34,6 @@
 
 # ChatGPT summmary
 
-* ThinkOrSwim Platform: It recommends using the PaperMoney feature on the ThinkOrSwim platform by TD Ameritrade to practice the strategy without risking real money.
-* Time of Day: The strategy is most effective during the first hour after the market opens due to higher volatility and volume.
-* Option Selection: When selecting options, consider the delta, volume and open interest, bid-ask spread, the trend of the underlying stock, and the expiration date. Ideally, choose options that are at-the-money or in-the-money, with high volume and open interest, a narrow bid-ask spread, and expiring within a week.
-* Chart Time Interval: A 2-minute chart interval is suggested for balancing high-fidelity, short-term information while smoothing out micro-fluctuations.
 * Technical Indicators: The strategy uses Simple Moving Averages (SMAs) and the Moving Average Convergence Divergence (MACD) to identify momentum and make trading decisions.
 * 5-8-13 SMA: These Fibonacci sequence numbers are used for SMAs. When these lines agree in their direction, it indicates strong momentum.
 * Trading Advice: The strategy emphasizes quick entry and exit from trades, suggesting buying at the ask price and selling at the bid price. It also advises on setting stop-loss orders to manage risk.
