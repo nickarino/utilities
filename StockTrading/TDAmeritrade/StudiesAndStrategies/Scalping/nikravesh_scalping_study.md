@@ -10,7 +10,7 @@
 * Volatility usually brings volume. And volume reduces the bid-ask spread of the option.
 * Time Interval - I have found that a 2-minute chart works best for this strategy as it provides a good balance of high-fidelity, short-term information while smoothing out the variance of micro-fluctuations in the stock that are not indicative of a larger trend.
 
-* [Started with this article on Scalping](https://medium.com/@nicknikravesh/a-foolproof-strategy-to-make-money-day-trading-no-really-7896e365fd40)
+* [Started with this article on Scalping](https:/ /medium.com/@nicknikravesh/a-foolproof-strategy-to-make-money-day-trading-no-really-7896e365fd40)
   * [He does have a repo on technical analysis but it is 3 years old](https://github.com/nikolas-nikravesh/technical-analysis-tool)
 
 # [Article in Medium by Nikravesh](https://medium.com/@nicknikravesh/a-foolproof-strategy-to-make-money-day-trading-no-really-7896e365fd40)

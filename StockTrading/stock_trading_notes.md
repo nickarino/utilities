@@ -405,4 +405,4 @@ If we are to consider all three criteria together (low risk, high return, low ti
 # What defines a trend?
 
 - Newton's First Law of Motion. It states that an object will continue in its state of rest or uniform motion unless acted upon by an external force. This can be applied metaphorically to trends in stock prices, where a stock that is moving in a certain direction tends to continue in that direction unless some external factor causes it to change.
-- A person climbing stairs and how high the stairs are rise to run.  What is reasonable and sustainable?  That is relative to the stocks movements. What kind of moves does it make? Look at the volatility histogram.
+- **A person climbing stairs and how high the stairs are rise to run.  What is reasonable and sustainable?  That is relative to the stocks movements. What kind of moves does it make? Look at the volatility histogram. If it is too fast, question it.**

@@ -1,0 +1,4 @@
+#Simplest script is start off with the price plot hidden
+HidePricePlot(yes);
+# To hide the volume portion, in GUI, click gear icon-> equities-> uncheck "Show Volume Subgraph"
+# To hide the extended trading hours, in GUI, click gear icon-> equities-> uncheck "Show extended trading hours"
