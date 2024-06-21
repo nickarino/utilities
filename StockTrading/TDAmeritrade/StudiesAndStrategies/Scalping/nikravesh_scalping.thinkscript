@@ -1,6 +1,6 @@
 # based on Nick Nikravesh article
 #https://medium.com/@nicknikravesh/a-foolproof-strategy-to-make-money-day-trading-no-really-7896e365fd40
-# Have this analyze the time of day, volatility (higher), and volume.
+# Have this analyze the time of day, volatility (higher), and volume, (and possibly whale holdings)
 # I use options for one reason, leverage. Options allow us to control a much larger amount of stocks without paying for them.
 #The most important principle of the option that we choose is that we can get in and out of a trade quickly, and that it will actually make us money. Here are the following factors that go into a good pick.
 # Volume and open interest. The volume (number of options traded) and open interest (the number of held contracts) should be very high, in at least the thousands.
@@ -8,7 +8,13 @@
 # Choose one that is expiring within a week (but not the same day). Since we’re going in and out on the same day, we don’t need to buy longer out options as that will only cost us more.
 # As it turns out, it may be hard to predict where a stock will go in a few hours, days, or years, but it is pretty easy to predict where a stock will go in a few minutes. 
 
-# Define the Simple Moving Averages (SMAs) based on fibonacci.  
+# You want three SMAs that predict best what will get you more wins than losses.  It does not necessarily have to be 3,6 and 9.  The
+ 
+# TODO: Define the type of trader: Algoritmic trader see [types of traders](../StockTrading/stock_trading_notes.md### Trader Type and expected return)
+# TODO: Define the type of Data and periods (\
+# TODO: Define your entry point and exit points. 
+# TODO define your win
+# TODO only use a certain time of day. 
 # Todo try tesla,: 3,6,9
 # Todo start here asking about a simple test. 
 def SMA5 = Average(close, 5);

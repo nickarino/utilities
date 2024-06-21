@@ -310,3 +310,84 @@ So, if you're looking for granular details and immediate execution, the tick cha
 # Stock Apis
 
 - https://medium.com/coinmonks/free-stock-apis-de8f13619911
+
+# Types of Traders
+In the world of trading, there are several types of traders, each employing different strategies to achieve their goals. Here are some of the most common types:
+
+1. **Trend Traders**
+   - **Strategy**: Follow the overall direction of the market. They buy when the market is in an uptrend and sell when it is in a downtrend.
+   - **Key Tools**: Moving averages, trend lines, and momentum indicators.
+   - **Time Frame**: Can range from short-term (days) to long-term (months or years).
+
+2. **Pullback Traders**
+   - **Strategy**: Look for price retracements within a trend and enter trades when the price pulls back to a support level in an uptrend or resistance level in a downtrend.
+   - **Key Tools**: Fibonacci retracement levels, moving averages, and support/resistance levels.
+   - **Time Frame**: Typically short to medium-term (days to weeks).
+
+3. **Scalpers**
+   - **Strategy**: Make numerous small trades throughout the day to capitalize on minor price fluctuations.
+   - **Key Tools**: High-frequency trading platforms, one-minute or tick charts, and tight stop-loss orders.
+   - **Time Frame**: Very short-term (seconds to minutes).
+
+4. **Swing Traders**
+   - **Strategy**: Hold positions for several days to weeks, aiming to profit from short to medium-term price movements.
+   - **Key Tools**: Technical analysis, candlestick patterns, and moving averages.
+   - **Time Frame**: Short to medium-term (days to weeks).
+
+5. **Position Traders**
+   - **Strategy**: Hold positions for months to years, focusing on long-term trends and fundamental analysis.
+   - **Key Tools**: Fundamental analysis, economic indicators, and long-term trend analysis.
+   - **Time Frame**: Long-term (months to years).
+
+6. **Momentum Traders**
+   - **Strategy**: Buy stocks that are moving strongly in one direction with high volume and sell stocks that are moving strongly in the opposite direction.
+   - **Key Tools**: Momentum indicators (e.g., RSI, MACD), volume analysis, and news catalysts.
+   - **Time Frame**: Can range from short-term (days) to medium-term (weeks).
+
+7. **Breakout Traders**
+   - **Strategy**: Enter trades when the price breaks through a significant support or resistance level with high volume.
+   - **Key Tools**: Chart patterns (e.g., triangles, head and shoulders), volume analysis, and moving averages.
+   - **Time Frame**: Short to medium-term (days to weeks).
+
+8. **Contrarian Traders**
+   - **Strategy**: Go against the prevailing market trends, buying when others are selling and selling when others are buying.
+   - **Key Tools**: Sentiment indicators, overbought/oversold indicators (e.g., RSI), and news analysis.
+   - **Time Frame**: Varies widely depending on the trader's perspective.
+
+9. **Algorithmic Traders**
+   - **Strategy**: Use computer algorithms to automatically execute trades based on predefined criteria.
+   - **Key Tools**: Trading algorithms, high-frequency trading systems, and quantitative models.
+   - **Time Frame**: Can range from milliseconds to long-term strategies.
+
+10. **Event-Driven Traders**
+    - **Strategy**: Trade based on news events, earnings reports, mergers, acquisitions, and other significant events.
+    - **Key Tools**: News feeds, earnings calendars, and event analysis tools.
+    - **Time Frame**: Short to medium-term (days to weeks).
+
+## Trader Type and expected return
+
+Based on the criteria you've provided (Risk Tolerance Ascending, Expected Return Descending, and Time Commitment Ascending), here’s the sorted table:
+
+| Trader Type         | Estimated Percentage (%) | Risk Tolerance   | Expected Return (%) | Time Commitment    |
+|---------------------|--------------------------|------------------|---------------------|--------------------|
+| Position Traders    | 10%                      | Low to Medium    | 5-10%               | Low                |
+| Algorithmic Traders | 1%                       | Low to Medium    | 5-15%               | High (setup)       |
+| Pullback Traders    | 10%                      | Medium           | 8-15%               | Medium             |
+| Swing Traders       | 25%                      | Medium           | 15-25%              | Medium             |
+| Trend Traders       | 20%                      | Medium           | 10-20%              | Medium to High     |
+| Event-Driven Traders| 1%                       | Medium to High   | 10-20%              | Medium to High     |
+| Breakout Traders    | 5%                       | High             | 15-25%              | Medium to High     |
+| Contrarian Traders  | 3%                       | High             | 10-20%              | Medium             |
+| Momentum Traders    | 10%                      | High             | 20-30%              | High               |
+| Scalpers            | 15%                      | High             | 1-2% per day        | Very High          |
+
+### Analysis
+- **Lowest Risk Tolerance**: Position Traders and Algorithmic Traders (Low to Medium)
+- **Highest Expected Return (%)**: Momentum Traders (20-30%)
+- **Lowest Time Commitment**: Position Traders
+
+Based on these criteria, **Position Traders** have the lowest risk tolerance and the lowest time commitment but not the highest return. The highest return with low to medium risk would be **Algorithmic Traders**, but they require a high time commitment for setup.
+
+If we are to consider all three criteria together (low risk, high return, low time commitment), none of the trader types perfectly match all three. However, **Position Traders** stand out for having the lowest time commitment and lower risk, making them a balanced option, albeit with moderate returns.
+
+Would you like further analysis or details on a specific type of trader?
