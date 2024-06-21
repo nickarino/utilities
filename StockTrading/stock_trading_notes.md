@@ -390,4 +390,19 @@ Based on these criteria, **Position Traders** have the lowest risk tolerance and
 
 If we are to consider all three criteria together (low risk, high return, low time commitment), none of the trader types perfectly match all three. However, **Position Traders** stand out for having the lowest time commitment and lower risk, making them a balanced option, albeit with moderate returns.
 
-Would you like further analysis or details on a specific type of trader?
+# Timeframes
+
+| Timeframe          | Common Use                     | Details                                    |
+|--------------------|--------------------------------|--------------------------------------------|
+| 1-Minute Chart     | Scalping                       | Detailed price action for quick trades     |
+| 3-Minute Chart     | Scalping and short-term trading| Slightly smoother than 1-minute chart      |
+| 5-Minute Chart     | Day trading                    | Popular for intraday trades                |
+| 10-Minute Chart    | Day trading and short-term swing| Broader view, still useful for intraday   |
+| 15-Minute Chart    | Day trading and short-term swing| Identifies trends and reversals           |
+| 30-Minute Chart    | Day trading and swing trading  | Clearer picture of intraday trends         |
+| 60-Minute Chart    | Swing trading and position trading | Identifies broader trends over days/weeks|
+
+# What defines a trend?
+
+- Newton's First Law of Motion. It states that an object will continue in its state of rest or uniform motion unless acted upon by an external force. This can be applied metaphorically to trends in stock prices, where a stock that is moving in a certain direction tends to continue in that direction unless some external factor causes it to change.
+- A person climbing stairs and how high the stairs are rise to run.  What is reasonable and sustainable?  That is relative to the stocks movements. What kind of moves does it make? Look at the volatility histogram.

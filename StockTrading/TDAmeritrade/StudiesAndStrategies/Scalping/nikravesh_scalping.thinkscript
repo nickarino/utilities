@@ -11,7 +11,8 @@
 # You want three SMAs that predict best what will get you more wins than losses.  It does not necessarily have to be 3,6 and 9.  The
  
 # TODO: Define the type of trader: Algoritmic trader see [types of traders](../StockTrading/stock_trading_notes.md### Trader Type and expected return)
-# TODO: Define the type of Data and periods (\
+# TODO: Define the type of Data and periods (can you let the data tell you what to do?, 
+#  - For now we are just going to algoritm this and then improve it. It is assuming that 2 min is the best time frame and 3,6,9 is the best SMA. But, you can let the data tell you that later. 
 # TODO: Define your entry point and exit points. 
 # TODO define your win
 # TODO only use a certain time of day. 
