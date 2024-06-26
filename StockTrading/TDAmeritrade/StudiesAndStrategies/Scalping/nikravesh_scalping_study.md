@@ -28,6 +28,7 @@
 * The overarching theme that we are aiming to uncover by using these indicators is momentum
 * As it turns out, it may be hard to predict where a stock will go in a few hours, days, or years, but it is pretty easy to predict where a stock will go in a few minutes.
 * 5–8–13 Simple Moving Average (SMA) OR 3,6,9 for tesla. Do those numbers look familiar? They are fibonacci numbers. **The idea is that you superimpose the 5, 8, and 13 <ins>DAY</ins> (could use MIN, 5MIN...)--bar SMA lines on top of the stock you are trading. When all three of these lines are in agreement, it indicates that the stock has momentum in that direction. Conversely, a disagreement indicates that the momentum is not strong or is shifting.**
+![Sample Image](../../md_file_assets/Nikravesh1.png)
 * Ideally, choose options that are at-the-money or in-the-money, with high volume and open interest, a narrow bid-ask spread, and expiring within a week.
 * Choosing the right price is important. As a scalper, you want to be able to get in and out of trades as quickly as possible. In order to do that, your best bet is to buy at the ask price and sell at the bid price. The caveat is that you will lose money if you try to buy and sell an option without a positive change in the price of the premium, so keep that in mind.<ins> Minimizing this spread is key to maximize profits and minimize risk.</ins>
 * Trend of underlying stock. This one is easy, if the stock is going up, we want to buy a CALL, if it’s going down, we want to buy a PUT.
@@ -36,7 +37,7 @@
 * Keep in mind the trading fees. On ThinkOrSwim, this is $0.65 per option you buy or sell. If you buy 30 options, that $19.50 to buy, and another $19.50 to sell. This means you must clear $40 in your trade just to break even. You pay this whether you win or lose the trade.
 * Keep a running tab of your taxes owed. If you’re like me and you want to use this money for fun, make sure you’re keeping track of how much you’ll owe Uncle Sam at the end of the year for your capital gains.
 
-# ChatGPT summmary
+# ChatGPT summmary 
 
 * Technical Indicators: The strategy uses Simple Moving Averages (SMAs) and the Moving Average Convergence Divergence (MACD) to identify momentum and make trading decisions.
 * 5-8-13 SMA: These Fibonacci sequence numbers are used for SMAs. When these lines agree in their direction, it indicates strong momentum.

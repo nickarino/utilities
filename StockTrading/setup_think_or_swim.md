@@ -41,7 +41,6 @@
   - Gauge the depth of buy and sell interest at different price levels.
   - Evaluate how easily you can enter or exit a position.
 
-
 # Exporting Data
 
 - Note, you can only export up to 30 days of 1-minute data. You can use OnDemand to load data beyond that, but for this amount of work, maybe getting data from a provider is a better route. Kibot, https://www.kibot.com/, is a good source, and you can find others on the web. Lastly, if you only export the subset of data you need, you can save a lot of time running the strategy in thinkorswim.

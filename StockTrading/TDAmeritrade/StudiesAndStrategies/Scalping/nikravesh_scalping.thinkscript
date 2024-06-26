@@ -14,6 +14,7 @@
 # TODO: Define the type of Data and periods (can you let the data tell you what to do?, 
 #  - For now we are just going to algoritm this and then improve it. It is assuming that 2 min is the best time frame and 3,6,9 is the best SMA. But, you can let the data tell you that later. 
 # TODO: Define your entry point and exit points. 
+
 # TODO define your win
 # TODO only use a certain time of day. 
 # Todo try tesla,: 3,6,9

@@ -1,3 +1,8 @@
+#If you have no script attached to chart then it just shows the equity with all of your GUI settings. 
+# If the data you collect from a, "Fundamental", is a one minute aggregation period (Secondary) but the aggregation period in the GUI (Primary) is two minutes, then you will see an error that says, "Secondary period cannot be less than primary", and the script will not load, but the GUI will then default to whatever would have been shown without the script in the GUI.  It makes sense as the least element of surprise. 
+
+#TODO Look for a tutorial on the fundamentals of thinkOrSwim for Devs. 
+
 #Simplest script is start off with the price plot hidden
 HidePricePlot(yes);
 # To hide the volume portion, in GUI, click gear icon-> equities-> uncheck "Show Volume Subgraph"
