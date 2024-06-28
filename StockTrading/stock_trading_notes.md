@@ -90,27 +90,9 @@ Remember, using these buttons effectively requires understanding market dynamics
 
 **Time Interval** - VERY important!  Which interval (ticks, 2 min, 5 min,..) provides a good balance of high-fidelity, short-term information while smoothing out the variance of micro-fluctuations in the stock that are not indicative of a larger trend.
 
-## Trading Strategies in Order of statistical profitability
-
-Certainly! Here are the statistically probable day trading strategies listed in ranked order based on their historical effectiveness and probability of success:
-
-1. **Breakout Trading**: Breakout trading ranks first due to its high potential for capturing significant price movements when the price breaks out of key support or resistance levels with high volume. Breakouts often lead to sustained trends, providing favorable risk-to-reward opportunities for traders.
-
-2. **Pullback Trading**: Pullback trading ranks second as it allows traders to enter trades in the direction of the prevailing trend at better prices following temporary retracements or pullbacks. Pullbacks within strong trends statistically have a higher probability of leading to trend continuation.
-
-3. **Gap Trading**: Gap trading ranks third as it capitalizes on price gaps that occur when the market opens higher or lower than the previous day's close. Statistically, price gaps tend to get filled, providing trading opportunities for traders to profit from the price returning to pre-gap levels.
-
-4. **Mean Reversion Trading**: Mean reversion trading ranks fourth as it focuses on identifying overbought or oversold conditions in the market and entering trades based on the expectation of price returning to its average or mean levels. While mean reversion trades can be profitable, they may require patience and discipline to wait for price reversals.
-
-5. **Volume Analysis**: Volume analysis ranks fifth as it helps traders gauge the strength of price movements and identify potential reversal or continuation patterns based on trading volume. High-volume price movements statistically have a higher probability of being sustained compared to low-volume movements.
-
-6. **Pattern Recognition**: Pattern recognition techniques rank sixth as they involve identifying chart patterns, candlestick patterns, and harmonic patterns to anticipate potential trend reversals or continuation patterns. While patterns can provide valuable insights, they may require subjective interpretation and confirmation from other indicators.
-
-
 ## Tradeable Entities that are created from the underlying stock
 
-- There are OTC (over-the-counter) and ETF (exchange-traded-funds) 
-
+- There are OTC (over-the-counter) and ETF (exchange-traded-funds)
 OTCs
 S - Interest Rate Swaps 
 F - Forwards
@@ -312,8 +294,31 @@ So, if you're looking for granular details and immediate execution, the tick cha
 
 - https://medium.com/coinmonks/free-stock-apis-de8f13619911
 
-# Types of Traders
-In the world of trading, there are several types of traders, each employing different strategies to achieve their goals. Here are some of the most common types:
+# Types of Traders and statistical probability
+
+Certainly! Here are the statistically probable day trading strategies listed in ranked order based on their historical effectiveness and probability of success: 
+
+In the world of trading, there are several types of traders, each employing different strategies to achieve their goals. Here are some of the most common types:  All these can be made into **Algorithmic Traders:** These traders use computer algorithms and automated systems to execute trades based on pre-defined criteria. They can operate in various time frames and strategies, from high-frequency trading to long-term investing.
+
+1. **Position Traders**
+   - **Strategy**: Hold positions for months to years, focusing on long-term trends and fundamental analysis.
+   - **Key Tools**: Fundamental analysis, economic indicators, and long-term trend analysis.
+   - **Time Frame**: Long-term (months to years).
+
+4. **Swing Traders**
+   - **Strategy**: Hold positions for several days to weeks, aiming to profit from short to medium-term price movements.
+   - **Key Tools**: Technical analysis, candlestick patterns, and moving averages.
+   - **Time Frame**: Short to medium-term (days to weeks).
+
+3. **Scalpers**
+   - **Strategy**: Make numerous small trades throughout the day to capitalize on minor price fluctuations.
+   - **Key Tools**: High-frequency trading platforms, one-minute or tick charts, and tight stop-loss orders.
+   - **Time Frame**: Very short-term (seconds to minutes).
+
+6. **Momentum Traders**
+   - **Strategy**: Buy stocks that are moving strongly in one direction with high volume and sell stocks that are moving strongly in the opposite direction.
+   - **Key Tools**: Momentum indicators (e.g., RSI, MACD), volume analysis, and news catalysts.
+   - **Time Frame**: Can range from short-term (days) to medium-term (weeks).
 
 1. **Trend Traders**
    - **Strategy**: Follow the overall direction of the market. They buy when the market is in an uptrend and sell when it is in a downtrend.
@@ -321,32 +326,12 @@ In the world of trading, there are several types of traders, each employing diff
    - **Time Frame**: Can range from short-term (days) to long-term (months or years).
 
 2. **Pullback Traders**
-   - **Strategy**: Look for price retracements within a trend and enter trades when the price pulls back to a support level in an uptrend or resistance level in a downtrend.
+   - **Strategy**: Look for price retracements within a trend and enter trades when the price pulls back to a support level in an uptrend or resistance level in a downtrend. Pullback trading ranks second as it allows traders to enter trades in the direction of the prevailing trend at better prices following temporary retracements or pullbacks. Pullbacks within strong trends statistically have a higher probability of leading to trend continuation. Pullback traders look for a stock that has had a significant move in one direction and then pulls back slightly before continuing in its original direction. The idea is to buy during the temporary dip (pullback) in an uptrend or sell during a temporary rise in a downtrend, with the expectation that the stock will resume its original trend. (Daytraders try to close out before the end of the day while swing traders stay in.)
    - **Key Tools**: Fibonacci retracement levels, moving averages, and support/resistance levels.
    - **Time Frame**: Typically short to medium-term (days to weeks).
 
-3. **Scalpers**
-   - **Strategy**: Make numerous small trades throughout the day to capitalize on minor price fluctuations.
-   - **Key Tools**: High-frequency trading platforms, one-minute or tick charts, and tight stop-loss orders.
-   - **Time Frame**: Very short-term (seconds to minutes).
-
-4. **Swing Traders**
-   - **Strategy**: Hold positions for several days to weeks, aiming to profit from short to medium-term price movements.
-   - **Key Tools**: Technical analysis, candlestick patterns, and moving averages.
-   - **Time Frame**: Short to medium-term (days to weeks).
-
-5. **Position Traders**
-   - **Strategy**: Hold positions for months to years, focusing on long-term trends and fundamental analysis.
-   - **Key Tools**: Fundamental analysis, economic indicators, and long-term trend analysis.
-   - **Time Frame**: Long-term (months to years).
-
-6. **Momentum Traders**
-   - **Strategy**: Buy stocks that are moving strongly in one direction with high volume and sell stocks that are moving strongly in the opposite direction.
-   - **Key Tools**: Momentum indicators (e.g., RSI, MACD), volume analysis, and news catalysts.
-   - **Time Frame**: Can range from short-term (days) to medium-term (weeks).
-
 7. **Breakout Traders**
-   - **Strategy**: Enter trades when the price breaks through a significant support or resistance level with high volume.
+   - **Strategy**: Enter trades when the price breaks through a significant support or resistance level with high volume. Breakouts often lead to sustained trends, providing favorable risk-to-reward opportunities for traders.
    - **Key Tools**: Chart patterns (e.g., triangles, head and shoulders), volume analysis, and moving averages.
    - **Time Frame**: Short to medium-term (days to weeks).
 
@@ -364,6 +349,21 @@ In the world of trading, there are several types of traders, each employing diff
     - **Strategy**: Trade based on news events, earnings reports, mergers, acquisitions, and other significant events.
     - **Key Tools**: News feeds, earnings calendars, and event analysis tools.
     - **Time Frame**: Short to medium-term (days to weeks).
+
+3. **Gap Trading**: Gap trading ranks third as it capitalizes on price gaps that occur when the market opens higher or lower than the previous day's close. Statistically, price gaps tend to get filled, providing trading opportunities for traders to profit from the price returning to pre-gap levels.
+
+4. **Mean Reversion Trading**: Mean reversion trading ranks fourth as it focuses on identifying overbought or oversold conditions in the market and entering trades based on the expectation of price returning to its average or mean levels. While mean reversion trades can be profitable, they may require patience and discipline to wait for price reversals.
+
+5. **Volume Analysis**: Volume analysis ranks fifth as it helps traders gauge the strength of price movements and identify potential reversal or continuation patterns based on trading volume. High-volume price movements statistically have a higher probability of being sustained compared to low-volume movements.
+
+6. **Pattern Recognition**: Pattern recognition techniques rank sixth as they involve identifying chart patterns, candlestick patterns, and harmonic patterns to anticipate potential trend reversals or continuation patterns. While patterns can provide valuable insights, they may require subjective interpretation and confirmation from other indicators.
+
+1. **Day Traders:** They buy and sell financial instruments within the same trading day, closing all positions before the market closes. They focus on short-term price movements and often use technical analysis.
+
+7. **Arbitrage Traders:** Arbitrage traders look for price discrepancies between different markets or instruments and aim to profit from these inefficiencies. They often require fast execution and significant capital.
+
+9. **Options Traders:** Options traders specialize in trading options contracts, which give them the right, but not the obligation, to buy or sell an underlying asset at a specified price before a certain date. They use various strategies to hedge risk or speculate on price movements.
+
 
 ## Trader Type and expected return
 
@@ -408,3 +408,10 @@ If we are to consider all three criteria together (low risk, high return, low ti
 - Newton's First Law of Motion. It states that an object will continue in its state of rest or uniform motion unless acted upon by an external force. This can be applied metaphorically to trends in stock prices, where a stock that is moving in a certain direction tends to continue in that direction unless some external factor causes it to change.
 - **A person climbing stairs and how high the stairs are rise to run.  What is reasonable and sustainable?  That is relative to the stocks movements. What kind of moves does it make? Look at the volatility histogram. If it is too fast, question it.**
 
+# Finding Raw Data
+
+![Alpha Vantage](../StockTrading/TDAmeritrade/md_file_assets/AlphaVantage.png)
+
+# Trading with AI
+
+- It is interesting that people can take a picture of the trading graph, upload it to AI and ask it to predict.
