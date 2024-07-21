@@ -415,3 +415,6 @@ If we are to consider all three criteria together (low risk, high return, low ti
 # Trading with AI
 
 - It is interesting that people can take a picture of the trading graph, upload it to AI and ask it to predict.
+
+# [Sizzle index](https://toslc.thinkorswim.com/center/howToTos/thinkManual/Scan/Stock-Hacker/Sizzle-Index)
+* 

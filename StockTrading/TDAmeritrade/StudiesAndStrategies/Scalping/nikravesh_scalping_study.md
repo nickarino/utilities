@@ -53,3 +53,7 @@ Follow the guidelines for selecting options and managing trades.
 # Strategies for Scalping
 
 * [watch the RSI and Vix](https://www.youtube.com/watch?v=AVIGYXcbeas) getting in and out quickly.  See her log links in.  She uses a 30 second chart. 
+
+## Gap strategies
+
+* 

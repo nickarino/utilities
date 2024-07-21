@@ -17,6 +17,7 @@
 
 # TODO define your win
 # TODO only use a certain time of day. 
+# TODO: look at Traffic light system.: https://medium.com/tech-talk-tank/do-you-really-understand-moving-average-and-its-traffic-light-signal-a5ff3eb25459
 # Todo try tesla,: 3,6,9
 # Todo start here asking about a simple test. 
 def SMA5 = Average(close, 5);
