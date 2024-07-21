@@ -90,6 +90,50 @@ Remember, using these buttons effectively requires understanding market dynamics
 
 **Time Interval** - VERY important!  Which interval (ticks, 2 min, 5 min,..) provides a good balance of high-fidelity, short-term information while smoothing out the variance of micro-fluctuations in the stock that are not indicative of a larger trend.
 
+In the context of stock trading and technical analysis, the terms "strategy" and "study" have distinct meanings and applications:
+
+### Strategy
+A **strategy** in trading is a comprehensive plan or method designed to achieve specific financial goals through the buying and selling of securities. It includes:
+
+1. **Entry and Exit Rules**: Defines when to buy or sell a security.
+2. **Risk Management**: Determines the size of the position, stop-loss levels, and how to manage the risk of loss.
+3. **Profit Targets**: Specifies how much profit is aimed to be achieved and when to exit a profitable trade.
+4. **Market Conditions**: Identifies the market conditions under which the strategy is most effective.
+5. **Indicators and Studies**: Often utilizes various technical indicators and studies to make informed decisions.
+
+Example: A simple moving average crossover strategy where a buy signal is generated when a short-term moving average crosses above a long-term moving average and a sell signal when the opposite occurs.
+
+### Study
+A **study** in technical analysis refers to a mathematical calculation that is applied to the price, volume, or open interest of a security to help make trading decisions. Studies are tools used within a strategy. They can be used to identify trends, generate signals, and understand market conditions. Common types of studies include:
+
+1. **Indicators**: Such as moving averages, Relative Strength Index (RSI), Moving Average Convergence Divergence (MACD), Bollinger Bands, etc.
+2. **Overlays**: Indicators that are plotted on the price chart (e.g., moving averages).
+3. **Oscillators**: Indicators that oscillate between a fixed range (e.g., RSI, Stochastic Oscillator).
+4. **Statistical Analysis**: Tools like regression lines or standard deviation channels.
+
+Example: The RSI study, which measures the speed and change of price movements, helping traders identify overbought or oversold conditions.
+
+### Key Differences
+
+1. **Purpose**:
+   - **Strategy**: Provides a complete trading framework including when to enter and exit trades, and how to manage risk.
+   - **Study**: Provides specific insights into market conditions and price movements, often forming part of the decision-making process in a strategy.
+
+2. **Components**:
+   - **Strategy**: Combines multiple elements such as studies, risk management rules, and market conditions into a unified plan.
+   - **Study**: Is a standalone analytical tool or indicator used to interpret market data.
+
+3. **Application**:
+   - **Strategy**: Directly used to execute trades based on predefined rules.
+   - **Study**: Used to inform and guide the development of trading strategies by analyzing historical and current market data.
+
+### Practical Use
+
+- **Developing a Strategy**: A trader might use multiple studies to create a robust trading strategy. For example, combining MACD and Bollinger Bands to develop rules for entering and exiting trades.
+- **Applying a Study**: A trader might apply the RSI study to a stock chart to determine whether the stock is overbought or oversold and use this information as part of their broader strategy.
+
+In summary, a trading strategy is a comprehensive plan that uses various studies (indicators and tools) to make trading decisions, while a study is an individual analytical tool used to understand and interpret market data.
+
 ## Tradeable Entities that are created from the underlying stock
 
 - There are OTC (over-the-counter) and ETF (exchange-traded-funds)
@@ -206,6 +250,7 @@ Remember, stock price action is complex and rarely driven by a single factor. An
 # Stock Exchanges
 
 - ![img](https://stockstotrade.com/wp-content/uploads/2016/10/Major-Stock-Exchanges-_2.0-01.png)
+- Given the GDP of the US is 29 Trillion/year, that is about 75 Billion per day.  On average, approximately $500 billion worth of stocks are traded daily in the U.S. equity markets.
 - New York Stock Exchange (NYSE): The NYSE is the largest stock exchange in the world, with a market capitalization of over $25 trillion as of 2021. It is located in New York City and is owned by the Intercontinental Exchange (ICE). The NYSE lists both domestic and international companies, and it is home to many well-known companies such as Apple, Microsoft, and ExxonMobil.
 - NASDAQ: The NASDAQ is the second-largest stock exchange in the world, with a market capitalization of over $18 trillion as of 2021. It is based in New York City and is owned by the NASDAQ, Inc. The NASDAQ is known for its focus on technology companies, and it is home to many well-known tech companies such as Amazon, Facebook, and Google.
 - London Stock Exchange (LSE): The LSE is the largest stock exchange in Europe and the third-largest in the world, with a market capitalization of over $6 trillion as of 2021. It is based in London, England and is owned by the London Stock Exchange Group (LSEG). The LSE lists both domestic and international companies, and it is home to many well-known companies such as HSBC, Unilever, and GlaxoSmithKline.

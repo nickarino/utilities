@@ -1,5 +1,7 @@
 # GUI only test
 
+#TODO Iterate this many times to get high percentages.
+
 ## Setup
 
 1. Open TOS, click charts, choose a ticker(TSLA), click beaker icon
@@ -11,6 +13,12 @@
 1. Show the volume by clicking the chart cog (next to the beaker icon), choose equities, and choose/click, "Show volume subgraph". Click ok and check that you now have the volume subgraph
 1. Add MACDHistogram study with "MACDHistogram(12,26,9,EXPOENTIAL,no)" and hit OK. 
 1. Click the timeframe and make it two minutes. 
+
+# Studies (the data)
+-
+
+# Strategies ()
+- 
 
 ## Scanner Setup
 
