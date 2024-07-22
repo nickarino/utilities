@@ -1,5 +1,5 @@
 # Define your API key
-$apiKey = ""
+$apiKey = "sk-proj-eLFBOyMvfdSx8ze1NOenT3BlbkFJi8NPiyi3iasDx3mFmj2t"
 
 # Get the diff of the staged changes
 $diff = git diff --cached
