@@ -1,5 +1,6 @@
 # another git repo
 businessSimulation/codespaces-flask/
+secrets.md
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
