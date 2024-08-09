@@ -1,5 +1,9 @@
 # Define your API key
-$apiKey = $env.OPENAI_API_KEY
+. ./env.ps1
+#TODO: Make this test work with pester and code coverage. First get docker testing working. 
+#TODO: Check in your code via this script. Remember Aaron Bedra's advice: "Commit early, commit often."
+#TODO: file:///Users/skriloffn/Box%20Sync/Skriloff/CSC/JavaLanguage/JavaTiddly.html#AaronBedra10XProgrammer
+$apiKey = $env.OPENAI_API_KEY.toString();
 
 # Get the diff of the staged changes
 $diff = git diff --cached
